@@ -3,7 +3,7 @@ import { defaults, sessionKey, buildDeck, visitRound } from "./deck.js";
 const KEY = "pearl-readers:v1";
 const fresh = () => ({
   schema: 1,
-  preferences: { ...defaults, theme: "night" },
+  preferences: { ...defaults, lang: "en", theme: "night" },
   sessions: {},
   lastActive: null,
 });

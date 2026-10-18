@@ -1,6 +1,6 @@
 export const messages = {
   en: {
-    tagline: "A little reading. A little wonder.",
+    tagline: "Kid + parent reading adventure game",
     home: "Home",
     library: "Word library",
     theme: "Switch day / night",
@@ -113,7 +113,7 @@ export const messages = {
     draft: "Draft content",
   },
   fr: {
-    tagline: "Un peu de lecture. Un peu de magie.",
+    tagline: "Jeu de lecture enfant + parent",
     home: "Accueil",
     library: "Les mots",
     theme: "Changer jour / nuit",

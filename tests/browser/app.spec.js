@@ -13,10 +13,16 @@ async function tools(page) {
   await page.locator(".reader-secondary summary").click();
 }
 
-test("starts the default French adventure from Home and resumes after refresh", async ({
+test("defaults to English and dark mode, supports French reading and resumes after refresh", async ({
   page,
 }) => {
   await page.goto("/");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("html")).toHaveAttribute("data-theme", "night");
+  await expect(page.locator(".brand small")).toHaveText(
+    "Kid + parent reading adventure game",
+  );
+  await page.selectOption("#lang", "fr");
   await expect(page.locator("html")).toHaveAttribute("lang", "fr");
   await page.getByRole("button", { name: "Nouvelle aventure" }).click();
   await expect(word(page)).toHaveText("ami");
@@ -259,7 +265,7 @@ test("early finish preserves position and does not mark a round complete", async
   await expect(page.locator("#notice")).toContainText("pause");
   expect(Object.values((await stored(page)).sessions)[0].completed).toBe(false);
   await page
-    .getByRole("link", { name: "Continuer notre aventure", exact: true })
+    .getByRole("link", { name: "Continue our adventure", exact: true })
     .click();
   await expect(word(page)).toHaveText("mamie");
 });
@@ -267,6 +273,7 @@ test("empty filter intersection disables Start and seed zero remains valid", asy
   page,
 }) => {
   await page.goto("/");
+  await page.selectOption("#lang", "fr");
   await page.locator("#advanced summary").click();
   await page.selectOption("#unit", "fr-02");
   await page.selectOption("#max", "1");
@@ -306,8 +313,8 @@ test("corrupt and denied storage never stop reading", async ({
   await page.evaluate(() => localStorage.setItem("pearl-readers:v1", "{bad"));
   await page.reload();
   await expect(page.locator(".storage-warning")).toBeVisible();
-  await page.getByRole("button", { name: "Nouvelle aventure" }).click();
-  await expect(word(page)).toHaveText("ami");
+  await page.getByRole("button", { name: "Start new adventure" }).click();
+  await expect(word(page)).toHaveText("cat");
   const context = await browser.newContext();
   await context.addInitScript(() => {
     Object.defineProperty(window, "localStorage", {
@@ -687,6 +694,8 @@ test("top language buttons are visible, indicate the active language and remembe
   const english = page.getByRole("button", { name: "English", exact: true });
   const french = page.getByRole("button", { name: "Français", exact: true });
   await expect(english).toBeVisible();
+  await expect(english).toHaveAttribute("aria-pressed", "true");
+  await french.click();
   await expect(french).toHaveAttribute("aria-pressed", "true");
   await english.click();
   await expect(english).toHaveAttribute("aria-pressed", "true");
@@ -736,6 +745,7 @@ test("story arrows cycle through ten titles without disturbing Home settings or 
     Math.random = () => 0;
   });
   await page.goto("/");
+  await page.getByRole("button", { name: "Français", exact: true }).click();
   await expect(page.locator("#story-title")).toHaveText(
     "Perle et les étoiles perdues",
   );
@@ -777,6 +787,7 @@ test("a full page load picks a fresh random story; language and theme changes ke
       Number(sessionStorage.getItem("test-story-random") ?? 0);
   });
   await page.goto("/");
+  await page.getByRole("button", { name: "Français", exact: true }).click();
   await expect(page.locator(".story-position")).toHaveText("Histoire 1 / 10");
   await page.evaluate(() =>
     sessionStorage.setItem("test-story-random", "0.99"),

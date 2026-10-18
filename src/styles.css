@@ -106,23 +106,26 @@ button svg {
   gap: 12px;
   text-decoration: none;
   font-family: Georgia, serif;
-  font-size: 1.4rem;
+  font-size: 2.35rem;
   line-height: 1.2;
   letter-spacing: -0.025em;
+  min-width: 0;
 }
+.brand > span { min-width: 0; overflow-wrap: anywhere; }
 .brand > svg {
   color: var(--pink);
-  width: 44px;
-  height: 44px;
+  width: 52px;
+  height: 52px;
   flex: none;
 }
 .brand small {
   font-family: "Trebuchet MS", Arial, sans-serif;
   display: block;
-  font-size: 0.65rem;
-  letter-spacing: 0.04em;
-  color: var(--muted);
-  margin-top: 6px;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  color: var(--text);
+  margin-top: 8px;
 }
 .site-header nav {
   display: flex;
@@ -917,16 +920,13 @@ main:focus {
     gap: 10px;
   }
   .brand {
-    font-size: 1.15rem;
-    gap: 8px;
+    font-size: 2rem;
+    gap: 12px;
   }
-  .brand small {
-    font-size: 0.5rem;
-    max-width: 180px;
-  }
+  .brand small { font-size: 0.9rem; }
   .brand > svg {
-    width: 32px;
-    height: 32px;
+    width: 44px;
+    height: 44px;
   }
   .site-header nav {
     gap: 12px;
@@ -1212,9 +1212,6 @@ main:focus {
   }
 }
 @media (max-width: 380px) {
-  .brand small {
-    display: none;
-  }
   .site-header nav {
     gap: 8px;
   }
@@ -1339,6 +1336,7 @@ h2,
 .language-switch {
   display: flex;
   align-items: center;
+  gap: 2px;
   max-width: 100%;
 }
 .language-button {
@@ -1361,7 +1359,8 @@ h2,
   color: var(--text);
 }
 .site-header nav {
-  gap: 16px;
+  gap: 20px;
+  padding-right: 8px;
 }
 .nav-icon {
   display: none;
@@ -1370,17 +1369,28 @@ h2,
 }
 @media (max-width: 800px) {
   .site-header {
-    flex-wrap: wrap;
-    row-gap: 8px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding: 20px 0 14px;
+    row-gap: 10px;
   }
+  .site-header .brand { grid-column: 1 / -1; }
   .site-header nav {
+    grid-column: 1 / -1;
+    justify-self: end;
     flex-wrap: wrap;
+    max-width: 100%;
   }
 }
 @media (max-width: 560px) {
-  .site-header nav {
+  .site-header {
     gap: 6px;
   }
+  .site-header nav {
+    gap: 8px;
+    padding-right: 4px;
+  }
+  .brand small { max-width: 100%; }
   .site-header .nav-text {
     display: none;
   }
