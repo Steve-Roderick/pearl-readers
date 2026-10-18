@@ -26,7 +26,9 @@ mode, deck, filter, order, seed, and goal identify separate saved adventures.
 
 Sound Explorer shows authored spelling groups. Word Explorer offers an optional
 hint. Dotted underlines identify silent letters, with a parent explanation. Card
-backs reveal a contextual example. Flipping does not advance or grade the child.
+backs reveal a contextual example. The small **Parent hint** / **Conseil aux parents**
+disclosure below the reading controls contains blending guidance and word-specific
+notes. Flipping does not advance or grade the child.
 **Flash French** (English reading) or **Voir en anglais** (French reading) shows
 the word’s contextual translation until you tap the same button again. While
 showing the translation, the button says **Back to English** or **Retour au français**.

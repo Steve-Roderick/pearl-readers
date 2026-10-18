@@ -78,6 +78,7 @@ export const messages = {
     silent: "Silent letters",
     silentHelp:
       "Letters marked with a dotted underline are silent in this word.",
+    parentHint: "Parent hint",
     parentTip: "Together, try blending the spoken groups into the whole word.",
     actions: "Adventure tools",
     copyWord: "Copy this word",
@@ -192,6 +193,7 @@ export const messages = {
     rime: "Attaque et rime",
     silent: "Lettres muettes",
     silentHelp: "Les lettres soulignées en pointillé sont muettes dans ce mot.",
+    parentHint: "Conseil aux parents",
     parentTip:
       "Essayez de réunir les groupes prononcés pour lire le mot entier.",
     actions: "Outils de l’aventure",
