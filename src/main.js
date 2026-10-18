@@ -448,6 +448,27 @@ function switchLanguage(language) {
     .querySelector(`.language-button[data-language="${language}"]`)
     ?.focus();
 }
+function readAnotherSet(config) {
+  const saved = config
+    ? store.get(config)
+    : store.sessions.find((record) => record.config.lang === lang());
+  let target = config ?? saved?.config ?? {
+    ...store.preferences,
+    lang: lang(),
+    unit: store.preferences.lang === lang() ? store.preferences.unit : "",
+    s: 0,
+    i: 0,
+  };
+  const completed = saved && (saved.completed || store.receipt(saved.attemptId));
+  if (config || completed) {
+    target = nextRound(target, buildDeck(target).length);
+    store.restart(target);
+  } else if (!saved) {
+    try { parseRoute(sessionURL(target)); }
+    catch { target = {...defaults, lang: lang()}; }
+  }
+  navigate(sessionURL(target), false, !saved || !!completed || !!config);
+}
 app.addEventListener("click", async (e) => {
   const anchor = e.target.closest("a[data-nav]");
   if (
@@ -494,6 +515,10 @@ app.addEventListener("click", async (e) => {
     cardState = cardState === "back" ? "front" : "back";
     render(false);
     document.querySelector('[data-action="flip"]').focus();
+    return;
+  }
+  if (name === "read-another-set" || name === "continue-deck") {
+    readAnotherSet(name === "continue-deck" ? route.config : undefined);
     return;
   }
   if (name === "skip-bubbles") return;
@@ -549,11 +574,6 @@ app.addEventListener("click", async (e) => {
     if (navigator.locks)
       await navigator.locks.request("pearl-readers-reward", finish);
     else finish();
-  }
-  if (name === "continue-deck") {
-    const next = nextRound(c, buildDeck(c).length);
-    store.restart(next);
-    navigate(sessionURL(next), false, true);
   }
 });
 app.addEventListener("change", (e) => {

@@ -284,3 +284,44 @@ test("independent tabs earn different animals, including on hosts without random
   expect(new Set(earned.map((r) => r.storyId)).size).toBe(2);
   await expect(page.locator(".pearl-joining img")).toBeVisible();
 });
+
+for (const language of ['en', 'fr']) {
+  test(`necklace opens the next ${language} set with one click and resumes it while unfinished`, async ({page}) => {
+    await page.goto(url(5, language));
+    await complete(page);
+    const earned = (await receipts(page))[0].attemptId;
+    await page.locator('.completion-actions .primary').click();
+    await page.locator('[data-action="read-another-set"]').click();
+    await expect(page.locator('#reading-word')).toBeVisible();
+    expect(new URL(page.url()).searchParams.get('s')).toBe('5');
+    expect(new URL(page.url()).searchParams.get('i')).toBe('5');
+    expect(new URL(page.url()).searchParams.get('lang')).toBe(language);
+    const record = await page.evaluate(() => {
+      const data=JSON.parse(localStorage.getItem('pearl-readers:v1'));
+      return data.sessions[data.lastActive];
+    });
+    expect(record.attemptId).not.toBe(earned);
+    expect(record.readIds).toEqual([]);
+    expect(await receipts(page)).toHaveLength(1);
+    await next(page).click();
+    await page.locator('header .necklace-link').click();
+    await page.locator('[data-action="read-another-set"]').click();
+    expect(new URL(page.url()).searchParams.get('i')).toBe('6');
+    for(let i=0;i<4;i++) await next(page).click();
+    await expect(page.locator('.rescue-story')).toBeVisible();
+    expect(await receipts(page)).toHaveLength(2);
+  });
+}
+
+test('necklace starts a first set directly and wraps after the final set', async ({page}) => {
+  await page.goto('/necklace?lang=en');
+  await page.locator('[data-action="read-another-set"]').click();
+  await expect(page.locator('#reading-word')).toHaveText('cat');
+  await page.goto('/play?lang=en&goal=10&s=98&i=98');
+  await complete(page,2);
+  await page.locator('.completion-actions .primary').click();
+  await page.locator('[data-action="read-another-set"]').click();
+  await expect(page.locator('#reading-word')).toHaveText('cat');
+  expect(new URL(page.url()).searchParams.get('s')).toBe('0');
+  expect(await receipts(page)).toHaveLength(1);
+});
