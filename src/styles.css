@@ -111,7 +111,10 @@ button svg {
   letter-spacing: -0.025em;
   min-width: 0;
 }
-.brand > span { min-width: 0; overflow-wrap: anywhere; }
+.brand > span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
 .brand > svg {
   color: var(--pink);
   width: 52px;
@@ -703,46 +706,56 @@ footer .connection {
   font-size: 0.8rem;
   margin-bottom: 18px;
 }
-.word-list {
-  list-style: none;
-  padding: 0;
+.word-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
   margin: 0 0 30px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 28px;
+  text-align: left;
 }
-.word-list li {
-  min-width: 0;
-  border-top: 1px solid var(--border);
+.word-table col {
+  width: 40%;
 }
-.word-list a {
-  display: grid;
-  grid-template-columns: 1fr auto auto;
-  gap: 12px;
-  align-items: center;
-  position: relative;
-  min-height: 86px;
-  text-decoration: none;
-  padding: 12px;
+.word-table .difficulty-column {
+  width: 20%;
 }
-.word-list a:hover {
+.word-table caption {
+  text-align: left;
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 14px;
+}
+.word-table th,
+.word-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+.word-table th {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.word-table th:last-child,
+.word-difficulty {
+  text-align: center;
+}
+.word-table tbody tr:hover {
   background: var(--hover);
-  border-radius: 10px;
 }
 .directory-word {
-  font-size: 1.5rem;
+  display: inline-block;
+  min-height: 44px;
+  max-width: 100%;
+  padding: 7px 0;
+  font-size: 1.15rem;
   color: var(--cream);
 }
-.word-level {
-  font-size: 0.65rem;
-  color: var(--muted);
+.translated-word {
+  font-size: 1rem;
 }
-.word-pattern {
-  grid-row: 2;
-  grid-column: 1 / 4;
-  font-size: 0.65rem;
-  color: var(--muted);
-  margin-top: -8px;
+.word-difficulty {
+  font-size: 1rem;
 }
 .completion,
 .error-page {
@@ -904,12 +917,6 @@ main:focus {
   .directory-filters {
     grid-template-columns: 1fr 1fr;
   }
-  .word-list {
-    gap: 0 14px;
-  }
-  .word-pattern {
-    overflow-wrap: anywhere;
-  }
 }
 @media (max-width: 560px) {
   .page {
@@ -923,7 +930,9 @@ main:focus {
     font-size: 2rem;
     gap: 12px;
   }
-  .brand small { font-size: 0.9rem; }
+  .brand small {
+    font-size: 0.9rem;
+  }
   .brand > svg {
     width: 44px;
     height: 44px;
@@ -1185,11 +1194,9 @@ main:focus {
     font-size: 0.78rem;
     padding: 10px;
   }
-  .word-list {
-    grid-template-columns: 1fr;
-  }
-  .word-list a {
-    min-height: 84px;
+  .word-table th,
+  .word-table td {
+    padding: 10px 8px;
   }
   .completion,
   .error-page {
@@ -1283,9 +1290,6 @@ h2,
 .directory-word {
   overflow-wrap: anywhere;
 }
-.word-list a {
-  grid-template-columns: minmax(0, 1fr) auto auto;
-}
 .directory-filters > label {
   min-width: 0;
 }
@@ -1374,7 +1378,9 @@ h2,
     padding: 20px 0 14px;
     row-gap: 10px;
   }
-  .site-header .brand { grid-column: 1 / -1; }
+  .site-header .brand {
+    grid-column: 1 / -1;
+  }
   .site-header nav {
     grid-column: 1 / -1;
     justify-self: end;
@@ -1390,7 +1396,9 @@ h2,
     gap: 8px;
     padding-right: 4px;
   }
-  .brand small { max-width: 100%; }
+  .brand small {
+    max-width: 100%;
+  }
   .site-header .nav-text {
     display: none;
   }

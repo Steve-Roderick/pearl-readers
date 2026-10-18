@@ -71,7 +71,10 @@ browser, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Standard Playwright's
 ## Reproducible links and local progress
 
 - `/words?lang=fr&sort=alpha&q=etoile&unit=fr-05` searches the directory without
-  altering an adventure. Accent-insensitive search preserves displayed spelling.
+  altering an adventure. The table shows English, French and difficulty together
+  in both language libraries. Difficulty belongs to the selected reading language;
+  its word links to the reading card. Accent-insensitive search covers both columns
+  and preserves displayed spelling.
 - `/card?deck=v1&lang=fr&id=fr-chat` opens a standalone card.
 - `/play?deck=v1&lang=fr&mode=simple&order=learn&case=lower&min=1&max=5&goal=10&s=0&i=4`
   restores a round, including its start and exact current word.

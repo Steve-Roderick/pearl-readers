@@ -274,14 +274,29 @@ function directoryResults() {
     .filter(
       (w) =>
         (!route.unit || w.curriculumUnit === route.unit) &&
-        searchKey(w.word).includes(searchKey(route.q)),
+        (searchKey(w.word).includes(searchKey(route.q)) ||
+          searchKey(translationFor(w).text).includes(searchKey(route.q))),
     )
     .sort((a, b) =>
       route.sort === "alpha"
         ? a.alphabeticalRank - b.alphabeticalRank
         : a.difficulty - b.difficulty || a.unitOrder - b.unitOrder,
     );
-  return `<p class="result-count" role="status">${list.length} ${esc(t("count"))}</p><ul class="word-list">${list.map((w) => `<li><a href="${esc(cardURL(w))}" data-nav><span class="directory-word" lang="${w.language}">${esc(w.word)}</span><span class="word-level">${esc(t("difficulty"))} ${w.difficulty}</span><span class="word-pattern">${esc(w.patterns.join(" · "))}</span><span aria-hidden="true">↗</span><span class="sr-only">${esc(t("open"))}</span></a></li>`).join("")}</ul>${!list.length ? `<p>${esc(t("empty"))}</p>` : ""}`;
+  const rows = list
+    .map((word) => {
+      const translation = translationFor(word);
+      const cell = (language) =>
+        word.language === language
+          ? `<a class="directory-word" href="${esc(cardURL(word))}" data-nav lang="${language}" aria-label="${esc(t("open") + ": " + word.word)}">${esc(word.word)}</a>`
+          : `<span class="translated-word" lang="${language}">${esc(translation.text)}</span>`;
+      return `<tr><td>${cell("en")}</td><td>${cell("fr")}</td><td class="word-difficulty">${word.difficulty}</td></tr>`;
+    })
+    .join("");
+  const alphabeticalSort = (language) =>
+    route.sort === "alpha" && route.lang === language
+      ? ' aria-sort="ascending"'
+      : "";
+  return `<p class="result-count" role="status">${list.length} ${esc(t("count"))}</p><table class="word-table"><caption>${esc(t("difficultyNote"))}</caption><colgroup><col><col><col class="difficulty-column"></colgroup><thead><tr><th scope="col"${alphabeticalSort("en")}>${esc(t("english"))}</th><th scope="col"${alphabeticalSort("fr")}>${esc(t("french"))}</th><th scope="col"${route.sort === "difficulty" ? ' aria-sort="ascending"' : ""}>${esc(t("difficulty"))}</th></tr></thead><tbody>${rows}</tbody></table>${!list.length ? `<p>${esc(t("empty"))}</p>` : ""}`;
 }
 function errorView() {
   return `<section class="error-page"><span class="meaning-star" aria-hidden="true">✧</span><h1>${esc(t("errorTitle"))}</h1><p class="intro">${esc(t("errorNote"))}</p><div class="completion-actions">${link("/", t("homeButton"), "primary")}${store.last ? link(sessionURL(store.last.config), t("continue"), "secondary") : ""}</div></section>`;

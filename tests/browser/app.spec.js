@@ -178,8 +178,8 @@ test("directory search handles accents, retains filters and isolates standalone 
   const before = await stored(page);
   await page.getByRole("link", { name: "Les mots", exact: true }).click();
   await page.locator("#search").fill("etoile");
-  await expect(page.locator(".word-list li")).toHaveCount(1);
-  await page.locator(".word-list a").click();
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(1);
+  await page.locator(".word-table a").click();
   await expect(word(page)).toHaveText("étoile");
   await page.reload();
   await expect(word(page)).toHaveText("étoile");
@@ -193,13 +193,44 @@ test("directory language, difficulty sort and unit filters expose all 200 entrie
   page,
 }) => {
   await page.goto("/words?lang=fr");
-  await expect(page.locator(".word-list li")).toHaveCount(100);
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(100);
   await page.selectOption("#directory-sort", "difficulty");
   await page.selectOption("#directory-unit", "fr-05");
-  await expect(page.locator(".word-list li")).toHaveCount(20);
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(20);
   await page.selectOption("#directory-lang", "en");
   await expect(page.locator("html")).toHaveAttribute("lang", "en");
-  await expect(page.locator(".word-list li")).toHaveCount(100);
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(100);
+  await expect(page.locator(".word-table th")).toHaveText([
+    "English",
+    "French",
+    "Difficulty",
+  ]);
+  await page.locator("#search").fill("chat");
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(1);
+  await expect(page.locator(".word-table tbody td")).toHaveText([
+    "cat",
+    "chat",
+    "1",
+  ]);
+  await expect(page.locator(".word-table a")).toHaveAttribute(
+    "href",
+    "/card?deck=v1&lang=en&id=en-cat",
+  );
+  await page.goto("/words?lang=fr&q=chat");
+  await expect(page.locator(".word-table th")).toHaveText([
+    "Anglais",
+    "Français",
+    "Niveau",
+  ]);
+  await expect(page.locator(".word-table tbody td")).toHaveText([
+    "cat",
+    "chat",
+    "3",
+  ]);
+  await expect(page.locator(".word-table a")).toHaveAttribute(
+    "href",
+    "/card?deck=v1&lang=fr&id=fr-chat",
+  );
 });
 test("case, reading mode and theme changes preserve the round and visit history", async ({
   page,
@@ -350,7 +381,7 @@ test("offline deep-link reload works after precaching, without external requests
   await expect(word(page)).toHaveText("papi");
   await page.getByRole("link", { name: "Les mots", exact: true }).click();
   await page.locator("#search").fill("etoile");
-  await page.locator(".word-list a").click();
+  await page.locator(".word-table a").click();
   await expect(word(page)).toHaveText("étoile");
   expect(external).toEqual([]);
 });
@@ -424,6 +455,11 @@ test("captures the reading experience at desktop and phone sizes", async ({
   await button(page, "theme").click();
   await page.screenshot({
     path: testInfo.outputPath("reader-day.png"),
+    fullPage: true,
+  });
+  await page.goto("/words?lang=en&q=zip");
+  await page.screenshot({
+    path: testInfo.outputPath("word-table-phone.png"),
     fullPage: true,
   });
   expect(errors).toEqual([]);
@@ -732,7 +768,7 @@ test("top language switching resumes independent reading positions and works in 
   await page.goto("/words?lang=fr&unit=fr-05&q=etoile");
   await page.getByRole("button", { name: "English", exact: true }).click();
   await expect(page.locator("#directory-lang")).toHaveValue("en");
-  await expect(page.locator(".word-list li")).toHaveCount(100);
+  await expect(page.locator(".word-table tbody tr")).toHaveCount(100);
   await page.goto("/card?lang=fr&id=fr-chat");
   await page.getByRole("button", { name: "English", exact: true }).click();
   await expect(word(page)).toHaveText("mat");
