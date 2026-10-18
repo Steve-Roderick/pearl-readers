@@ -42,7 +42,7 @@ self.addEventListener('activate',event=>event.waitUntil((async()=>{
 self.addEventListener('fetch',event=>{
   const url=new URL(event.request.url);
   if(event.request.method!=='GET'||url.origin!==self.location.origin)return;
-  const supported=['/','/play','/card','/words'].includes(url.pathname);
+  const supported=['/','/play','/card','/words','/necklace'].includes(url.pathname);
   if(event.request.mode==='navigate'&&supported){
     // Pages redirects /index.html to /. Navigation requests can reject a cached
     // redirected response, so return a fresh response with the same body/headers.

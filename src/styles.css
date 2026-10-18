@@ -1594,3 +1594,572 @@ h2,
     transform: translate(var(--drift), -138px) scale(0.8);
   }
 }
+
+/* Rescue rewards: iridescent animal pearls on a gently scalloped necklace. */
+.necklace-link {
+  width: 36px;
+  height: 36px;
+  padding: 2px;
+  color: var(--pink);
+}
+.necklace-link svg {
+  width: 32px;
+  height: 28px;
+}
+.hero-promise {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  line-height: 1.5;
+  color: var(--cream);
+}
+.hero-necklace {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+.hero-necklace svg {
+  width: 48px;
+  height: 40px;
+  color: var(--pink);
+}
+.rescue-completion {
+  max-width: 850px;
+  margin-inline: auto;
+}
+.rescue-completion > h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+}
+.rescue-celebration {
+  height: 170px;
+  margin-bottom: -10px;
+}
+.bubble-sparkles {
+  display: block;
+  color: var(--cream);
+  font-size: 2rem;
+  letter-spacing: 1rem;
+}
+.rescue-story {
+  text-align: center;
+  max-width: 760px;
+  margin: 2rem auto;
+  padding: clamp(1rem, 4vw, 2.5rem);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 36px;
+}
+.animal-stamp {
+  display: block;
+  width: 128px;
+  height: 128px;
+  margin: 0 auto 1rem;
+  filter: drop-shadow(0 7px 15px #102d4022);
+}
+.rescue-story > .animal-stamp {
+  width: clamp(110px, 20vw, 170px);
+  height: auto;
+}
+.rescue-story h2 {
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+  line-height: 1.25;
+  margin: 0.5rem 0 1.5rem;
+}
+.rescue-story .story-text {
+  text-align: left;
+  font-size: clamp(1.3rem, 2.6vw, 1.75rem);
+  line-height: 1.7;
+}
+.pearl-earned {
+  color: var(--mint);
+  font-size: 1.1rem;
+}
+.necklace-page {
+  text-align: center;
+  max-width: 1000px;
+  margin-inline: auto;
+}
+.necklace-page > h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin-bottom: 1rem;
+}
+.collection-totals {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1rem, 4vw, 3rem);
+  margin: 2rem 0 1rem;
+}
+.collection-totals div {
+  display: flex;
+  flex-direction: column-reverse;
+  flex: 1;
+  max-width: 190px;
+}
+.collection-totals dt {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.collection-totals dd {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: var(--cream);
+  font-family: Georgia, serif;
+}
+.bubble-tally {
+  min-height: 78px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.bubble-tally p {
+  margin: 0.4rem;
+}
+.bubble-tally button {
+  font-size: 0.85rem;
+  padding: 0.4rem 0.7rem;
+}
+.necklace-display {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2;
+  min-height: 280px;
+  margin: 1rem 0;
+  border-radius: 44px;
+  background: radial-gradient(ellipse at 50% 35%, var(--glow), transparent 70%);
+}
+.necklace-thread {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  color: var(--cream);
+  opacity: 0.7;
+}
+.necklace-bead {
+  position: absolute;
+  left: var(--bead-x);
+  top: var(--bead-y);
+  width: clamp(36px, 6.4vw, 74px);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: filter 0.2s;
+}
+.necklace-bead:hover {
+  filter: drop-shadow(0 0 10px var(--pink));
+}
+.necklace-bead .animal-stamp {
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+.bead-number {
+  position: absolute;
+  bottom: -19px;
+  left: 0;
+  width: 100%;
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.empty-bead {
+  width: clamp(20px, 3vw, 35px);
+  border: 1px dashed var(--border-strong);
+  background: radial-gradient(circle at 30% 25%, var(--glow), transparent);
+  opacity: 0.65;
+}
+.strand-navigation {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.strand-navigation p {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.collection-privacy {
+  max-width: 650px;
+  margin: 2rem auto;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.lifetime-bubbles {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+.lifetime-bubble {
+  display: block;
+  position: absolute;
+  bottom: -65px;
+  border-radius: 50%;
+  border: 1px solid var(--mint);
+  background:
+    radial-gradient(circle at 30% 25%, #fff7dc99, transparent 40%),
+    linear-gradient(135deg, #edc9d72a, #a1dedb20);
+  animation: lifetime-rise 1.9s ease-out both;
+}
+@keyframes lifetime-rise {
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  to {
+    transform: translate(25px, -115vh);
+    opacity: 0.15;
+  }
+}
+@media (max-width: 600px) {
+  .necklace-display {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2.4rem 0.35rem;
+    padding: 1rem 0.5rem 3rem;
+    aspect-ratio: auto;
+    min-height: 240px;
+    align-content: start;
+  }
+  .necklace-thread {
+    display: none;
+  }
+  .necklace-bead {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 60px;
+    transform: none;
+    justify-self: center;
+  }
+  .necklace-bead:nth-child(5n + 3),
+  .necklace-bead:nth-child(5n + 5) {
+    margin-top: 18px;
+  }
+  .necklace-bead:nth-child(5n + 4) {
+    margin-top: 28px;
+  }
+  .necklace-bead::before {
+    content: "";
+    position: absolute;
+    height: 1px;
+    width: calc(100% + 12px);
+    background: var(--cream);
+    top: 50%;
+    left: -6px;
+    z-index: -1;
+    opacity: 0.5;
+  }
+  .empty-bead {
+    width: 30px;
+    align-self: center;
+  }
+  .rescue-story {
+    border-radius: 24px;
+  }
+  .collection-totals {
+    gap: 0.5rem;
+  }
+  .collection-totals dt {
+    font-size: 0.75rem;
+  }
+  .rescue-completion .completion-actions {
+    flex-direction: column;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lifetime-bubbles {
+    display: none;
+  }
+  .rescue-celebration .celebration-bubble {
+    opacity: 0.65;
+  }
+}
+
+.necklace-bead[data-bead-index="0"] {
+  --bead-x: 6%;
+  --bead-y: 17%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="0"] {
+  --x: 10%;
+  --size: 12px;
+  --rest: -70px;
+  --drift: -8px;
+  --delay: 0s;
+}
+.necklace-bead[data-bead-index="1"] {
+  --bead-x: 15.78%;
+  --bead-y: 23.16%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="1"] {
+  --x: 41%;
+  --size: 19px;
+  --rest: -70px;
+  --drift: 9px;
+  --delay: 0.075s;
+}
+.necklace-bead[data-bead-index="2"] {
+  --bead-x: 25.56%;
+  --bead-y: 28.57%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="2"] {
+  --x: 72%;
+  --size: 26px;
+  --rest: -70px;
+  --drift: -10px;
+  --delay: 0.15s;
+}
+.necklace-bead[data-bead-index="3"] {
+  --bead-x: 35.34%;
+  --bead-y: 32.59%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="3"] {
+  --x: 23%;
+  --size: 16px;
+  --rest: -70px;
+  --drift: 11px;
+  --delay: 0.225s;
+}
+.necklace-bead[data-bead-index="4"] {
+  --bead-x: 45.12%;
+  --bead-y: 34.73%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="4"] {
+  --x: 54%;
+  --size: 23px;
+  --rest: -70px;
+  --drift: -12px;
+  --delay: 0.3s;
+}
+.necklace-bead[data-bead-index="5"] {
+  --bead-x: 54.9%;
+  --bead-y: 34.73%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="5"] {
+  --x: 85%;
+  --size: 13px;
+  --rest: -70px;
+  --drift: 13px;
+  --delay: 0.375s;
+}
+.necklace-bead[data-bead-index="6"] {
+  --bead-x: 64.68%;
+  --bead-y: 32.59%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="6"] {
+  --x: 36%;
+  --size: 20px;
+  --rest: -70px;
+  --drift: -14px;
+  --delay: 0.45s;
+}
+.necklace-bead[data-bead-index="7"] {
+  --bead-x: 74.46%;
+  --bead-y: 28.57%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="7"] {
+  --x: 67%;
+  --size: 27px;
+  --rest: -70px;
+  --drift: 15px;
+  --delay: 0.525s;
+}
+.necklace-bead[data-bead-index="8"] {
+  --bead-x: 84.24%;
+  --bead-y: 23.16%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="8"] {
+  --x: 18%;
+  --size: 17px;
+  --rest: -70px;
+  --drift: -16px;
+  --delay: 0.6s;
+}
+.necklace-bead[data-bead-index="9"] {
+  --bead-x: 94.02%;
+  --bead-y: 17%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="9"] {
+  --x: 49%;
+  --size: 24px;
+  --rest: -70px;
+  --drift: 17px;
+  --delay: 0.675s;
+}
+.necklace-bead[data-bead-index="10"] {
+  --bead-x: 6%;
+  --bead-y: 60%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="10"] {
+  --x: 80%;
+  --size: 14px;
+  --rest: -70px;
+  --drift: -18px;
+  --delay: 0.75s;
+}
+.necklace-bead[data-bead-index="11"] {
+  --bead-x: 15.78%;
+  --bead-y: 66.16%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="11"] {
+  --x: 31%;
+  --size: 21px;
+  --rest: -70px;
+  --drift: 19px;
+  --delay: 0.825s;
+}
+.necklace-bead[data-bead-index="12"] {
+  --bead-x: 25.56%;
+  --bead-y: 71.57%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="12"] {
+  --x: 62%;
+  --size: 28px;
+  --rest: -70px;
+  --drift: -20px;
+  --delay: 0.9s;
+}
+.necklace-bead[data-bead-index="13"] {
+  --bead-x: 35.34%;
+  --bead-y: 75.59%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="13"] {
+  --x: 13%;
+  --size: 18px;
+  --rest: -70px;
+  --drift: 21px;
+  --delay: 0.975s;
+}
+.necklace-bead[data-bead-index="14"] {
+  --bead-x: 45.12%;
+  --bead-y: 77.73%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="14"] {
+  --x: 44%;
+  --size: 25px;
+  --rest: -70px;
+  --drift: -22px;
+  --delay: 1.05s;
+}
+.necklace-bead[data-bead-index="15"] {
+  --bead-x: 54.9%;
+  --bead-y: 77.73%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="15"] {
+  --x: 75%;
+  --size: 15px;
+  --rest: -70px;
+  --drift: 8px;
+  --delay: 1.125s;
+}
+.necklace-bead[data-bead-index="16"] {
+  --bead-x: 64.68%;
+  --bead-y: 75.59%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="16"] {
+  --x: 26%;
+  --size: 22px;
+  --rest: -70px;
+  --drift: -9px;
+  --delay: 1.2s;
+}
+.necklace-bead[data-bead-index="17"] {
+  --bead-x: 74.46%;
+  --bead-y: 71.57%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="17"] {
+  --x: 57%;
+  --size: 12px;
+  --rest: -70px;
+  --drift: 10px;
+  --delay: 1.275s;
+}
+.necklace-bead[data-bead-index="18"] {
+  --bead-x: 84.24%;
+  --bead-y: 66.16%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="18"] {
+  --x: 88%;
+  --size: 19px;
+  --rest: -70px;
+  --drift: -11px;
+  --delay: 1.35s;
+}
+.necklace-bead[data-bead-index="19"] {
+  --bead-x: 94.02%;
+  --bead-y: 60%;
+}
+.rescue-celebration .celebration-bubble[data-bubble-index="19"] {
+  --x: 39%;
+  --size: 26px;
+  --rest: -70px;
+  --drift: 12px;
+  --delay: 1.425s;
+}
+.rescue-hero .hero-copy {
+  min-width: 0;
+}
+.rescue-hero h1 {
+  overflow-wrap: anywhere;
+}
+.reader-secondary > [data-action="pause"] {
+  white-space: normal;
+  max-width: 100%;
+}
+.hero-necklace {
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+.hero-necklace svg {
+  flex-shrink: 0;
+}
+.rescue-hero .hero-art {
+  min-width: 0;
+}
+.rescue-hero .hero-art {
+  flex-direction: column;
+  height: auto;
+  margin-top: 0;
+  justify-content: center;
+}
+.rescue-hero .hero-art img {
+  width: 100%;
+  height: auto;
+  max-width: 520px;
+}
+.pearl-joining {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  color: var(--pink);
+}
+.pearl-joining .animal-stamp {
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  animation: pearl-join 1.4s ease-out both;
+}
+.pearl-joining > svg {
+  width: 80px;
+  height: 68px;
+}
+@keyframes pearl-join {
+  from {
+    transform: translate(-25px, -12px) scale(0.7);
+    opacity: 0.2;
+  }
+  to {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+}

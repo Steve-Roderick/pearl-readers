@@ -27,12 +27,14 @@ import {
 } from "../../scripts/validate-content.js";
 const c = { ...defaults };
 const memory = () => {
-  let value = null;
+  const values = new Map();
   return {
-    getItem: () => value,
-    setItem: (_, v) => {
-      value = v;
+    get length() {
+      return values.size;
     },
+    key: (i) => [...values.keys()][i],
+    getItem: (key = "pearl-readers:v1") => values.get(key) ?? null,
+    setItem: (key, value) => values.set(key || "pearl-readers:v1", value),
   };
 };
 
@@ -248,13 +250,18 @@ describe("local persistence", () => {
     s.visit({ ...c, i: 1 }, deck);
     s.visit(c, deck);
     expect(s.last.visited).toHaveLength(2);
-    s.complete(c);
+    for (let i = 0; i < c.goal; i++) {
+      const config = { ...c, i };
+      s.visit(config, deck);
+      s.advance(config);
+    }
+    s.complete({ ...c, i: c.goal - 1 });
     const english = { ...c, lang: "en" };
     s.visit(english, buildDeck(english));
     const restored = createStorage(() => backend);
     expect(restored.get(c).completed).toBe(true);
     expect(restored.last.config.lang).toBe("en");
-    expect(restored.get(c).visited).toHaveLength(2);
+    expect(restored.get(c).visited).toHaveLength(c.goal);
   });
   it("resets visits on a new round and transfers them when mode changes", () => {
     const s = createStorage(() => memory());

@@ -229,3 +229,67 @@ export const messages = {
     draft: "Contenu provisoire",
   },
 };
+
+Object.assign(messages.en, {
+  heroTitle: "Little words. Ocean-sized wonders.",
+  heroNote: "Read together. Rescue ocean friends. Grow your pearl necklace.",
+  heroReward:
+    "Finish a set to discover a magical rescue story and an animal pearl of your own.",
+  necklace: "My pearl necklace",
+  necklaceIntro:
+    "Every pearl holds a friend you helped rescue. Touch one to hear their story again.",
+  necklaceEmpty:
+    "Your next ocean friend awaits. Read a little set together to earn your first animal pearl.",
+  necklaceHint:
+    "One finished set, one rescued friend, one new pearl. A new strand begins after twenty rescues.",
+  wordsTogether: "Words read together",
+  rescues: "Rescues",
+  oceanFriends: "Ocean friends",
+  oceanBubbles: "bubbles for your ocean",
+  strand: "Strand",
+  skipBubbles: "Skip bubbles",
+  collectionPrivacy:
+    "Your necklace is saved in this browser on this device. It does not travel with adventure links. Private browsing or clearing site data may remove it.",
+  readAnother: "Read another set",
+  pearlEarned: "An animal pearl for your necklace",
+  rewardNote:
+    "Your words made a little magic. Here is the friend you helped rescue.",
+  pause: "Pause and save my place",
+  notSaved:
+    "Saving is unavailable. You can keep reading, but your place and necklace may be lost when you leave. Copy an adventure link to keep your reading settings.",
+  missingWords:
+    "Let’s read the remaining words together before our rescue story.",
+  visited: "words read together · one magical bubble for each word",
+});
+Object.assign(messages.fr, {
+  heroTitle: "De petits mots. Un océan de merveilles.",
+  heroNote:
+    "Lisez ensemble. Sauvez les amis de l’océan. Faites grandir votre collier de perles.",
+  heroReward:
+    "Terminez une étape pour découvrir une histoire de sauvetage magique et gagner une perle animal.",
+  necklace: "Mon collier de perles",
+  necklaceIntro:
+    "Chaque perle abrite un ami que vous avez aidé à sauver. Touchez une perle pour retrouver son histoire.",
+  necklaceEmpty:
+    "Votre prochain ami de l’océan vous attend. Lisez une petite étape ensemble pour gagner votre première perle animal.",
+  necklaceHint:
+    "Une étape terminée, un ami sauvé, une nouvelle perle. Un nouveau collier commence après vingt sauvetages.",
+  wordsTogether: "Mots lus ensemble",
+  rescues: "Sauvetages",
+  oceanFriends: "Amis de l’océan",
+  oceanBubbles: "bulles pour votre océan",
+  strand: "Collier",
+  skipBubbles: "Passer les bulles",
+  collectionPrivacy:
+    "Votre collier reste dans ce navigateur sur cet appareil. Les liens d’aventure ne le transportent pas. La navigation privée ou l’effacement des données peuvent le supprimer.",
+  readAnother: "Lire une autre étape",
+  pearlEarned: "Une perle animal pour votre collier",
+  rewardNote:
+    "Vos mots ont fait un peu de magie. Voici l’ami que vous avez aidé à sauver.",
+  pause: "Faire une pause et garder ma place",
+  notSaved:
+    "L’enregistrement est indisponible. Vous pouvez lire, mais votre place et votre collier risquent d’être perdus en quittant la page. Copiez un lien pour conserver vos réglages de lecture.",
+  missingWords:
+    "Lisons les mots restants ensemble avant notre histoire de sauvetage.",
+  visited: "mots lus ensemble · une bulle magique pour chaque mot",
+});

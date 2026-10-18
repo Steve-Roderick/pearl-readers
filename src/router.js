@@ -44,9 +44,22 @@ export function parseRoute(input, base = "https://pearl.local") {
     "id",
     "q",
     "sort",
+    "strand",
+    "rescue",
   ])
     if (p.getAll(key).length > 1) fail();
   if (url.pathname === "/") return { view: "home" };
+  if (url.pathname === "/necklace") {
+    const lang = enumValue(p, "lang", ["en", "fr"], "en");
+    const rescue = p.get("rescue") ?? "";
+    if (rescue && !/^[a-zA-Z0-9-]{8,100}$/.test(rescue)) fail();
+    return {
+      view: "necklace",
+      lang,
+      strand: numberValue(p, "strand", 0),
+      rescue,
+    };
+  }
   if (!["/play", "/card", "/words"].includes(url.pathname)) fail();
   const lang = enumValue(p, "lang", ["en", "fr"], "fr");
   if (url.pathname === "/words") {

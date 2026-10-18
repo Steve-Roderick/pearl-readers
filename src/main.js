@@ -18,10 +18,16 @@ import {
 } from "./router.js";
 import { createStorage } from "./storage.js";
 import { messages } from "./i18n.js";
-import stories from "./data/stories.json";
-
-// Pick once per page load; settings and language changes keep the chosen story.
-let storyIndex = Math.floor(Math.random() * stories.length);
+import {
+  necklaceIcon,
+  earnedPearl,
+  necklaceURL,
+  necklacePage,
+  rescueStory,
+  roundBubbles,
+  startBubbles,
+  stopBubbles,
+} from "./rescue.js";
 
 const app = document.querySelector("#app");
 let storageFailed = false,
@@ -85,14 +91,7 @@ function shell(body) {
   document.querySelector('meta[name="theme-color"]').content =
     store.preferences.theme === "night" ? "#102d40" : "#f8f3eb";
   document.title = `Pearl Readers · ${lang() === "fr" ? "Un mot, une perle" : "One word, one pearl"}`;
-  return `<div class="page ${route.view === "play" || route.view === "card" ? "reading-page" : ""}"><header class="site-header"><a class="brand" href="/" data-nav aria-label="Pearl Readers — ${esc(t("home"))}">${icon}<span>Pearl Readers<small>${esc(t("tagline"))}</small></span></a><nav aria-label="${esc(t("actions"))}"><div class="language-switch" role="group" aria-label="${esc(t("language"))}">${action("language", "EN", "language-button", `data-language="en" lang="en" aria-label="English" title="English" aria-pressed="${lang() === "en"}"`)}${action("language", "FR", "language-button", `data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="${lang() === "fr"}"`)}</div><a class="nav-link" href="/words?lang=${lang()}" data-nav aria-label="${esc(t("library"))}" title="${esc(t("library"))}"><span class="nav-text">${esc(t("library"))}</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v14c-4-1-6 0-9 2-3-2-5-3-9-2Z"/></svg></a><button type="button" class="theme-button" data-action="theme" aria-label="${esc(t("theme"))}" title="${esc(t("theme"))}">${themeIcon()}</button></nav></header>${storageFailed ? `<p class="storage-warning" role="status">${esc(t("notSaved"))}</p>` : ""}<main id="main" tabindex="-1">${body}</main>${footer()}</div><dialog id="copy-dialog"><form method="dialog"><h2>${esc(t("manualCopy"))}</h2><textarea id="copy-link" readonly aria-label="${esc(t("manualCopy"))}"></textarea><button class="primary">${esc(t("close"))}</button></form></dialog>`;
-}
-function storyContent() {
-  const story = stories[storyIndex][lang()];
-  return `<h1 id="story-title">${esc(story.title)}</h1><div class="story-text">${story.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}</div>`;
-}
-function storyPosition() {
-  return `${t("story")} ${storyIndex + 1} / ${stories.length}`;
+  return `<div class="page ${route.view === "play" || route.view === "card" ? "reading-page" : ""}"><header class="site-header"><a class="brand" href="/" data-nav aria-label="Pearl Readers — ${esc(t("home"))}">${icon}<span>Pearl Readers<small>${esc(t("tagline"))}</small></span></a><nav aria-label="${esc(t("actions"))}"><a class="necklace-link nav-link" href="/necklace?lang=${lang()}" data-nav aria-label="${esc(t("necklace"))}" title="${esc(t("necklace"))}">${necklaceIcon}</a><div class="language-switch" role="group" aria-label="${esc(t("language"))}">${action("language", "EN", "language-button", `data-language="en" lang="en" aria-label="English" title="English" aria-pressed="${lang() === "en"}"`)}${action("language", "FR", "language-button", `data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="${lang() === "fr"}"`)}</div><a class="nav-link" href="/words?lang=${lang()}" data-nav aria-label="${esc(t("library"))}" title="${esc(t("library"))}"><span class="nav-text">${esc(t("library"))}</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v14c-4-1-6 0-9 2-3-2-5-3-9-2Z"/></svg></a><button type="button" class="theme-button" data-action="theme" aria-label="${esc(t("theme"))}" title="${esc(t("theme"))}">${themeIcon()}</button></nav></header>${storageFailed ? `<p class="storage-warning" role="status">${esc(t("notSaved"))}</p>` : ""}<main id="main" tabindex="-1">${body}</main>${footer()}</div><dialog id="copy-dialog"><form method="dialog"><h2>${esc(t("manualCopy"))}</h2><textarea id="copy-link" readonly aria-label="${esc(t("manualCopy"))}"></textarea><button class="primary">${esc(t("close"))}</button></form></dialog>`;
 }
 function home() {
   const c = store.preferences;
@@ -117,7 +116,7 @@ function home() {
         record.config.lang === c.lang && record.config.mode === c.mode,
     ) ??
     store.last;
-  return `<section class="hero story-hero" aria-labelledby="story-title"><div class="hero-copy"><div class="story-selector">${action("previous-story", "‹", "story-arrow", `aria-label="${esc(t("previousStory"))}" aria-controls="story-content"`)}<p class="story-position" role="status">${esc(storyPosition())}</p>${action("next-story", "›", "story-arrow", `aria-label="${esc(t("nextStory"))}" aria-controls="story-content"`)}</div><div id="story-content">${storyContent()}</div><a href="#adventure" class="text-link hero-link">${esc(t("begin"))} <span aria-hidden="true">↘</span></a><p class="quiet-note">${esc(t("noRush"))}</p></div><div class="hero-art"><img src="/kingdom.svg" alt="" width="600" height="460"><span class="art-caption">${esc(t(store.preferences.theme === "night" ? "night" : "day"))} · Pearl Readers</span></div></section>
+  return `<section class="hero rescue-hero" aria-labelledby="hero-title"><div class="hero-copy"><p class="eyebrow">✧ Pearl Readers</p><h1 id="hero-title">${esc(t("heroTitle"))}</h1><p class="hero-promise">${esc(t("heroNote"))}</p><p class="intro">${esc(t("heroReward"))}</p><a href="#adventure" class="text-link hero-link">${esc(t("begin"))} <span aria-hidden="true">↘</span></a><p class="quiet-note">${esc(t("noRush"))}</p></div><div class="hero-art"><img src="/kingdom.svg" alt="" width="600" height="460"><a class="hero-necklace" data-nav href="/necklace?lang=${lang()}">${necklaceIcon}<span>${esc(t("necklace"))}</span></a></div></section>
   <section id="adventure" class="setup-panel" aria-labelledby="setup-title"><div class="section-heading"><div><p class="eyebrow">✧ Pearl Readers</p><h2 id="setup-title">${esc(t("setup"))}</h2><p>${esc(t("setupNote"))}</p></div><span class="shell-stamp" aria-hidden="true">${icon}</span></div>
   ${saved ? `<div class="continue-panel">${link(sessionURL(saved.config), t("continue"), "primary")}<span>${esc(saved.config.lang === "fr" ? t("french") : t("english"))} · ${esc(t("progress"))} ${saved.config.i - saved.config.s + 1} ${esc(t("of"))} ${roundEnd(saved.config, saved.deckIds.length) - saved.config.s}</span></div>` : ""}
   <form id="setup-form"><div class="setup-grid">${select(
@@ -248,7 +247,9 @@ function reader() {
   )}${action("copy-word", t("copyWord"))}${isSession ? action("copy-adventure", t("copyAdventure")) : ""}</div></details>${isSession ? action("pause", t("pause"), "text-button") : store.last ? link(sessionURL(store.last.config), t("backSession")) : ""}</div><details class="parent-hint"><summary>${esc(t("parentHint"))}</summary><p>${esc(t("parentTip"))}</p>${word.exceptionNote ? `<p>${esc(word.exceptionNote)}</p>` : ""}</details></section>`;
 }
 function completion(c, deck) {
-  return `<section class="completion"><p class="eyebrow">${esc(t("goalDone"))}</p><div class="bubble-celebration" aria-hidden="true"><svg class="celebration-stars" viewBox="0 0 360 80" fill="none"><g fill="currentColor"><path d="m180 9 5 15 15 5-15 5-5 15-5-15-15-5 15-5Z"/><path d="m93 31 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z"/><path d="m267 25 3 9 9 3-9 3-3 9-3-9-9-3 9-3Z"/><circle cx="135" cy="17" r="2"/><circle cx="226" cy="57" r="2"/><circle cx="54" cy="65" r="1.5"/><circle cx="311" cy="58" r="1.5"/></g></svg><div class="celebration-bubbles">${Array.from({ length: 8 }, () => '<span class="celebration-bubble"></span>').join("")}</div><div class="celebration-shell">${icon}</div><svg class="celebration-sea" viewBox="0 0 360 30" fill="none"><path d="M10 13q28-12 56 0t56 0 56 0 56 0 56 0 56 0" stroke="currentColor" stroke-width="1.5"/></svg></div><h1>${esc(t("doneTitle"))}</h1><p class="visited-count"><strong>${currentRecord.visited.length}</strong> ${esc(t("visited"))}</p><div class="completion-actions">${action("continue-deck", t(roundEnd(c, deck.length) < deck.length ? "continueDeck" : "again"), "primary")}${link("/", t("homeButton"), "secondary")}${action("copy-adventure", t("copyAdventure"), "text-button")}</div></section>`;
+  const receipt = store.receipt(currentRecord.attemptId);
+  if (!receipt) return "";
+  return `<section class="completion rescue-completion"><p class="eyebrow">${esc(t("goalDone"))}</p>${roundBubbles(receipt.wordCount)}<h1>${esc(t("doneTitle"))}</h1><p class="visited-count"><strong>${receipt.wordCount}</strong> ${esc(t("visited"))}</p><p class="intro">${esc(t("rewardNote"))}</p>${rescueStory(receipt.storyId, lang())}${earnedPearl(receipt.storyId)}<p class="pearl-earned">✧ ${esc(t("pearlEarned"))}</p><div class="completion-actions">${link(necklaceURL(lang(), Math.floor(store.receipts.findIndex((r) => r.attemptId === receipt.attemptId) / 20), receipt.attemptId), t("necklace"), "primary")}${action("continue-deck", t("readAnother"), "secondary")}${link("/", t("homeButton"), "text-link")}</div></section>`;
 }
 function directory() {
   return `<section class="directory"><p class="eyebrow">FR · EN / Pearl Readers</p><h1>${esc(t("directoryTitle"))}</h1><p class="intro">${esc(t("directoryNote"))}</p><form id="directory-form" class="directory-filters">${select(
@@ -302,17 +303,21 @@ function errorView() {
   return `<section class="error-page"><span class="meaning-star" aria-hidden="true">✧</span><h1>${esc(t("errorTitle"))}</h1><p class="intro">${esc(t("errorNote"))}</p><div class="completion-actions">${link("/", t("homeButton"), "primary")}${store.last ? link(sessionURL(store.last.config), t("continue"), "secondary") : ""}</div></section>`;
 }
 function render(focus = false, focusId = "") {
+  stopBubbles();
   hideTranslation();
   advancedOpen = document.querySelector("#advanced")?.open ?? advancedOpen;
   app.innerHTML = shell(
     route.view === "home"
       ? home()
-      : route.view === "words"
-        ? directory()
-        : route.view === "error"
-          ? errorView()
-          : reader(),
+      : route.view === "necklace"
+        ? necklacePage(route, store.receipts)
+        : route.view === "words"
+          ? directory()
+          : route.view === "error"
+            ? errorView()
+            : reader(),
   );
+  if (route.view === "necklace") startBubbles();
   if (focusId) document.getElementById(focusId)?.focus();
   else if (focus)
     document.querySelector("#main").focus({ preventScroll: true });
@@ -333,8 +338,12 @@ function load(focus = true) {
     route = parseRoute(location.href);
     if (route.view === "play") {
       const deck = buildDeck(route.config);
-      currentRecord = store.visit(route.config, deck);
-      history.replaceState(null, "", sessionURL(route.config));
+      currentRecord = store.visit(route.config, deck, history.state?.attemptId);
+      history.replaceState(
+        { attemptId: currentRecord.attemptId },
+        "",
+        sessionURL(route.config),
+      );
     } else if (route.view === "card") {
       directoryReturn = history.state?.directoryReturn ?? "";
       history.replaceState(
@@ -349,14 +358,19 @@ function load(focus = true) {
   }
   render(focus);
 }
-function navigate(url, replace = false) {
+function navigate(url, replace = false, freshAttempt = false) {
   const state =
     route?.view === "words" && url.startsWith("/card")
       ? { directoryReturn: location.pathname + location.search }
-      : null;
+      : !freshAttempt && route?.view === "play" && url.startsWith("/play")
+        ? { attemptId: currentRecord?.attemptId }
+        : null;
   history[replace ? "replaceState" : "pushState"](state, "", url);
   load();
-  window.scrollTo(0, 0);
+  const target =
+    location.hash && document.getElementById(location.hash.slice(1));
+  if (target) target.scrollIntoView();
+  else window.scrollTo(0, 0);
 }
 function copy(url) {
   const absolute = new URL(url, location.origin).href;
@@ -423,6 +437,8 @@ function switchLanguage(language) {
     navigate(sessionURL(saved?.config ?? config));
   } else if (route.view === "words") {
     navigate(directoryURL({ ...route, lang: language, unit: "", q: "" }));
+  } else if (route.view === "necklace") {
+    navigate(necklaceURL(language, route.strand, route.rescue));
   } else if (route.view === "home") {
     render(false);
   } else {
@@ -432,7 +448,7 @@ function switchLanguage(language) {
     .querySelector(`.language-button[data-language="${language}"]`)
     ?.focus();
 }
-app.addEventListener("click", (e) => {
+app.addEventListener("click", async (e) => {
   const anchor = e.target.closest("a[data-nav]");
   if (
     anchor &&
@@ -449,14 +465,6 @@ app.addEventListener("click", (e) => {
   const button = e.target.closest("[data-action]");
   if (!button || button.disabled) return;
   const name = button.dataset.action;
-  if (name === "previous-story" || name === "next-story") {
-    storyIndex =
-      (storyIndex + (name === "next-story" ? 1 : -1) + stories.length) %
-      stories.length;
-    document.querySelector("#story-content").innerHTML = storyContent();
-    document.querySelector(".story-position").textContent = storyPosition();
-    return;
-  }
   if (name === "language") {
     switchLanguage(button.dataset.language);
     return;
@@ -488,6 +496,7 @@ app.addEventListener("click", (e) => {
     document.querySelector('[data-action="flip"]').focus();
     return;
   }
+  if (name === "skip-bubbles") return;
   const c = route.config;
   const word = c ? buildDeck(c)[c.i] : findWord(route.lang, route.id);
   if (name === "translate") {
@@ -512,16 +521,39 @@ app.addEventListener("click", (e) => {
     return;
   }
   if (name === "next") {
-    if (c.i === roundEnd(c, buildDeck(c).length) - 1) {
-      store.complete(c);
-      currentRecord = store.get(c);
-      render(true);
-    } else navigate(sessionURL({ ...c, i: c.i + 1 }));
+    button.disabled = true;
+    store.advance(c);
+    if (c.i !== roundEnd(c, buildDeck(c).length) - 1) {
+      navigate(sessionURL({ ...c, i: c.i + 1 }));
+      return;
+    }
+    const finish = () => {
+      if (c.i === roundEnd(c, buildDeck(c).length) - 1) {
+        const receipt = store.complete(c);
+        currentRecord = store.get(c);
+        if (receipt) render(true);
+        else {
+          const deck = buildDeck(c);
+          const missing = deck.findIndex(
+            (w, i) =>
+              i >= c.s &&
+              i < roundEnd(c, deck.length) &&
+              !currentRecord.readIds.includes(w.id),
+          );
+          navigate(sessionURL({ ...c, i: missing }));
+          toast(t("missingWords"));
+        }
+      } else navigate(sessionURL({ ...c, i: c.i + 1 }));
+    };
+    // Serialize awards across tabs so each group of twenty has unique animals.
+    if (navigator.locks)
+      await navigator.locks.request("pearl-readers-reward", finish);
+    else finish();
   }
   if (name === "continue-deck") {
     const next = nextRound(c, buildDeck(c).length);
-    if (next.s === 0) store.restart(c);
-    navigate(sessionURL(next));
+    store.restart(next);
+    navigate(sessionURL(next), false, true);
   }
 });
 app.addEventListener("change", (e) => {

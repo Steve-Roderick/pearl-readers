@@ -6,7 +6,7 @@
       "paragraphs": [
         "A little turtle is lost beyond the coral reef. Pearl the mermaid finds three stars asleep in the sand.",
         "The sea is dark, but Pearl is brave. She reads a word. Pop! A bubble glows. With each new word, the bubbles form a bright arch.",
-        "The stars wake up and light the way. The turtle swims under the arch and home. Will you read with Pearl?"
+        "The stars wake up and light the way. The turtle swims under the arch and home. “Thank you!” she whispers, leaving a turtle pearl in Pearl’s hand."
       ]
     },
     "fr": {
@@ -14,8 +14,13 @@
       "paragraphs": [
         "Une petite tortue se perd derrière le récif. Perle la sirène trouve trois étoiles endormies dans le sable.",
         "La mer est sombre, mais Perle est brave. Elle lit un mot. Pop ! Une bulle brille. À chaque nouveau mot, les bulles forment une grande arche.",
-        "Les étoiles se réveillent et éclairent le chemin. La tortue passe sous l’arche et rentre chez elle. Veux-tu lire avec Perle ?"
+        "Les étoiles se réveillent et éclairent le chemin. La tortue passe sous l’arche et rentre chez elle. « Merci ! » murmure-t-elle en offrant une perle tortue à Perle."
       ]
+    },
+    "creature": {
+      "id": "turtle",
+      "en": "Turtle",
+      "fr": "Tortue"
     }
   },
   {
@@ -25,7 +30,7 @@
       "paragraphs": [
         "A tiny seahorse is stuck in a knot of seaweed. Pearl finds a silver button from a human coat.",
         "The weeds wave like long green arms. Pearl takes a brave breath and reads a word. A bubble spins around the button! More words make a spiral of bubbles.",
-        "Round and round they go. The knot gently opens. The seahorse dances free! Can your words help Pearl make the spiral?"
+        "Round and round they go. The knot gently opens. The seahorse dances free and curls his tail around Pearl’s finger. A seahorse pearl shimmers between them."
       ]
     },
     "fr": {
@@ -33,8 +38,13 @@
       "paragraphs": [
         "Un petit hippocampe est pris dans un nœud d’algues. Perle trouve un bouton d’argent tombé d’un manteau humain.",
         "Les algues bougent comme de longs bras verts. Perle prend son courage et lit un mot. Une bulle tourne autour du bouton ! D’autres mots font une spirale de bulles.",
-        "Elles tournent doucement. Le nœud s’ouvre. L’hippocampe est libre ! Tes mots vont-ils aider Perle à faire la spirale ?"
+        "Les bulles tournent doucement. Le nœud s’ouvre. L’hippocampe est libre ! Il enroule sa queue autour du doigt de Perle. Une perle hippocampe brille entre eux."
       ]
+    },
+    "creature": {
+      "id": "seahorse",
+      "en": "Seahorse",
+      "fr": "Hippocampe"
     }
   },
   {
@@ -44,7 +54,7 @@
       "paragraphs": [
         "A little octopus hides inside a sunken toy boat. A rock blocks the door. Pearl finds a red ribbon tied to the mast.",
         "The boat creaks, but Pearl stays brave. She reads the words, one by one. Rainbow bubbles follow the ribbon and join in a long loop.",
-        "The loop lifts the rock like a feather. Eight happy arms wave hello! Read with Pearl to help her friend swim out."
+        "The loop lifts the rock like a feather. Eight happy arms wave hello! The octopus swims safely out and gives Pearl an octopus pearl, glowing with every colour."
       ]
     },
     "fr": {
@@ -52,8 +62,13 @@
       "paragraphs": [
         "Une petite pieuvre se cache dans un bateau jouet. Un rocher bloque la porte. Perle trouve un ruban rouge noué au mât.",
         "Le bateau craque, mais Perle reste brave. Elle lit les mots, un à un. Des bulles arc-en-ciel suivent le ruban et forment une longue boucle.",
-        "La boucle soulève le rocher comme une plume. Huit bras joyeux disent bonjour ! Lis avec Perle pour aider son amie à sortir."
+        "La boucle soulève le rocher comme une plume. Huit bras joyeux disent bonjour ! La pieuvre sort, saine et sauve. Elle offre à Perle une perle pieuvre aux mille couleurs."
       ]
+    },
+    "creature": {
+      "id": "octopus",
+      "en": "Octopus",
+      "fr": "Pieuvre"
     }
   },
   {
@@ -63,7 +78,7 @@
       "paragraphs": [
         "A shy little ray is lost in a maze of silver sand. Pearl must find the moonstones hidden in a shell garden.",
         "She is a little scared of getting lost too. But she is brave for her friend. Each word she reads puts a bubble on a moonstone: dot, dot, dot!",
-        "The dots make a shining path through the maze. The ray glides home. Shall we help Pearl light the next stone?"
+        "The dots make a shining path through the maze. The ray glides home to her family. Before she goes, she gives Pearl a ray pearl, smooth as moonlight."
       ]
     },
     "fr": {
@@ -71,8 +86,13 @@
       "paragraphs": [
         "Une petite raie se perd dans un labyrinthe de sable argenté. Perle doit trouver les pierres de lune du jardin de coquillages.",
         "Elle a un peu peur de se perdre aussi. Mais elle est brave pour son amie. Chaque mot lu pose une bulle sur une pierre : un point, puis un autre !",
-        "Les points tracent un chemin brillant. La raie rentre chez elle. Veux-tu aider Perle à éclairer la prochaine pierre ?"
+        "Les points tracent un chemin brillant. La raie retrouve sa famille. Avant de partir, elle offre à Perle une perle raie, douce comme la lumière de la lune."
       ]
+    },
+    "creature": {
+      "id": "ray",
+      "en": "Ray",
+      "fr": "Raie"
     }
   },
   {
@@ -82,7 +102,7 @@
       "paragraphs": [
         "A little crab is stranded in a deep rock pool. Pearl spots a tiny golden key beneath a sleeping clam.",
         "She asks kindly, and the clam opens. Pearl takes the key and bravely reads the first word. Bubbles line up, two by two, all the way across the pool.",
-        "Click! The key turns the bubbles into a bridge. The crab tiptoes home. What word will help Pearl build the next pair?"
+        "Click! The key turns the bubbles into a bridge. The crab tiptoes home and waves both claws. A crab pearl rests on the last bubble: a little thank-you for Pearl."
       ]
     },
     "fr": {
@@ -90,8 +110,13 @@
       "paragraphs": [
         "Un petit crabe est isolé dans un bassin profond. Perle voit une clé dorée sous une palourde endormie.",
         "Elle demande gentiment, et la palourde s’ouvre. Perle prend la clé et lit le premier mot avec courage. Les bulles se rangent deux par deux au-dessus de l’eau.",
-        "Clic ! La clé change les bulles en pont. Le crabe rentre sur la pointe des pattes. Quel mot aidera Perle à construire la prochaine paire ?"
+        "Clic ! La clé change les bulles en pont. Le crabe rentre sur la pointe des pattes et agite ses pinces. Une perle crabe attend Perle sur la dernière bulle, en remerciement."
       ]
+    },
+    "creature": {
+      "id": "crab",
+      "en": "Crab",
+      "fr": "Crabe"
     }
   },
   {
@@ -101,7 +126,7 @@
       "paragraphs": [
         "A young dolphin is caught in a curtain of seaweed. Pearl searches an old shipwreck for a little brass bell.",
         "A strange shadow passes. It is only a fish! Pearl smiles and bravely reads. Three words make three bubbles. The next three words make three more.",
-        "The bubbles ring the bell in groups of three. Ding, ding, ding! The weeds sway apart. Read with Pearl to set the dolphin free."
+        "The bubbles ring the bell in groups. Ding, ding, ding! The weeds sway apart. The dolphin swims free, makes a joyful leap, and gives Pearl a dolphin pearl."
       ]
     },
     "fr": {
@@ -109,8 +134,13 @@
       "paragraphs": [
         "Un jeune dauphin est pris dans un rideau d’algues. Perle cherche une petite clochette dans une vieille épave.",
         "Une ombre passe. Ce n’est qu’un poisson ! Perle sourit et lit avec courage. Trois mots font trois bulles. Trois autres mots font trois nouvelles bulles.",
-        "Les bulles font sonner la clochette par groupes de trois. Ding, ding, ding ! Les algues s’écartent. Lis avec Perle pour libérer le dauphin."
+        "Les bulles font sonner la clochette. Ding, ding, ding ! Les algues s’écartent. Le dauphin est libre ! Il fait un bond de joie et offre une perle dauphin à Perle."
       ]
+    },
+    "creature": {
+      "id": "dolphin",
+      "en": "Dolphin",
+      "fr": "Dauphin"
     }
   },
   {
@@ -120,7 +150,7 @@
       "paragraphs": [
         "A tiny jellyfish cannot find her way out of a dark grotto. Pearl finds a blue glass bead beside the cave.",
         "She holds it close and swims bravely inside. Each word she reads lights a bubble. The bubbles make a wavy line, up and down, like a little sea dance.",
-        "The bead shines, and the line leads to the door. The jellyfish twinkles with joy. Can you read a light for Pearl?"
+        "The bead shines, and the line leads to the door. The jellyfish floats safely into the moonlit sea. She twinkles with joy and leaves Pearl a tiny jellyfish pearl."
       ]
     },
     "fr": {
@@ -128,8 +158,13 @@
       "paragraphs": [
         "Une petite méduse ne trouve plus la sortie d’une grotte sombre. Perle découvre une bille de verre bleu près de l’entrée.",
         "Elle la serre et entre avec courage. Chaque mot lu allume une bulle. Les bulles font une ligne ondulée qui monte et descend, comme une danse de la mer.",
-        "La bille brille, et la ligne montre la sortie. La méduse scintille de joie. Peux-tu lire une lumière pour Perle ?"
+        "La bille brille, et la ligne montre la sortie. La méduse rejoint la mer éclairée par la lune. Elle scintille de joie et laisse à Perle une petite perle méduse."
       ]
+    },
+    "creature": {
+      "id": "jellyfish",
+      "en": "Jellyfish",
+      "fr": "Méduse"
     }
   },
   {
@@ -139,7 +174,7 @@
       "paragraphs": [
         "A baby seal waits on a high ledge in a moonlit cave. Pearl finds a silver spoon that fell from a picnic boat.",
         "The ledge looks very tall. Pearl feels small, but she is brave. She reads a word and taps the spoon. One bubble floats above another, then another!",
-        "The bubbles make a soft ladder. Down slides the seal, safe into the sea. Help Pearl read the next step!"
+        "The bubbles make a soft ladder. Down slides the seal, safe into the sea. He nuzzles Pearl’s hand. Inside a little shell, he has brought her a seal pearl."
       ]
     },
     "fr": {
@@ -147,8 +182,13 @@
       "paragraphs": [
         "Un bébé phoque attend sur un rocher haut dans une grotte. La lune éclaire une cuillère d’argent tombée d’un bateau.",
         "Le rocher semble très grand. Perle se sent petite, mais elle est brave. Elle lit un mot et touche la cuillère. Une bulle flotte au-dessus d’une autre, puis d’une autre !",
-        "Les bulles font une douce échelle. Le phoque glisse jusqu’à la mer. Aide Perle à lire la prochaine marche !"
+        "Les bulles font une douce échelle. Le phoque glisse jusqu’à la mer, en sécurité. Il caresse la main de Perle avec son museau et lui offre une perle phoque dans un coquillage."
       ]
+    },
+    "creature": {
+      "id": "seal",
+      "en": "Seal",
+      "fr": "Phoque"
     }
   },
   {
@@ -158,7 +198,7 @@
       "paragraphs": [
         "A little whale turns round and round in a sleepy whirlpool. Pearl must find the singing shell in the coral palace.",
         "She hears a tiny song and follows it. Then she bravely reads the words into the shell. Bubbles gather in a wide circle around her friend.",
-        "The circle sings. The whirlpool slows to a gentle sway, and the whale swims free. Will your words help Pearl sing the sea calm?"
+        "The circle sings. The whirlpool slows to a gentle sway, and the whale swims free. Her happy song makes a whale pearl appear. Pearl catches it with a smile."
       ]
     },
     "fr": {
@@ -166,8 +206,13 @@
       "paragraphs": [
         "Une petite baleine tourne dans un tourbillon endormi. Perle doit trouver le coquillage chantant du palais de corail.",
         "Elle suit une toute petite chanson. Puis elle lit les mots dans le coquillage avec courage. Les bulles se rassemblent en grand cercle autour de son amie.",
-        "Le cercle chante. Le tourbillon ralentit, et la baleine nage librement. Tes mots vont-ils aider Perle à calmer la mer en chantant ?"
+        "Le cercle chante. Le tourbillon ralentit, et la baleine nage librement. Sa chanson de joie fait apparaître une perle baleine. Perle l’attrape en souriant."
       ]
+    },
+    "creature": {
+      "id": "whale",
+      "en": "Whale",
+      "fr": "Baleine"
     }
   },
   {
@@ -177,7 +222,7 @@
       "paragraphs": [
         "A little starfish is behind a gate of sleeping coral. Pearl finds a golden pearl in a garden of glowing flowers.",
         "The gate is huge, but Pearl is brave. She holds up the pearl and reads. Bubbles dart left, then right, then left again, making a sparkling zigzag.",
-        "The coral wakes and opens like a flower. The starfish is safe! Read with Pearl and help the bubbles find their magical pattern."
+        "The coral wakes and opens like a flower. The starfish is safe! She stretches her five little arms in the warm water and gives Pearl a shining starfish pearl."
       ]
     },
     "fr": {
@@ -185,7 +230,252 @@
       "paragraphs": [
         "Une petite étoile de mer est derrière une porte de corail endormi. Perle trouve une perle dorée dans un jardin de fleurs lumineuses.",
         "La porte est immense, mais Perle est brave. Elle lève la perle et lit. Les bulles vont à gauche, puis à droite, puis à gauche, en un zigzag brillant.",
-        "Le corail se réveille et s’ouvre comme une fleur. L’étoile de mer est sauvée ! Lis avec Perle pour aider les bulles à trouver leur motif magique."
+        "Le corail se réveille et s’ouvre comme une fleur. L’étoile de mer est sauvée ! Elle étire ses cinq petits bras dans l’eau douce et offre une perle étoile de mer à Perle."
+      ]
+    },
+    "creature": {
+      "id": "starfish",
+      "en": "Starfish",
+      "fr": "Étoile de mer"
+    }
+  },
+  {
+    "id": "otter-rescue",
+    "creature": {
+      "id": "otter",
+      "en": "Sea otter",
+      "fr": "Loutre de mer"
+    },
+    "en": {
+      "title": "The Lantern in the Kelp",
+      "paragraphs": [
+        "A little sea otter cannot find his floating bed. Tall kelp hides the moon, and his favourite pebble has slipped into a hollow log. Pearl swims down to look.",
+        "She finds the pebble beside a lantern shell. Pearl reads her words bravely. Each word sends a bubble into the shell. Soon it shines like a tiny moon among the leaves.",
+        "The otter follows the lantern safely home and curls up on his bed. “Stay for a story,” he says. He gives Pearl an otter pearl, warm with golden light."
+      ]
+    },
+    "fr": {
+      "title": "La lanterne des algues",
+      "paragraphs": [
+        "Une petite loutre de mer ne retrouve plus son lit flottant. Les grandes algues cachent la lune. Son galet préféré a glissé dans un tronc creux. Perle plonge pour le chercher.",
+        "Elle trouve le galet près d’un coquillage lanterne. Perle lit ses mots avec courage. Chaque mot envoie une bulle dans le coquillage. Il brille bientôt comme une petite lune parmi les feuilles.",
+        "La loutre suit la lanterne et rentre sans danger. Elle se blottit dans son lit. « Reste pour une histoire ! » dit-elle en offrant à Perle une perle loutre aux reflets dorés."
+      ]
+    }
+  },
+  {
+    "id": "penguin-rescue",
+    "creature": {
+      "id": "penguin",
+      "en": "Penguin",
+      "fr": "Manchot"
+    },
+    "en": {
+      "title": "The Iceberg with a Pink Door",
+      "paragraphs": [
+        "A young penguin has slid into a hollow iceberg. He can see his family through the blue ice, but the little doorway has frozen shut. Pearl finds a pink sea-glass heart.",
+        "The ice makes a cracking sound. Pearl takes a calm breath and reads. Bubbles gather around the heart, making a warm, glowing ring. Slowly, the frozen doorway begins to soften.",
+        "The door opens with a gentle plop! The penguin waddles into his family’s waiting wings. He gives Pearl a penguin pearl and a very grand little bow."
+      ]
+    },
+    "fr": {
+      "title": "L’iceberg à la porte rose",
+      "paragraphs": [
+        "Un jeune manchot a glissé dans un iceberg creux. Il voit sa famille à travers la glace bleue, mais la petite porte est gelée. Perle trouve un cœur en verre de mer rose.",
+        "La glace craque. Perle respire doucement et lit. Les bulles entourent le cœur et forment un anneau lumineux et chaud. Peu à peu, la glace de la porte commence à fondre.",
+        "La porte s’ouvre avec un petit plouf ! Le manchot rejoint les ailes de sa famille. Il offre une perle manchot à Perle et lui fait une très grande révérence."
+      ]
+    }
+  },
+  {
+    "id": "lobster-rescue",
+    "creature": {
+      "id": "lobster",
+      "en": "Lobster",
+      "fr": "Homard"
+    },
+    "en": {
+      "title": "The Lighthouse in a Teacup",
+      "paragraphs": [
+        "A lobster has wandered into a forest of coral towers. Every tower looks the same! Pearl discovers a tiny teacup, left long ago by a passing ship.",
+        "She climbs the tallest tower and reads into the cup. Her brave words make bubbles rise in a bright stack. A beam of light spills across the forest, pointing towards the lobster’s home.",
+        "The lobster follows the shining trail and reaches his cosy rock. He clicks his claws with delight. A lobster pearl rolls from the teacup, a gift for his brave new friend."
+      ]
+    },
+    "fr": {
+      "title": "Le phare dans la tasse",
+      "paragraphs": [
+        "Un petit homard se perd dans une forêt de tours de corail. Toutes les tours se ressemblent ! Perle découvre une minuscule tasse, laissée autrefois par un bateau.",
+        "Elle monte sur la plus haute tour et lit dans la tasse. Ses mots courageux font monter les bulles en colonne. Un rayon de lumière traverse la forêt et montre le chemin de la maison.",
+        "Le homard suit le sentier brillant et retrouve son rocher douillet. Il fait claquer ses pinces de joie. Une perle homard roule hors de la tasse : un cadeau pour sa nouvelle amie."
+      ]
+    }
+  },
+  {
+    "id": "squid-rescue",
+    "creature": {
+      "id": "squid",
+      "en": "Squid",
+      "fr": "Calmar"
+    },
+    "en": {
+      "title": "The Ink-Cloud Umbrella",
+      "paragraphs": [
+        "A shy little squid has made a cloud of ink. He cannot see his friends! Pearl finds a tiny umbrella caught among the shells at the edge of the cloud.",
+        "She cannot see very far either, but she keeps reading bravely. Her words make bubbles gather like petals around the umbrella. They turn gently, carrying the dark cloud up and away.",
+        "Sunlight fills the water. The squid finds his friends waiting nearby, and they all wave their arms. He gives Pearl a squid pearl, clear as the sea after rain."
+      ]
+    },
+    "fr": {
+      "title": "Le parapluie du nuage d’encre",
+      "paragraphs": [
+        "Un petit calmar timide a fait un nuage d’encre. Maintenant, il ne voit plus ses amis ! Perle trouve un petit parapluie parmi les coquillages au bord du nuage.",
+        "Elle ne voit pas très loin non plus, mais elle continue à lire avec courage. Ses mots rassemblent les bulles comme des pétales autour du parapluie. Elles tournent doucement et emportent le nuage sombre.",
+        "Le soleil éclaire l’eau. Le calmar retrouve ses amis tout près, et tous agitent leurs bras. Il offre à Perle une perle calmar, claire comme la mer après la pluie."
+      ]
+    }
+  },
+  {
+    "id": "pufferfish-rescue",
+    "creature": {
+      "id": "pufferfish",
+      "en": "Pufferfish",
+      "fr": "Poisson-globe"
+    },
+    "en": {
+      "title": "The Garden of Gentle Bubbles",
+      "paragraphs": [
+        "A little pufferfish is so surprised by a falling shell that she puffs up inside a narrow coral arch. Now she cannot swim out. Pearl finds a smooth green marble in the sand.",
+        "Pearl sits beside her friend and reads in a calm, brave voice. Bubbles circle the marble like a slow little dance. Round and round they go, soft as a lullaby.",
+        "The pufferfish relaxes and becomes small again. She swims through the arch, safe and smiling. She gives Pearl a pufferfish pearl, with a tiny green sparkle inside."
+      ]
+    },
+    "fr": {
+      "title": "Le jardin des bulles douces",
+      "paragraphs": [
+        "Un petit poisson-globe sursaute quand un coquillage tombe. Il se gonfle sous une étroite arche de corail et ne peut plus sortir. Perle trouve une bille verte dans le sable.",
+        "Perle s’assoit près de son ami et lit d’une voix calme et courageuse. Les bulles tournent autour de la bille en une lente petite danse. Elles sont douces comme une berceuse.",
+        "Le poisson-globe se détend et redevient petit. Il traverse l’arche, libre et souriant. Il offre à Perle une perle poisson-globe, avec une petite étincelle verte à l’intérieur."
+      ]
+    }
+  },
+  {
+    "id": "clownfish-rescue",
+    "creature": {
+      "id": "clownfish",
+      "en": "Clownfish",
+      "fr": "Poisson-clown"
+    },
+    "en": {
+      "title": "The Anemone’s Secret Song",
+      "paragraphs": [
+        "A clownfish is outside her anemone home. Its soft arms have closed for a nap, and she cannot get inside. Pearl finds a tiny music box under a ribbon of seaweed.",
+        "The box has forgotten its tune. Pearl bravely reads the words, and bubbles hop across the lid like musical notes. One by one, the notes become a gentle waking song.",
+        "The anemone opens its arms. The clownfish slips safely into her soft bed and peeks out to say thank you. A striped clownfish pearl shines beside the music box."
+      ]
+    },
+    "fr": {
+      "title": "La chanson secrète de l’anémone",
+      "paragraphs": [
+        "Un petit poisson-clown attend devant sa maison anémone. Ses bras doux se sont fermés pour une sieste, et il ne peut plus entrer. Perle trouve une boîte à musique sous une algue.",
+        "La boîte a oublié son air. Perle lit courageusement les mots. Les bulles sautillent sur le couvercle comme des notes. Une à une, les notes deviennent une douce chanson pour se réveiller.",
+        "L’anémone ouvre ses bras. Le poisson-clown retrouve son lit moelleux et sort la tête pour dire merci. Une perle poisson-clown rayée brille près de la boîte à musique."
+      ]
+    }
+  },
+  {
+    "id": "snail-rescue",
+    "creature": {
+      "id": "snail",
+      "en": "Sea snail",
+      "fr": "Escargot de mer"
+    },
+    "en": {
+      "title": "The Staircase of Shells",
+      "paragraphs": [
+        "A sea snail has climbed onto a tall coral leaf. The tide has turned, and the way down is much too steep. Pearl finds a little thimble full of silver sand.",
+        "She feels nervous at the edge, but reads her words bravely. Bubbles carry grains of sand into the water. They settle one below another, making a soft, shimmering staircase.",
+        "The snail glides down every little step and reaches his garden safely. He leaves a sparkling trail around Pearl’s hand and gives her a snail pearl with a silver spiral."
+      ]
+    },
+    "fr": {
+      "title": "L’escalier de coquillages",
+      "paragraphs": [
+        "Un minuscule escargot de mer a grimpé sur une haute feuille de corail. La marée a changé, et la descente est trop raide. Perle trouve un dé à coudre rempli de sable argenté.",
+        "Elle a un peu peur du bord, mais lit ses mots avec courage. Les bulles emportent les grains de sable. Ils se posent les uns sous les autres et forment un escalier doux et brillant.",
+        "L’escargot glisse sur chaque petite marche et retrouve son jardin. Il laisse une trace scintillante autour de la main de Perle et lui offre une perle escargot à la spirale argentée."
+      ]
+    }
+  },
+  {
+    "id": "shrimp-rescue",
+    "creature": {
+      "id": "shrimp",
+      "en": "Shrimp",
+      "fr": "Crevette"
+    },
+    "en": {
+      "title": "The Net of Moonlit Threads",
+      "paragraphs": [
+        "A shrimp has caught her whiskers in a fishing net. Pearl finds a golden comb beside a sea fan. She brings it close so her friend can see it.",
+        "The knots are tricky, but Pearl is patient and brave. She reads each word slowly. Bubbles slide along the comb and weave through the net, loosening one moonlit thread at a time.",
+        "The last knot opens. The shrimp flicks her tail and swims safely out. She gives Pearl a shrimp pearl and dances through the water, her long whiskers free at last."
+      ]
+    },
+    "fr": {
+      "title": "Le filet aux fils de lune",
+      "paragraphs": [
+        "Une petite crevette a les antennes prises dans un vieux filet. Perle trouve un peigne doré près d’un éventail de corail. Elle l’approche pour montrer ses dents brillantes à son amie.",
+        "Les nœuds sont difficiles, mais Perle reste patiente et courageuse. Elle lit chaque mot lentement. Les bulles glissent sur le peigne et traversent le filet. Elles dénouent un fil après l’autre.",
+        "Le dernier nœud s’ouvre. La crevette agite sa queue et sort sans danger. Elle offre une perle crevette à Perle et danse dans l’eau, ses longues antennes enfin libres."
+      ]
+    }
+  },
+  {
+    "id": "hermit-rescue",
+    "creature": {
+      "id": "hermit",
+      "en": "Hermit crab",
+      "fr": "Bernard-l’ermite"
+    },
+    "en": {
+      "title": "The Shell That Rolled Away",
+      "paragraphs": [
+        "A hermit crab watches his new shell roll down a sandy slope. It stops behind a stone, too far away to reach safely. Pearl finds a tiny wooden wheel.",
+        "She plants the wheel in the sand and bravely reads. Bubbles join in a long necklace around its rim. As the wheel turns, the bubble necklace gently gathers the runaway shell.",
+        "The shell rolls back up the slope. The hermit crab settles into his snug new home. “A perfect fit!” he says, giving Pearl a hermit crab pearl from his old shell."
+      ]
+    },
+    "fr": {
+      "title": "La coquille qui s’est envolée",
+      "paragraphs": [
+        "Un petit bernard-l’ermite regarde sa nouvelle coquille rouler sur une pente de sable. Elle s’arrête derrière une pierre, trop loin pour l’atteindre sans danger. Perle trouve une petite roue en bois.",
+        "Elle plante la roue dans le sable et lit avec courage. Les bulles forment un long collier autour du bord. La roue tourne, et le collier de bulles ramène doucement la coquille égarée.",
+        "La coquille remonte la pente. Le bernard-l’ermite s’installe dans sa maison bien ajustée. « Parfaite ! » dit-il en offrant à Perle une perle bernard-l’ermite trouvée dans son ancienne coquille."
+      ]
+    }
+  },
+  {
+    "id": "shark-rescue",
+    "creature": {
+      "id": "shark",
+      "en": "Little shark",
+      "fr": "Petit requin"
+    },
+    "en": {
+      "title": "The Star at the End of the Tunnel",
+      "paragraphs": [
+        "A small shark has followed a sparkle into a winding coral tunnel. Now he cannot find the way back. Pearl discovers a star-shaped locket on a coral branch.",
+        "The tunnel is dark, but Pearl stays brave. She opens the locket and reads. Bubbles shine in pairs, making bright arrows through the bends. Her friend follows each arrow slowly.",
+        "Together they reach the open sea. The little shark circles Pearl with a happy grin. He gives her a shark pearl, and they watch the real stars wake above the waves."
+      ]
+    },
+    "fr": {
+      "title": "L’étoile au bout du tunnel",
+      "paragraphs": [
+        "Un petit requin a suivi une lumière dans un tunnel de corail. Il ne retrouve plus le chemin du retour. Perle découvre un médaillon en forme d’étoile accroché à une branche.",
+        "Le tunnel est sombre, mais Perle reste courageuse. Elle ouvre le médaillon et lit. Les bulles brillent par paires et dessinent des flèches dans les virages. Son ami suit chaque flèche doucement.",
+        "Ensemble, ils rejoignent la pleine mer. Le petit requin tourne autour de Perle avec un grand sourire. Il lui offre une perle requin. Ils regardent les vraies étoiles s’éveiller au-dessus des vagues."
       ]
     }
   }

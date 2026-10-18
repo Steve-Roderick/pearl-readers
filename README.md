@@ -41,12 +41,17 @@ the translation immediately. Translations are local, work offline, and do not
 change the reading deck or progress. They may be short phrases when the meaning
 needs one. No word illustrations or audio are required in this release.
 
-Home opens with one of ten magical mermaid rescue stories, chosen randomly on each
-full page load. The small previous/next arrows cycle through all ten. Each story
-has a large title and child-readable text in both languages; switching language
-keeps the same story. Story selection is atmosphere and does not alter the reading
-deck, settings, or saved progress. These fictional introductions are shared-reading
-text, not a claim of independently decodable practice.
+Home explains the reading/reward loop. Completing a set reveals one of twenty
+complete bilingual mermaid rescue stories and earns its illustrated animal pearl.
+Each story has a problem and a happy resolution; these are shared-reading stories,
+not a claim of independently decodable practice. All twenty original SVG animal
+illustrations are local and precached.
+
+**My pearl necklace** in the header opens `/necklace`. Each bead reopens its story
+in the current language. Animals do not repeat within a strand of twenty; further
+sets begin another strand. Totals show completed words, rescues, and unique friends.
+Opening the necklace sends one bubble per earned word upwards, using a bounded
+particle pool with a skip control. Reduced motion shows the totals without motion.
 
 ## Build and verify
 
@@ -91,19 +96,32 @@ Clipboard denial exposes a selectable link. Theme is device-local; card case is
 part of the adventure link. Browser Back/Forward follows card changes.
 
 An adventure contains the full filtered deck. A round reads at most 5, 10, 15, or
-20 consecutive cards; the final round may be shorter. Finishing records completion
-once and **Continue reading** starts at the next unread slice. Completion celebrates the round with a brief burst of bubbles rising toward stars
-and “Every little discovery is a bubble for your ocean.” The animation stops
-after a few seconds; reduced-motion settings show a still scene. Early finish saves
-the current position without reporting a completed round. Unique local visits
-are reported separately from mastery. A link imports position/configuration, not
-the source device's private visit or completion history.
+20 consecutive cards; the final round may be shorter. Advancing a card records it
+as read together, once per attempt. Loading, revisiting, or revealing a card does
+not assess correctness or add another completed word. Finish counts the final
+card and awards only when every card in the set has been advanced. A link that
+starts midway directs the reader to the remaining cards before awarding.
 
-Storage key `pearl-readers:v1` carries schema 1, preferences, ordered deck-ID
-snapshots, round visits/completion and at most 20 recently used identities.
+Completion shows exactly one bubble per completed word, a complete rescue story,
+and an animal pearl. **Read another set** starts the next slice (or restarts at
+the deck boundary) as a new attempt. Pause preserves unfinished work. Refresh,
+history navigation, language/theme/case changes, and reopening a completed set
+do not award twice. English and French share the necklace.
+
+Storage key `pearl-readers:v1` now carries schema 2, preferences, deck snapshots,
+and at most 20 recent reading identities. Schema 1 positions/preferences migrate
+without turning past visits into rewards. Attempts are saved under
+`pearl-readers:attempt:<uuid>`; immutable receipts under
+`pearl-readers:rescue:<uuid>` survive recent-session pruning. Receipt keys prevent
+stale session/preference writes from deleting awards. Web Locks serialize award
+selection across tabs on supported browsers. The no-lock fallback still keys each
+award by attempt, but simultaneous independent completions can choose the same
+animal. Current Safari/Chromium support Web Locks on secure origins.
+
 Storage denial, quota errors, corruption or unsupported schemas leave reading
 available in memory with a visible notice. Nothing calls `localStorage.clear()`.
-Local progress is not synchronized and can be lost if browser data is cleared.
+Progress is local to this browser/device and can be lost if site data is cleared;
+adventure links carry settings and position, not completed words or pearls.
 
 The committed `src/data/v1/` bundle defines vocabulary, curriculum and ordering.
 Learning order is unit sequence, difficulty, unit order, stable ID. Alphabetical
@@ -146,15 +164,14 @@ secret is needed):
 
 The [Cloudflare serving documentation](https://developers.cloudflare.com/pages/configuration/serving-pages/)
 describes Pages routing. `public/_redirects` provides explicit rewrites for `/play`,
-`/card` and `/words`; a top-level `404.html` prevents implicit catch-all SPA
+`/card`, `/words` and `/necklace`; a top-level `404.html` prevents implicit catch-all SPA
 fallback. Missing assets consequently remain missing rather than returning HTML.
 `public/_headers` sets a self-only CSP, disables camera/mic/location, and avoids
 long-lived caching of the worker and HTML. No third-party fonts or CDNs are used.
 
-After deploying, check direct requests and refreshes for all four app routes;
+After deploying, check direct requests and refreshes for all five app routes;
 verify `/missing.js` returns 404, MIME types, security headers, and offline reload
-on the actual HTTPS origin. These hosted checks have not been run without a
-Cloudflare deployment. Local Vite preview tests validate app routing and offline
+on the actual HTTPS origin. Local Vite preview tests validate app routing and offline
 behavior, not Cloudflare's redirect/header interpreter.
 
 ## Structure and boundaries
@@ -162,7 +179,8 @@ behavior, not Cloudflare's redirect/header interpreter.
 `src/content.js` loads the immutable bundle and applies presentation casing.
 `deck.js` owns filtering, ordering, identity and round rules; `router.js` validates
 and serializes routes; `storage.js` owns resilient persistence; `i18n.js` contains
-independent UI dictionaries. `main.js` renders the Home, reader, directory,
+independent UI dictionaries. `rescue.js` renders necklace/story rewards and manages
+the lifetime bubble animation. `main.js` renders the Home, reader, directory,
 standalone card, error and completion views. CSS tokens define accessible day
 and night palettes. Tests cover domain invariants and integrated interactions.
 
