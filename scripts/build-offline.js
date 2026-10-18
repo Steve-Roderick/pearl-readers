@@ -20,6 +20,7 @@ const assets = files(root)
   )
   .sort();
 const version = createHash("sha256");
+version.update(fs.readFileSync(new URL(import.meta.url)));
 for (const file of assets) version.update(file).update(fs.readFileSync(file));
 const cache = `pearl-${version.digest("hex").slice(0, 16)}`;
 const urls = assets.map(
@@ -43,7 +44,9 @@ self.addEventListener('fetch',event=>{
   if(event.request.method!=='GET'||url.origin!==self.location.origin)return;
   const supported=['/','/play','/card','/words'].includes(url.pathname);
   if(event.request.mode==='navigate'&&supported){
-    event.respondWith(caches.open(CACHE).then(cache=>cache.match('/index.html')).then(hit=>hit||fetch(event.request)));
+    // Pages redirects /index.html to /. Navigation requests can reject a cached
+    // redirected response, so return a fresh response with the same body/headers.
+    event.respondWith(caches.open(CACHE).then(cache=>cache.match('/index.html')).then(hit=>hit?new Response(hit.body,{status:hit.status,statusText:hit.statusText,headers:hit.headers}):fetch(event.request)));
     return;
   }
   if(ASSETS.includes(url.pathname))event.respondWith(caches.open(CACHE).then(cache=>cache.match(url.pathname)).then(hit=>hit||fetch(event.request)));
