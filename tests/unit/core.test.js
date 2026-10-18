@@ -215,6 +215,30 @@ describe("URL contract", () => {
     expect(() => parseRoute("/rewards")).toThrow();
   });
 });
+
+it("restores LAN links even when clipboard formatting adds invisible marks or encoded separators", () => {
+  const url =
+    "http://192.168.0.81:5173/play?deck=v1&lang=en&mode=simple&order=learn&case=lower&min=1&max=5&goal=10&s=0&i=9";
+  for (const text of [
+    url,
+    `  ${url}  `,
+    `\u200e${url}\u200b`,
+    `<${url}>`,
+    url.replaceAll("&", "&amp;"),
+    url.replaceAll("&", "&#38;"),
+    url.replaceAll("&", "&#x26;"),
+  ]) {
+    expect(parseAdventureLink(text)).toMatchObject({
+      lang: "en",
+      goal: 10,
+      s: 0,
+      i: 9,
+    });
+  }
+  expect(() => parseAdventureLink(url.replace("i=9", "i=1 0"))).toThrow();
+  expect(() => parseAdventureLink(url.replace("i=9", "i=10"))).toThrow();
+});
+
 describe("local persistence", () => {
   it("retains visits once, separates languages and preserves completion across reload", () => {
     const backend = memory(),

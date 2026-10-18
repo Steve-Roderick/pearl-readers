@@ -78,13 +78,18 @@ browser, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`. Standard Playwright's
 
 All replay fields are copied by **Copy this adventure**. Home can import a full
 HTTP(S) adventure URL from any host or a relative `/play` link; it only parses
-its state and never fetches the pasted host. Invalid present fields are rejected.
+its state and never fetches the pasted host. Mobile text correction is disabled;
+invisible clipboard direction marks, angle-bracket wrappers and HTML-escaped
+query separators are normalized before validation. Invalid state fields are still
+rejected.
 Clipboard denial exposes a selectable link. Theme is device-local; card case is
 part of the adventure link. Browser Back/Forward follows card changes.
 
 An adventure contains the full filtered deck. A round reads at most 5, 10, 15, or
 20 consecutive cards; the final round may be shorter. Finishing records completion
-once and **Continue reading** starts at the next unread slice. Early finish saves
+once and **Continue reading** starts at the next unread slice. Completion celebrates the round with a brief burst of bubbles rising toward stars
+and “Every little discovery is a bubble for your ocean.” The animation stops
+after a few seconds; reduced-motion settings show a still scene. Early finish saves
 the current position without reporting a completed round. Unique local visits
 are reported separately from mastery. A link imports position/configuration, not
 the source device's private visit or completion history.

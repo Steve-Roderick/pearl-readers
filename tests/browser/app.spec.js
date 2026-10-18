@@ -242,6 +242,9 @@ test("short final round ends at deck boundary and offers restart", async ({
   await expect(page.locator(".position")).toHaveText("Pearl 1 of 2");
   await button(page, "next").click();
   await button(page, "next").click();
+  await expect(page.locator(".completion h1")).toHaveText(
+    "Every little discovery is a bubble for your ocean.",
+  );
   await expect(button(page, "continue-deck")).toHaveText("Start again");
   await button(page, "continue-deck").click();
   await expect(word(page)).toHaveText("cat");
@@ -440,9 +443,63 @@ test("the saved adventure offered on Home follows the selected language", async 
 
 test("completion and error recovery pass automated accessibility checks", async ({
   page,
-}) => {
+}, testInfo) => {
+  await page.emulateMedia({ reducedMotion: "no-preference" });
   await page.goto(base.replace("i=0", "i=4"));
   await button(page, "next").click();
+  await expect(page.locator(".completion h1")).toHaveText(
+    "Chaque petite découverte est une bulle pour ton océan.",
+  );
+  await expect(page.locator(".bubble-celebration")).toHaveAttribute(
+    "aria-hidden",
+    "true",
+  );
+  await expect(page.locator(".celebration-bubble").first()).toHaveCSS(
+    "animation-name",
+    "ocean-bubble-rise",
+  );
+  const motion = await page
+    .locator(".celebration-bubble")
+    .evaluateAll((bubbles) =>
+      bubbles.map((bubble) => {
+        const style = getComputedStyle(bubble);
+        return {
+          end:
+            parseFloat(style.animationDuration) +
+            parseFloat(style.animationDelay),
+          iterations: style.animationIterationCount,
+        };
+      }),
+    );
+  expect(
+    motion.every(
+      (animation) => animation.end <= 5 && animation.iterations === "1",
+    ),
+  ).toBe(true);
+  // Capture a deterministic middle frame without waiting for the animation.
+  await page.locator(".celebration-bubble").evaluateAll((bubbles) =>
+    bubbles.forEach((bubble) =>
+      bubble.getAnimations().forEach((animation) => {
+        animation.pause();
+        animation.currentTime = 2300;
+      }),
+    ),
+  );
+  await page.screenshot({
+    path: testInfo.outputPath("completion-bubbles.png"),
+    fullPage: true,
+  });
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(page.locator(".celebration-bubble").first()).toHaveCSS(
+    "animation-name",
+    "none",
+  );
+  expect(
+    await page
+      .locator(".celebration-bubble")
+      .first()
+      .evaluate((bubble) => Number(getComputedStyle(bubble).opacity)),
+  ).toBeGreaterThan(0);
   expect(
     (
       await new AxeBuilder({ page })

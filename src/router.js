@@ -121,7 +121,15 @@ export function directoryURL(c) {
   return `/words?${p}`;
 }
 export function parseAdventureLink(text) {
-  const input = text.trim();
+  if (typeof text !== "string" || text.length > 4096) fail();
+  // Clipboard text can carry invisible direction/word-break marks or HTML
+  // separators from a formatted link. Remove formatting, not URL values.
+  let input = text
+    .replace(/[\u200B-\u200F\u2060\u2066-\u2069\uFEFF\r\n\t]/g, "")
+    .trim();
+  if (input.startsWith("<") && input.endsWith(">"))
+    input = input.slice(1, -1).trim();
+  input = input.replace(/&(?:amp|#0*38|#x0*26);/gi, "&");
   if (!/^https?:\/\//i.test(input) && !/^\/play(?:\?|$)/.test(input)) fail();
   const result = parseRoute(input);
   if (result.view !== "play") fail();
