@@ -81,7 +81,7 @@ function shell(body) {
   document.querySelector('meta[name="theme-color"]').content =
     store.preferences.theme === "night" ? "#102d40" : "#f8f3eb";
   document.title = `Pearl Readers · ${lang() === "fr" ? "Un mot, une perle" : "One word, one pearl"}`;
-  return `<div class="page ${route.view === "play" || route.view === "card" ? "reading-page" : ""}"><header class="site-header"><a class="brand" href="/" data-nav aria-label="Pearl Readers — ${esc(t("home"))}">${icon}<span>Pearl Readers<small>${esc(t("tagline"))}</small></span></a><nav aria-label="${esc(t("actions"))}">${link("/words?lang=" + lang(), t("library"), "nav-link")}<button type="button" class="theme-button" data-action="theme" aria-label="${esc(t("theme"))}" title="${esc(t("theme"))}">${themeIcon()}</button></nav></header>${storageFailed ? `<p class="storage-warning" role="status">${esc(t("notSaved"))}</p>` : ""}<main id="main" tabindex="-1">${body}</main>${footer()}</div><dialog id="copy-dialog"><form method="dialog"><h2>${esc(t("manualCopy"))}</h2><textarea id="copy-link" readonly aria-label="${esc(t("manualCopy"))}"></textarea><button class="primary">${esc(t("close"))}</button></form></dialog>`;
+  return `<div class="page ${route.view === "play" || route.view === "card" ? "reading-page" : ""}"><header class="site-header"><a class="brand" href="/" data-nav aria-label="Pearl Readers — ${esc(t("home"))}">${icon}<span>Pearl Readers<small>${esc(t("tagline"))}</small></span></a><nav aria-label="${esc(t("actions"))}"><div class="language-switch" role="group" aria-label="${esc(t("language"))}">${action("language", "EN", "language-button", `data-language="en" lang="en" aria-label="English" title="English" aria-pressed="${lang() === "en"}"`)}${action("language", "FR", "language-button", `data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="${lang() === "fr"}"`)}</div><a class="nav-link" href="/words?lang=${lang()}" data-nav aria-label="${esc(t("library"))}" title="${esc(t("library"))}"><span class="nav-text">${esc(t("library"))}</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v14c-4-1-6 0-9 2-3-2-5-3-9-2Z"/></svg></a><button type="button" class="theme-button" data-action="theme" aria-label="${esc(t("theme"))}" title="${esc(t("theme"))}">${themeIcon()}</button></nav></header>${storageFailed ? `<p class="storage-warning" role="status">${esc(t("notSaved"))}</p>` : ""}<main id="main" tabindex="-1">${body}</main>${footer()}</div><dialog id="copy-dialog"><form method="dialog"><h2>${esc(t("manualCopy"))}</h2><textarea id="copy-link" readonly aria-label="${esc(t("manualCopy"))}"></textarea><button class="primary">${esc(t("close"))}</button></form></dialog>`;
 }
 function home() {
   const c = store.preferences;
@@ -374,6 +374,38 @@ function configFromForm() {
   if (changed.lang !== p.lang) changed.unit = "";
   return changed;
 }
+function switchLanguage(language) {
+  if (language === lang()) return;
+  store.preferencesUpdate({ lang: language, unit: "" });
+  if (route.view === "play" || route.view === "card") {
+    const config = {
+      ...(route.config ?? defaults),
+      lang: language,
+      mode: route.config?.mode ?? store.preferences.mode,
+      case: route.config?.case ?? store.preferences.case,
+      unit: "",
+      s: 0,
+      i: 0,
+    };
+    const saved =
+      store.get(config) ??
+      store.sessions.find(
+        (record) =>
+          record.config.lang === language && record.config.mode === config.mode,
+      ) ??
+      store.sessions.find((record) => record.config.lang === language);
+    navigate(sessionURL(saved?.config ?? config));
+  } else if (route.view === "words") {
+    navigate(directoryURL({ ...route, lang: language, unit: "", q: "" }));
+  } else if (route.view === "home") {
+    render(false);
+  } else {
+    navigate("/");
+  }
+  document
+    .querySelector(`.language-button[data-language="${language}"]`)
+    ?.focus();
+}
 app.addEventListener("click", (e) => {
   const anchor = e.target.closest("a[data-nav]");
   if (
@@ -391,6 +423,10 @@ app.addEventListener("click", (e) => {
   const button = e.target.closest("[data-action]");
   if (!button || button.disabled) return;
   const name = button.dataset.action;
+  if (name === "language") {
+    switchLanguage(button.dataset.language);
+    return;
+  }
   if (name === "theme") {
     store.preferencesUpdate({
       theme: store.preferences.theme === "night" ? "day" : "night",

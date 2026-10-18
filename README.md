@@ -20,6 +20,8 @@ npm run dev
 
 Open the Local URL Vite prints (normally `http://127.0.0.1:5173`). Defaults are
 French, Sound Explorer, night, lowercase, learning order, and ten words per round.
+The top bar has compact **EN / FR** shortcuts, with the active language underlined. During reading, switching languages resumes that language’s saved
+adventure (or starts its first card); each language keeps its own place.
 Home remembers configuration; **Continue** opens a saved adventure, while **Start
 new adventure** starts that configuration at its beginning. English/French,
 mode, deck, filter, order, seed, and goal identify separate saved adventures.

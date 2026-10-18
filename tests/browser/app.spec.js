@@ -529,7 +529,10 @@ test("French translation toggles English and restores the current card without c
   );
   await page.clock.runFor(10000);
   await expect(flash).toBeVisible();
-  const back = page.getByRole("button", { name: "Retour au français", exact: true });
+  const back = page.getByRole("button", {
+    name: "Retour au français",
+    exact: true,
+  });
   await expect(back).toHaveAttribute("aria-expanded", "true");
   await back.click();
   await expect(flash).toBeHidden();
@@ -550,7 +553,9 @@ test("English translation toggles French with accents and selected letter case, 
   await expect(page.locator(".translation-word")).toHaveAttribute("lang", "fr");
   await page.clock.runFor(10000);
   await expect(page.locator(".translation-word")).toBeVisible();
-  await page.getByRole("button", { name: "Back to English", exact: true }).click();
+  await page
+    .getByRole("button", { name: "Back to English", exact: true })
+    .click();
   await expect(button(page, "translate")).toHaveText("Flash French");
   await expect(word(page)).toBeVisible();
   await expect(word(page)).toHaveText("CAKE");
@@ -616,4 +621,53 @@ test("translation is available offline and remains accessible on a phone", async
   ).toEqual([]);
   const nav = await page.locator(".reading-navigation").boundingBox();
   expect(nav.y + nav.height).toBeLessThanOrEqual(844);
+});
+
+test("top language buttons are visible, indicate the active language and remember Home selection", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const english = page.getByRole("button", { name: "English", exact: true });
+  const french = page.getByRole("button", { name: "Français", exact: true });
+  await expect(english).toBeVisible();
+  await expect(french).toHaveAttribute("aria-pressed", "true");
+  await english.click();
+  await expect(english).toHaveAttribute("aria-pressed", "true");
+  await expect(french).toHaveAttribute("aria-pressed", "false");
+  await expect(page.locator("html")).toHaveAttribute("lang", "en");
+  await expect(page.locator("#lang")).toHaveValue("en");
+  await page.reload();
+  await expect(english).toHaveAttribute("aria-pressed", "true");
+  await french.click();
+  await expect(page.locator("#lang")).toHaveValue("fr");
+  for (const width of [320, 600, 768]) {
+    await page.setViewportSize({ width, height: 900 });
+    await expect(english).toBeVisible();
+    await expect(french).toBeVisible();
+    expect(
+      await page.evaluate(
+        () => document.documentElement.scrollWidth <= innerWidth,
+      ),
+    ).toBe(true);
+  }
+});
+
+test("top language switching resumes independent reading positions and works in the directory", async ({
+  page,
+}) => {
+  await page.goto(base.replace("i=0", "i=2"));
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(word(page)).toHaveText("cat");
+  await button(page, "next").click();
+  await page.getByRole("button", { name: "Français", exact: true }).click();
+  await expect(word(page)).toHaveText("papi");
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(word(page)).toHaveText("mat");
+  await page.goto("/words?lang=fr&unit=fr-05&q=etoile");
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(page.locator("#directory-lang")).toHaveValue("en");
+  await expect(page.locator(".word-list li")).toHaveCount(100);
+  await page.goto("/card?lang=fr&id=fr-chat");
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(word(page)).toHaveText("mat");
 });

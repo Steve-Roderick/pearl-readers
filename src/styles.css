@@ -1350,3 +1350,41 @@ h2,
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* Quiet language shortcuts share the title bar with the other parent tools. */
+.language-switch {
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+}
+.language-button {
+  min-height: 32px;
+  min-width: 24px;
+  border: 0;
+  background: transparent;
+  color: var(--muted);
+  padding: 3px 4px;
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+.language-button[aria-pressed="true"] {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.language-button:hover { color: var(--text); }
+.site-header nav { gap: 16px; }
+.nav-icon { display: none; width: 24px; height: 24px; }
+@media (max-width: 800px) {
+  .site-header { flex-wrap: wrap; row-gap: 8px; }
+  .site-header nav { flex-wrap: wrap; }
+}
+@media (max-width: 560px) {
+  .site-header nav { gap: 6px; }
+  .site-header .nav-text { display: none; }
+  .site-header .nav-icon { display: block; }
+  .site-header .nav-link { min-height: 32px; }
+  .site-header .theme-button { width: 32px; height: 32px; }
+  .site-header .theme-button svg { width: 18px; height: 18px; }
+}
