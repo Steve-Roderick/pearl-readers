@@ -1308,3 +1308,32 @@ h2,
 .directory-filters > label {
   min-width: 0;
 }
+
+/* The translation covers the card without shifting its controls or focus. */
+.card-content {
+  display: contents;
+}
+.flashcard.is-translating .card-content {
+  visibility: hidden;
+}
+.translation-flash {
+  position: absolute;
+  inset: 0;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.translation-flash[hidden] {
+  display: none;
+}
+.translation-word {
+  font-size: clamp(2rem, 8vw, 5rem);
+  overflow-wrap: anywhere;
+}
+.reveal-controls {
+  flex-wrap: wrap;
+  padding: 12px 0;
+  gap: 8px;
+}

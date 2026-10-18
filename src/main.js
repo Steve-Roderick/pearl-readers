@@ -1,4 +1,5 @@
 import "./styles.css";
+import { translationFor } from "./translations.js";
 import {
   words,
   curricula,
@@ -166,6 +167,35 @@ function segments(word, c) {
   const parts = displaySegments(word, c.case);
   return `<div class="decoding"><p class="small-label">${esc(t({ graphemes: "groups", syllables: "syllables", "onset-rime": "rime" }[word.decoding.kind]))}</p><div class="segments" aria-label="${esc(word.word)}">${parts.map((p, i) => `${i ? '<span class="separator" aria-hidden="true">·</span>' : ""}<span class="segment ${p.spoken ? "" : "silent"}" ${p.spoken ? "" : `aria-label="${esc(p.text + " — " + t("silent"))}"`}>${esc(p.text)}</span>`).join("")}</div>${parts.some((p) => !p.spoken) ? `<p class="silent-note">${esc(t("silentHelp"))}</p>` : ""}<p class="parent-tip">${esc(word.exceptionNote || t("parentTip"))}</p></div>`;
 }
+function hideTranslation() {
+  const flash = document.querySelector("#translation-flash");
+  if (!flash) return;
+  flash.hidden = true;
+  flash.innerHTML = "";
+  document.querySelector(".flashcard")?.classList.remove("is-translating");
+  document.querySelector(".card-content")?.removeAttribute("aria-hidden");
+  const button = document.querySelector('[data-action="translate"]');
+  if (button) {
+    button.setAttribute("aria-expanded", "false");
+    button.textContent = t("translate");
+  }
+}
+function toggleTranslation(word, letterCase) {
+  if (!document.querySelector("#translation-flash").hidden) {
+    hideTranslation();
+    return;
+  }
+  const translation = translationFor(word);
+  const text = displayCase(translation.text, letterCase, translation.language);
+  const flash = document.querySelector("#translation-flash");
+  flash.hidden = false;
+  flash.innerHTML = `<p class="small-label">${esc(t(translation.language === "en" ? "english" : "french"))}</p><p class="word translation-word ${text.length > 8 ? "long-word" : ""}" lang="${translation.language}">${esc(text)}</p>`;
+  document.querySelector(".flashcard").classList.add("is-translating");
+  document.querySelector(".card-content").setAttribute("aria-hidden", "true");
+  const button = document.querySelector('[data-action="translate"]');
+  button.setAttribute("aria-expanded", "true");
+  button.textContent = t("backToReadingLanguage");
+}
 function reader() {
   const isSession = route.view === "play";
   const c = isSession
@@ -183,9 +213,9 @@ function reader() {
   const step = isSession ? c.i - c.s + 1 : 1;
   return `<section class="reader" aria-labelledby="reading-word"><div class="reader-top">${link(isSession ? "/" : directoryReturn || "/words?lang=" + c.lang, isSession ? t("home") : t("backLibrary"))}<span class="reader-mode">${c.lang.toUpperCase()} <span aria-hidden="true">·</span> ${esc(t(c.mode === "simple" ? "simple" : "normal"))}</span><span class="position">${isSession ? `${esc(t("progress"))} ${step} ${esc(t("of"))} ${total}` : esc(t("standalone"))}</span></div>
   ${isSession ? `<div class="pearls" aria-hidden="true">${Array.from({ length: total }, (_, i) => `<span class="${i < step ? "lit" : ""}"></span>`).join("")}</div>` : ""}
-  <article class="flashcard ${cardState === "back" ? "card-back" : ""}" data-state="${cardState}"><span class="card-corner" aria-hidden="true">✧</span><p class="small-label">${cardState === "back" ? esc(t("example")) : "Pearl Readers"}</p><h1 id="reading-word" class="word ${word.word.length > 8 ? "long-word" : ""}" lang="${c.lang}">${esc(displayCase(word.word, c.case, c.lang))}</h1>
-  ${cardState === "back" ? `<div class="meaning"><span class="meaning-star" aria-hidden="true">✧</span><p class="example" lang="${c.lang}">${esc(word.example)}</p></div>` : c.mode === "simple" || cardState === "hint" ? segments(word, c) : `<p class="reading-prompt">${esc(t("normalNote"))}</p>`}<span class="card-bottom-corner" aria-hidden="true">✧</span></article>
-  <div class="reveal-controls">${c.mode === "normal" && cardState !== "back" ? action("hint", t(cardState === "hint" ? "hideHint" : "hint"), "text-button", `aria-pressed="${cardState === "hint"}"`) : ""}${action("flip", t(cardState === "back" ? "front" : "flip"), "secondary", `aria-pressed="${cardState === "back"}"`)}</div>
+  <article class="flashcard ${cardState === "back" ? "card-back" : ""}" data-state="${cardState}"><span class="card-corner" aria-hidden="true">✧</span><div class="card-content"><p class="small-label">${cardState === "back" ? esc(t("example")) : "Pearl Readers"}</p><h1 id="reading-word" class="word ${word.word.length > 8 ? "long-word" : ""}" lang="${c.lang}">${esc(displayCase(word.word, c.case, c.lang))}</h1>
+  ${cardState === "back" ? `<div class="meaning"><span class="meaning-star" aria-hidden="true">✧</span><p class="example" lang="${c.lang}">${esc(word.example)}</p></div>` : c.mode === "simple" || cardState === "hint" ? segments(word, c) : `<p class="reading-prompt">${esc(t("normalNote"))}</p>`}</div><div id="translation-flash" class="translation-flash" role="status" aria-live="polite" aria-atomic="true" hidden></div><span class="card-bottom-corner" aria-hidden="true">✧</span></article>
+  <div class="reveal-controls">${c.mode === "normal" && cardState !== "back" ? action("hint", t(cardState === "hint" ? "hideHint" : "hint"), "text-button", `aria-pressed="${cardState === "hint"}"`) : ""}${action("flip", t(cardState === "back" ? "front" : "flip"), "secondary", `aria-pressed="${cardState === "back"}"`)}${action("translate", t("translate"), "secondary", 'aria-controls="translation-flash" aria-expanded="false"')}</div>
   ${isSession ? `<div class="reading-navigation">${action("previous", "← " + t("previous"), "secondary", c.i === c.s ? "disabled" : "")}${action("next", t(c.i === roundEnd(c, deck.length) - 1 ? "finish" : "next") + " →", "primary")}</div>` : ""}
   <div class="reader-secondary"><details><summary>${esc(t("actions"))}</summary><div class="reader-tools">${select(
     "reader-mode",
@@ -246,6 +276,7 @@ function errorView() {
   return `<section class="error-page"><span class="meaning-star" aria-hidden="true">✧</span><h1>${esc(t("errorTitle"))}</h1><p class="intro">${esc(t("errorNote"))}</p><div class="completion-actions">${link("/", t("homeButton"), "primary")}${store.last ? link(sessionURL(store.last.config), t("continue"), "secondary") : ""}</div></section>`;
 }
 function render(focus = false, focusId = "") {
+  hideTranslation();
   advancedOpen = document.querySelector("#advanced")?.open ?? advancedOpen;
   app.innerHTML = shell(
     route.view === "home"
@@ -389,6 +420,10 @@ app.addEventListener("click", (e) => {
   }
   const c = route.config;
   const word = c ? buildDeck(c)[c.i] : findWord(route.lang, route.id);
+  if (name === "translate") {
+    toggleTranslation(word, c?.case ?? store.preferences.case);
+    return;
+  }
   if (name === "copy-word") {
     copy(cardURL(word));
     return;

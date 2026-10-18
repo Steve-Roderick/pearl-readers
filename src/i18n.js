@@ -65,6 +65,8 @@ export const messages = {
     pause: "Finish early",
     paused:
       "Practice paused. Your place is saved when device storage is available.",
+    translate: "Flash French",
+    backToReadingLanguage: "Back to English",
     hint: "Help me",
     hideHint: "Hide hint",
     flip: "Show meaning",
@@ -178,6 +180,8 @@ export const messages = {
     pause: "Arrêter ici",
     paused:
       "La lecture est en pause. Votre place est conservée si l’enregistrement est disponible.",
+    translate: "Voir en anglais",
+    backToReadingLanguage: "Retour au français",
     hint: "Un indice",
     hideHint: "Masquer l’indice",
     flip: "Découvrir le sens",

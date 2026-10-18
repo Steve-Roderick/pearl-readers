@@ -147,6 +147,31 @@ export function validateContent(
   }
   return errors;
 }
+export function validateTranslations(libraries, translations) {
+  const errors = [];
+  for (const lang of ["en", "fr"]) {
+    const entries = translations?.[lang];
+    if (!entries || typeof entries !== "object" || Array.isArray(entries)) {
+      errors.push(`${lang}: missing translations`);
+      continue;
+    }
+    const ids = new Set(libraries[lang].map((word) => word.id));
+    for (const id of ids) {
+      const text = entries[id];
+      if (
+        typeof text !== "string" ||
+        !text.trim() ||
+        text !== text.trim() ||
+        text !== text.normalize("NFC")
+      ) {
+        errors.push(`${id}: missing or invalid translation`);
+      }
+    }
+    for (const id of Object.keys(entries))
+      if (!ids.has(id)) errors.push(`${id}: unknown translation word`);
+  }
+  return errors;
+}
 export function readContent() {
   const read = (name) =>
     JSON.parse(
@@ -165,12 +190,21 @@ if (
   import.meta.url === pathToFileURL(process.argv[1]).href
 ) {
   const { libraries, units } = readContent();
-  const errors = validateContent(libraries, units);
+  const translations = JSON.parse(
+    fs.readFileSync(
+      new URL("../src/data/translations.json", import.meta.url),
+      "utf8",
+    ),
+  );
+  const errors = [
+    ...validateContent(libraries, units),
+    ...validateTranslations(libraries, translations),
+  ];
   if (errors.length) {
     console.error(errors.join("\n"));
     process.exitCode = 1;
   } else
     console.log(
-      "Content valid: 100 English + 100 French entries; all 200 await educator review.",
+      "Content valid: 100 English + 100 French entries with translations; all 200 await educator review.",
     );
 }

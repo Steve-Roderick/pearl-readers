@@ -27,7 +27,13 @@ mode, deck, filter, order, seed, and goal identify separate saved adventures.
 Sound Explorer shows authored spelling groups. Word Explorer offers an optional
 hint. Dotted underlines identify silent letters, with a parent explanation. Card
 backs reveal a contextual example. Flipping does not advance or grade the child.
-No word illustrations or audio are required in this release.
+**Flash French** (English reading) or **Voir en anglais** (French reading) shows
+the word’s contextual translation until you tap the same button again. While
+showing the translation, the button says **Back to English** or **Retour au français**.
+Toggling back restores the original front, hint, or back; navigation dismisses
+the translation immediately. Translations are local, work offline, and do not
+change the reading deck or progress. They may be short phrases when the meaning
+needs one. No word illustrations or audio are required in this release.
 
 ## Build and verify
 

@@ -506,3 +506,114 @@ test("long words, 200% text and narrow viewports do not cause horizontal overflo
     ).toBe(true);
   }
 });
+
+test("French translation toggles English and restores the current card without changing progress", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await page.goto(base);
+  const before = await stored(page);
+  const flash = page.locator("#translation-flash");
+  await page
+    .getByRole("button", { name: "Voir en anglais", exact: true })
+    .click();
+  await expect(flash).toBeVisible();
+  await expect(flash.locator(".translation-word")).toHaveText("friend");
+  await expect(flash.locator(".translation-word")).toHaveAttribute(
+    "lang",
+    "en",
+  );
+  await expect(page.locator(".card-content")).toHaveAttribute(
+    "aria-hidden",
+    "true",
+  );
+  await page.clock.runFor(10000);
+  await expect(flash).toBeVisible();
+  const back = page.getByRole("button", { name: "Retour au français", exact: true });
+  await expect(back).toHaveAttribute("aria-expanded", "true");
+  await back.click();
+  await expect(flash).toBeHidden();
+  await expect(button(page, "translate")).toHaveText("Voir en anglais");
+  await expect(button(page, "translate")).toBeFocused();
+  await expect(word(page)).toBeVisible();
+  await expect(word(page)).toHaveText("ami");
+  expect((await stored(page)).sessions).toEqual(before.sessions);
+});
+
+test("English translation toggles French with accents and selected letter case, including standalone cards", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await page.goto("/play?lang=en&mode=normal&case=upper&s=95&i=98");
+  await button(page, "translate").click();
+  await expect(page.locator(".translation-word")).toHaveText("GÂTEAU");
+  await expect(page.locator(".translation-word")).toHaveAttribute("lang", "fr");
+  await page.clock.runFor(10000);
+  await expect(page.locator(".translation-word")).toBeVisible();
+  await page.getByRole("button", { name: "Back to English", exact: true }).click();
+  await expect(button(page, "translate")).toHaveText("Flash French");
+  await expect(word(page)).toBeVisible();
+  await expect(word(page)).toHaveText("CAKE");
+  await button(page, "translate").click();
+  await expect(page.locator(".translation-word")).toHaveText("GÂTEAU");
+  await button(page, "translate").click();
+  await expect(page.locator(".decoding")).toHaveCount(0);
+  await page.goto("/card?lang=fr&id=fr-chat");
+  await button(page, "translate").click();
+  await expect(page.locator(".translation-word")).toHaveText("cat");
+});
+
+test("repeated translation taps toggle the card back and forth; navigation and flipping reset it", async ({
+  page,
+}) => {
+  await page.clock.install();
+  await page.goto(base);
+  await button(page, "flip").click();
+  await button(page, "translate").click();
+  await page.clock.runFor(1800);
+  await button(page, "translate").click();
+  await expect(page.locator("#translation-flash")).toBeHidden();
+  await expect(page.locator(".example")).toBeVisible();
+  await button(page, "translate").click();
+  await expect(page.locator("#translation-flash")).toBeVisible();
+  await button(page, "translate").click();
+  await expect(page.locator(".example")).toBeVisible();
+  await expect(page.locator(".flashcard")).toHaveAttribute(
+    "data-state",
+    "back",
+  );
+  await button(page, "translate").click();
+  await button(page, "next").click();
+  await expect(page.locator("#translation-flash")).toBeHidden();
+  await expect(word(page)).toHaveText("mamie");
+  await page.clock.runFor(3000);
+  await expect(word(page)).toHaveText("mamie");
+  await button(page, "translate").click();
+  await button(page, "flip").click();
+  await expect(page.locator("#translation-flash")).toBeHidden();
+  await expect(page.locator(".example")).toBeVisible();
+});
+
+test("translation is available offline and remains accessible on a phone", async ({
+  page,
+  context,
+}) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto(base.replace("mode=simple", "mode=normal"));
+  await expect(page.locator("#offline-status")).toHaveText(
+    "Lecture hors ligne prête",
+  );
+  await context.setOffline(true);
+  await button(page, "translate").focus();
+  await page.keyboard.press("Enter");
+  await expect(page.locator(".translation-word")).toHaveText("friend");
+  expect(
+    (
+      await new AxeBuilder({ page })
+        .withTags(["wcag2a", "wcag2aa", "wcag21aa", "wcag22aa"])
+        .analyze()
+    ).violations,
+  ).toEqual([]);
+  const nav = await page.locator(".reading-navigation").boundingBox();
+  expect(nav.y + nav.height).toBeLessThanOrEqual(844);
+});

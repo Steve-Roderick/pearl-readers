@@ -43,3 +43,9 @@ If content must change after the published v1 bundle is in use, create a new
 version and preserve v1 replay, rather than changing the meaning of existing
 shared URLs. Before initial publication, corrections to this unreleased draft
 remain appropriate.
+
+Translations in `src/data/translations.json` give the other language’s contextual
+meaning for each word, based on its example (for instance, English `bat` means
+`chauve-souris`, and French `moule` means `mussel`). They are separate from the
+immutable deck data and need linguistic review alongside the reading content.
+Build validation checks complete coverage and NFC text, not semantic accuracy.
