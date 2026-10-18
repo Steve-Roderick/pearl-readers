@@ -1,0 +1,32 @@
+[
+  {
+    "id": "en-01",
+    "sequence": 1,
+    "title": "First short a",
+    "note": "Short a with consonants; x and vowel teams come later."
+  },
+  {
+    "id": "en-02",
+    "sequence": 2,
+    "title": "Short e and i",
+    "note": "Introduce short e and short i."
+  },
+  {
+    "id": "en-03",
+    "sequence": 3,
+    "title": "Short o and u",
+    "note": "Introduce short o and short u; x represents two sounds."
+  },
+  {
+    "id": "en-04",
+    "sequence": 4,
+    "title": "Consonant teams",
+    "note": "Introduce sh, ch, th, ck and doubled consonants."
+  },
+  {
+    "id": "en-05",
+    "sequence": 5,
+    "title": "Blends and vowel teams",
+    "note": "Blend adjacent consonants, then introduce ai, ee, oa, oo and split digraphs."
+  }
+]

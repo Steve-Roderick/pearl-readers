@@ -1,0 +1,32 @@
+[
+  {
+    "id": "fr-01",
+    "sequence": 1,
+    "title": "Premiers mots en a et i",
+    "note": "Introduire a et i avec des consonnes; signaler les lettres muettes."
+  },
+  {
+    "id": "fr-02",
+    "sequence": 2,
+    "title": "Voyelles u, o et é",
+    "note": "Introduire u, o et é; certaines combinaisons de consonnes sont nouvelles."
+  },
+  {
+    "id": "fr-03",
+    "sequence": 3,
+    "title": "Les graphèmes ou et ch",
+    "note": "Introduire ou puis ch; signaler les lettres finales muettes."
+  },
+  {
+    "id": "fr-04",
+    "sequence": 4,
+    "title": "Les voyelles nasales an et on",
+    "note": "Introduire an, on et la graphie om; ne pas prononcer le n séparément."
+  },
+  {
+    "id": "fr-05",
+    "sequence": 5,
+    "title": "Oi et nouveaux graphèmes",
+    "note": "Introduire oi puis ei, è, ail et eil; distinguer les valeurs de e."
+  }
+]

@@ -1,0 +1,3654 @@
+[
+  {
+    "id": "en-cat",
+    "language": "en",
+    "word": "cat",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 1,
+    "alphabeticalRank": 17,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The cat naps.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-mat",
+    "language": "en",
+    "word": "mat",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 2,
+    "alphabeticalRank": 53,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Sit on the mat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sat",
+    "language": "en",
+    "word": "sat",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 3,
+    "alphabeticalRank": 80,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The cat sat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-map",
+    "language": "en",
+    "word": "map",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 4,
+    "alphabeticalRank": 52,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Look at the map.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-tap",
+    "language": "en",
+    "word": "tap",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 5,
+    "alphabeticalRank": 90,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Tap the shell.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pan",
+    "language": "en",
+    "word": "pan",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 6,
+    "alphabeticalRank": 64,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pan is hot.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-man",
+    "language": "en",
+    "word": "man",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 7,
+    "alphabeticalRank": 51,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The man has a hat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-can",
+    "language": "en",
+    "word": "can",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 8,
+    "alphabeticalRank": 15,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I can hop.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-cap",
+    "language": "en",
+    "word": "cap",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 9,
+    "alphabeticalRank": 16,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Put on your cap.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bag",
+    "language": "en",
+    "word": "bag",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 10,
+    "alphabeticalRank": 2,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My bag is red.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bat",
+    "language": "en",
+    "word": "bat",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 11,
+    "alphabeticalRank": 3,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "A bat can fly.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hat",
+    "language": "en",
+    "word": "hat",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 12,
+    "alphabeticalRank": 37,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Here is my hat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-fan",
+    "language": "en",
+    "word": "fan",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 13,
+    "alphabeticalRank": 29,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The fan spins.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-van",
+    "language": "en",
+    "word": "van",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 14,
+    "alphabeticalRank": 95,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We ride in a van.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-jam",
+    "language": "en",
+    "word": "jam",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 15,
+    "alphabeticalRank": 44,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I like jam.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-ham",
+    "language": "en",
+    "word": "ham",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 16,
+    "alphabeticalRank": 36,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The ham is on a plate.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sad",
+    "language": "en",
+    "word": "sad",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 17,
+    "alphabeticalRank": 77,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The lost pup is sad.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-mad",
+    "language": "en",
+    "word": "mad",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 18,
+    "alphabeticalRank": 50,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The crab looks mad.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-rag",
+    "language": "en",
+    "word": "rag",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 19,
+    "alphabeticalRank": 71,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Use a rag to wipe it.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-wag",
+    "language": "en",
+    "word": "wag",
+    "curriculumUnit": "en-01",
+    "difficulty": 1,
+    "unitOrder": 20,
+    "alphabeticalRank": 96,
+    "patterns": [
+      "short-a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "w",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pup can wag its tail.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bed",
+    "language": "en",
+    "word": "bed",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 1,
+    "alphabeticalRank": 5,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My bed is soft.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-red",
+    "language": "en",
+    "word": "red",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 2,
+    "alphabeticalRank": 73,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The shell is red.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hen",
+    "language": "en",
+    "word": "hen",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 3,
+    "alphabeticalRank": 38,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The hen has an egg.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pen",
+    "language": "en",
+    "word": "pen",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 4,
+    "alphabeticalRank": 65,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I have a blue pen.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-net",
+    "language": "en",
+    "word": "net",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 5,
+    "alphabeticalRank": 61,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The net is wet.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pet",
+    "language": "en",
+    "word": "pet",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 6,
+    "alphabeticalRank": 66,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My pet is a cat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-wet",
+    "language": "en",
+    "word": "wet",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 7,
+    "alphabeticalRank": 97,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "w",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My feet are wet.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-ten",
+    "language": "en",
+    "word": "ten",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 8,
+    "alphabeticalRank": 91,
+    "patterns": [
+      "short-e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I see ten shells.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pig",
+    "language": "en",
+    "word": "pig",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 9,
+    "alphabeticalRank": 67,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pig digs.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sit",
+    "language": "en",
+    "word": "sit",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 10,
+    "alphabeticalRank": 85,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Sit with me.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pin",
+    "language": "en",
+    "word": "pin",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 11,
+    "alphabeticalRank": 68,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pin is in the box.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-fin",
+    "language": "en",
+    "word": "fin",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 12,
+    "alphabeticalRank": 30,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The fish has a fin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-lip",
+    "language": "en",
+    "word": "lip",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 13,
+    "alphabeticalRank": 48,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I have jam on my lip.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-dig",
+    "language": "en",
+    "word": "dig",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 14,
+    "alphabeticalRank": 25,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We dig in the sand.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-big",
+    "language": "en",
+    "word": "big",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 15,
+    "alphabeticalRank": 7,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "That is a big shell.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-kid",
+    "language": "en",
+    "word": "kid",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 16,
+    "alphabeticalRank": 45,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "k",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The kid can hop.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hit",
+    "language": "en",
+    "word": "hit",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 17,
+    "alphabeticalRank": 40,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Hit the ball gently.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bin",
+    "language": "en",
+    "word": "bin",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 18,
+    "alphabeticalRank": 8,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Put it in the bin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-win",
+    "language": "en",
+    "word": "win",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 19,
+    "alphabeticalRank": 98,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "w",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We all win a turn.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-zip",
+    "language": "en",
+    "word": "zip",
+    "curriculumUnit": "en-02",
+    "difficulty": 2,
+    "unitOrder": 20,
+    "alphabeticalRank": 100,
+    "patterns": [
+      "short-i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "z",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Zip up your bag.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-dog",
+    "language": "en",
+    "word": "dog",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 1,
+    "alphabeticalRank": 26,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The dog runs.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-log",
+    "language": "en",
+    "word": "log",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 2,
+    "alphabeticalRank": 49,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "A frog sits on a log.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hop",
+    "language": "en",
+    "word": "hop",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 3,
+    "alphabeticalRank": 41,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I can hop.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pot",
+    "language": "en",
+    "word": "pot",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 4,
+    "alphabeticalRank": 69,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pot has a lid.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hot",
+    "language": "en",
+    "word": "hot",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 5,
+    "alphabeticalRank": 42,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The soup is hot.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-top",
+    "language": "en",
+    "word": "top",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 6,
+    "alphabeticalRank": 94,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The hat is on top.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-fox",
+    "language": "en",
+    "word": "fox",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 7,
+    "alphabeticalRank": 34,
+    "patterns": [
+      "short-o",
+      "x"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "The letter x represents two sounds together: /k/ and /s/.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "x",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The fox has a den.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-box",
+    "language": "en",
+    "word": "box",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 8,
+    "alphabeticalRank": 10,
+    "patterns": [
+      "short-o",
+      "x"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "The letter x represents two sounds together: /k/ and /s/.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "x",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "A shell is in the box.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-mop",
+    "language": "en",
+    "word": "mop",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 9,
+    "alphabeticalRank": 56,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Use the mop.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-nod",
+    "language": "en",
+    "word": "nod",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 10,
+    "alphabeticalRank": 62,
+    "patterns": [
+      "short-o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Nod if you are ready.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sun",
+    "language": "en",
+    "word": "sun",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 11,
+    "alphabeticalRank": 88,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The sun is warm.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-cup",
+    "language": "en",
+    "word": "cup",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 12,
+    "alphabeticalRank": 24,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My cup is full.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bus",
+    "language": "en",
+    "word": "bus",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 13,
+    "alphabeticalRank": 12,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The bus stops here.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bug",
+    "language": "en",
+    "word": "bug",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 14,
+    "alphabeticalRank": 11,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "A bug is on the leaf.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-mud",
+    "language": "en",
+    "word": "mud",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 15,
+    "alphabeticalRank": 58,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My boots have mud on them.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-run",
+    "language": "en",
+    "word": "run",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 16,
+    "alphabeticalRank": 76,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We run to the park.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-rug",
+    "language": "en",
+    "word": "rug",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 17,
+    "alphabeticalRank": 75,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The cat is on the rug.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hug",
+    "language": "en",
+    "word": "hug",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 18,
+    "alphabeticalRank": 43,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "May I have a hug?",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-pup",
+    "language": "en",
+    "word": "pup",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 19,
+    "alphabeticalRank": 70,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The pup is small.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-nut",
+    "language": "en",
+    "word": "nut",
+    "curriculumUnit": "en-03",
+    "difficulty": 3,
+    "unitOrder": 20,
+    "alphabeticalRank": 63,
+    "patterns": [
+      "short-u"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The squirrel has a nut.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-ship",
+    "language": "en",
+    "word": "ship",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 1,
+    "alphabeticalRank": 83,
+    "patterns": [
+      "sh"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "sh",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The ship is at sea.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-shop",
+    "language": "en",
+    "word": "shop",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 2,
+    "alphabeticalRank": 84,
+    "patterns": [
+      "sh"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "sh",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We go to the shop.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-fish",
+    "language": "en",
+    "word": "fish",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 3,
+    "alphabeticalRank": 31,
+    "patterns": [
+      "sh"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "sh",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The fish swims.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-wish",
+    "language": "en",
+    "word": "wish",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 4,
+    "alphabeticalRank": 99,
+    "patterns": [
+      "sh"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "w",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "sh",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Make a wish.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-chin",
+    "language": "en",
+    "word": "chin",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 5,
+    "alphabeticalRank": 18,
+    "patterns": [
+      "ch"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I have a spot on my chin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-chip",
+    "language": "en",
+    "word": "chip",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 6,
+    "alphabeticalRank": 19,
+    "patterns": [
+      "ch"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Take a chip.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-chop",
+    "language": "en",
+    "word": "chop",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 7,
+    "alphabeticalRank": 20,
+    "patterns": [
+      "ch"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We chop the fruit.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-much",
+    "language": "en",
+    "word": "much",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 8,
+    "alphabeticalRank": 57,
+    "patterns": [
+      "ch"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "ch",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Thank you so much.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-thin",
+    "language": "en",
+    "word": "thin",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 9,
+    "alphabeticalRank": 93,
+    "patterns": [
+      "th"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "th",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The twig is thin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-thick",
+    "language": "en",
+    "word": "thick",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 10,
+    "alphabeticalRank": 92,
+    "patterns": [
+      "th",
+      "ck"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "th",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "ck",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The book is thick.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bath",
+    "language": "en",
+    "word": "bath",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 11,
+    "alphabeticalRank": 4,
+    "patterns": [
+      "th"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "The vowel varies by accent. Use your family’s pronunciation.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "th",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The duck is in the bath.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sock",
+    "language": "en",
+    "word": "sock",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 12,
+    "alphabeticalRank": 86,
+    "patterns": [
+      "ck"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "ck",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "My sock is wet.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-neck",
+    "language": "en",
+    "word": "neck",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 13,
+    "alphabeticalRank": 59,
+    "patterns": [
+      "ck"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "ck",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The scarf keeps my neck warm.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-duck",
+    "language": "en",
+    "word": "duck",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 14,
+    "alphabeticalRank": 28,
+    "patterns": [
+      "ck"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "ck",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The duck swims.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-bell",
+    "language": "en",
+    "word": "bell",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 15,
+    "alphabeticalRank": 6,
+    "patterns": [
+      "ll"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "ll",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Ring the bell.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-hill",
+    "language": "en",
+    "word": "hill",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 16,
+    "alphabeticalRank": 39,
+    "patterns": [
+      "ll"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "h",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "ll",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We walk up the hill.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-mess",
+    "language": "en",
+    "word": "mess",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 17,
+    "alphabeticalRank": 54,
+    "patterns": [
+      "ss"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "ss",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We clean up the mess.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-buzz",
+    "language": "en",
+    "word": "buzz",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 18,
+    "alphabeticalRank": 13,
+    "patterns": [
+      "zz"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "zz",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Bees buzz near the flowers.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-back",
+    "language": "en",
+    "word": "back",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 19,
+    "alphabeticalRank": 1,
+    "patterns": [
+      "ck"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "ck",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The bag is on my back.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-shell",
+    "language": "en",
+    "word": "shell",
+    "curriculumUnit": "en-04",
+    "difficulty": 4,
+    "unitOrder": 20,
+    "alphabeticalRank": 82,
+    "patterns": [
+      "sh",
+      "ll"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "sh",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "ll",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "I found a shell.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-clap",
+    "language": "en",
+    "word": "clap",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 1,
+    "alphabeticalRank": 21,
+    "patterns": [
+      "blend-cl"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Clap your hands.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-flag",
+    "language": "en",
+    "word": "flag",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 2,
+    "alphabeticalRank": 32,
+    "patterns": [
+      "blend-fl"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The flag waves.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-frog",
+    "language": "en",
+    "word": "frog",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 3,
+    "alphabeticalRank": 35,
+    "patterns": [
+      "blend-fr"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The frog can jump.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-crab",
+    "language": "en",
+    "word": "crab",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 4,
+    "alphabeticalRank": 23,
+    "patterns": [
+      "blend-cr"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "b",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "A crab walks on the sand.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-drum",
+    "language": "en",
+    "word": "drum",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 5,
+    "alphabeticalRank": 27,
+    "patterns": [
+      "blend-dr"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Tap the drum.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-stop",
+    "language": "en",
+    "word": "stop",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 6,
+    "alphabeticalRank": 87,
+    "patterns": [
+      "blend-st"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Stop at the gate.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-swim",
+    "language": "en",
+    "word": "swim",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 7,
+    "alphabeticalRank": 89,
+    "patterns": [
+      "blend-sw"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "w",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Fish swim in the sea.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sand",
+    "language": "en",
+    "word": "sand",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 8,
+    "alphabeticalRank": 79,
+    "patterns": [
+      "blend-nd"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The sand is warm.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-lamp",
+    "language": "en",
+    "word": "lamp",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 9,
+    "alphabeticalRank": 47,
+    "patterns": [
+      "blend-mp"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Turn on the lamp.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-nest",
+    "language": "en",
+    "word": "nest",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 10,
+    "alphabeticalRank": 60,
+    "patterns": [
+      "blend-st"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The bird is in its nest.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-rain",
+    "language": "en",
+    "word": "rain",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 11,
+    "alphabeticalRank": 72,
+    "patterns": [
+      "ai"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "ai",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The rain helps plants grow.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-sail",
+    "language": "en",
+    "word": "sail",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 12,
+    "alphabeticalRank": 78,
+    "patterns": [
+      "ai"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "ai",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The boat has a sail.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-seed",
+    "language": "en",
+    "word": "seed",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 13,
+    "alphabeticalRank": 81,
+    "patterns": [
+      "ee"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "ee",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Plant a seed.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-reef",
+    "language": "en",
+    "word": "reef",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 14,
+    "alphabeticalRank": 74,
+    "patterns": [
+      "ee"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "ee",
+          "spoken": true
+        },
+        {
+          "text": "f",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Fish live near the reef.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-boat",
+    "language": "en",
+    "word": "boat",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 15,
+    "alphabeticalRank": 9,
+    "patterns": [
+      "oa"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "oa",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The boat is blue.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-coat",
+    "language": "en",
+    "word": "coat",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 16,
+    "alphabeticalRank": 22,
+    "patterns": [
+      "oa"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "oa",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Put on your coat.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-moon",
+    "language": "en",
+    "word": "moon",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 17,
+    "alphabeticalRank": 55,
+    "patterns": [
+      "oo"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "oo",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "The moon lights the sea.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-food",
+    "language": "en",
+    "word": "food",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 18,
+    "alphabeticalRank": 33,
+    "patterns": [
+      "oo"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "oo",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "We share our food.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-cake",
+    "language": "en",
+    "word": "cake",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 19,
+    "alphabeticalRank": 14,
+    "patterns": [
+      "a_e"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Silent letters: e. The final e changes the vowel sound; do not sound out the vowel as a short vowel.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "k",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "We made a cake.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "en-kite",
+    "language": "en",
+    "word": "kite",
+    "curriculumUnit": "en-05",
+    "difficulty": 5,
+    "unitOrder": 20,
+    "alphabeticalRank": 46,
+    "patterns": [
+      "i_e"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Silent letters: e. The final e changes the vowel sound; do not sound out the vowel as a short vowel.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "k",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "The kite flies high.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  }
+]

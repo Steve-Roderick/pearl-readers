@@ -1,0 +1,3905 @@
+[
+  {
+    "id": "fr-ami",
+    "language": "fr",
+    "word": "ami",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 1,
+    "alphabeticalRank": 1,
+    "patterns": [
+      "a",
+      "i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Mon ami joue avec moi.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-mamie",
+    "language": "fr",
+    "word": "mamie",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 2,
+    "alphabeticalRank": 46,
+    "patterns": [
+      "a",
+      "i",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Mamie lit avec moi.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-papi",
+    "language": "fr",
+    "word": "papi",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 3,
+    "alphabeticalRank": 60,
+    "patterns": [
+      "a",
+      "i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Papi porte un chapeau.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-papa",
+    "language": "fr",
+    "word": "papa",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 4,
+    "alphabeticalRank": 59,
+    "patterns": [
+      "a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Papa prépare le repas.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-lama",
+    "language": "fr",
+    "word": "lama",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 5,
+    "alphabeticalRank": 38,
+    "patterns": [
+      "a"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le lama marche.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-rat",
+    "language": "fr",
+    "word": "rat",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 6,
+    "alphabeticalRank": 73,
+    "patterns": [
+      "a",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le rat se cache.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sac",
+    "language": "fr",
+    "word": "sac",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 7,
+    "alphabeticalRank": 84,
+    "patterns": [
+      "a",
+      "c"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Mon sac est ici.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-lac",
+    "language": "fr",
+    "word": "lac",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 8,
+    "alphabeticalRank": 37,
+    "patterns": [
+      "a",
+      "c"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le lac est calme.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bal",
+    "language": "fr",
+    "word": "bal",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 9,
+    "alphabeticalRank": 2,
+    "patterns": [
+      "a",
+      "l"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Nous allons au bal.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-mal",
+    "language": "fr",
+    "word": "mal",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 10,
+    "alphabeticalRank": 44,
+    "patterns": [
+      "a",
+      "l"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Mon pied me fait mal.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-fil",
+    "language": "fr",
+    "word": "fil",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 11,
+    "alphabeticalRank": 29,
+    "patterns": [
+      "i",
+      "l"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le fil est rouge.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-pile",
+    "language": "fr",
+    "word": "pile",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 12,
+    "alphabeticalRank": 62,
+    "patterns": [
+      "i",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La pile est dans la boîte.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ile",
+    "language": "fr",
+    "word": "île",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 13,
+    "alphabeticalRank": 32,
+    "patterns": [
+      "î",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "î",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Une île est au loin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-lit",
+    "language": "fr",
+    "word": "lit",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 14,
+    "alphabeticalRank": 39,
+    "patterns": [
+      "i",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le chat dort sur le lit.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-nid",
+    "language": "fr",
+    "word": "nid",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 15,
+    "alphabeticalRank": 54,
+    "patterns": [
+      "i",
+      "d-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : d.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le nid est dans un arbre.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-riz",
+    "language": "fr",
+    "word": "riz",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 16,
+    "alphabeticalRank": 77,
+    "patterns": [
+      "i",
+      "z-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : z.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "z",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je mange du riz.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-midi",
+    "language": "fr",
+    "word": "midi",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 17,
+    "alphabeticalRank": 49,
+    "patterns": [
+      "i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "À midi, nous mangeons.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-radis",
+    "language": "fr",
+    "word": "radis",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 18,
+    "alphabeticalRank": 71,
+    "patterns": [
+      "a",
+      "i",
+      "s-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : s.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le radis est rouge.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ravi",
+    "language": "fr",
+    "word": "ravi",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 19,
+    "alphabeticalRank": 74,
+    "patterns": [
+      "a",
+      "i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Je suis ravi de te voir.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-salami",
+    "language": "fr",
+    "word": "salami",
+    "curriculumUnit": "fr-01",
+    "difficulty": 1,
+    "unitOrder": 20,
+    "alphabeticalRank": 85,
+    "patterns": [
+      "a",
+      "i"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le salami est sur la table.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-lune",
+    "language": "fr",
+    "word": "lune",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 1,
+    "alphabeticalRank": 43,
+    "patterns": [
+      "u",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La lune brille.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-rue",
+    "language": "fr",
+    "word": "rue",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 2,
+    "alphabeticalRank": 83,
+    "patterns": [
+      "u",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La rue est calme.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-tortue",
+    "language": "fr",
+    "word": "tortue",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 3,
+    "alphabeticalRank": 94,
+    "patterns": [
+      "o",
+      "u",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La tortue nage.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-mur",
+    "language": "fr",
+    "word": "mur",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 4,
+    "alphabeticalRank": 52,
+    "patterns": [
+      "u",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le mur est bleu.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sur",
+    "language": "fr",
+    "word": "sur",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 5,
+    "alphabeticalRank": 93,
+    "patterns": [
+      "u",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le livre est sur le lit.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-pur",
+    "language": "fr",
+    "word": "pur",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 6,
+    "alphabeticalRank": 70,
+    "patterns": [
+      "u",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Cet air est pur.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-dur",
+    "language": "fr",
+    "word": "dur",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 7,
+    "alphabeticalRank": 24,
+    "patterns": [
+      "u",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "d",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Ce caillou est dur.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bulle",
+    "language": "fr",
+    "word": "bulle",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 8,
+    "alphabeticalRank": 13,
+    "patterns": [
+      "u",
+      "ll",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e. Les deux l représentent une seule consonne prononcée.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "ll",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Une bulle monte.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-jupe",
+    "language": "fr",
+    "word": "jupe",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 9,
+    "alphabeticalRank": 36,
+    "patterns": [
+      "u",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Ma jupe est rose.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-plume",
+    "language": "fr",
+    "word": "plume",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 10,
+    "alphabeticalRank": 64,
+    "patterns": [
+      "u",
+      "pl",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La plume est légère.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-moto",
+    "language": "fr",
+    "word": "moto",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 11,
+    "alphabeticalRank": 50,
+    "patterns": [
+      "o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La moto est rouge.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-velo",
+    "language": "fr",
+    "word": "vélo",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 12,
+    "alphabeticalRank": 98,
+    "patterns": [
+      "é",
+      "o"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Mon vélo est bleu.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bebe",
+    "language": "fr",
+    "word": "bébé",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 13,
+    "alphabeticalRank": 5,
+    "patterns": [
+      "é"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le bébé dort.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ete",
+    "language": "fr",
+    "word": "été",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 14,
+    "alphabeticalRank": 25,
+    "patterns": [
+      "é"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "En été, il fait chaud.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-cafe",
+    "language": "fr",
+    "word": "café",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 15,
+    "alphabeticalRank": 14,
+    "patterns": [
+      "a",
+      "é"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le café de papa est chaud.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-pre",
+    "language": "fr",
+    "word": "pré",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 16,
+    "alphabeticalRank": 69,
+    "patterns": [
+      "é",
+      "pr"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La vache est dans le pré.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-cle",
+    "language": "fr",
+    "word": "clé",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 17,
+    "alphabeticalRank": 21,
+    "patterns": [
+      "é",
+      "cl"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La clé ouvre la porte.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-fee",
+    "language": "fr",
+    "word": "fée",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 18,
+    "alphabeticalRank": 27,
+    "patterns": [
+      "é",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La fée a une baguette.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-fumee",
+    "language": "fr",
+    "word": "fumée",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 19,
+    "alphabeticalRank": 31,
+    "patterns": [
+      "u",
+      "é",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La fumée monte.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sale",
+    "language": "fr",
+    "word": "salé",
+    "curriculumUnit": "fr-02",
+    "difficulty": 2,
+    "unitOrder": 20,
+    "alphabeticalRank": 86,
+    "patterns": [
+      "a",
+      "é"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "é",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le repas est salé.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-cou",
+    "language": "fr",
+    "word": "cou",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 1,
+    "alphabeticalRank": 23,
+    "patterns": [
+      "ou"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La girafe a un long cou.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-roue",
+    "language": "fr",
+    "word": "roue",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 2,
+    "alphabeticalRank": 81,
+    "patterns": [
+      "ou",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La roue tourne.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-poule",
+    "language": "fr",
+    "word": "poule",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 3,
+    "alphabeticalRank": 68,
+    "patterns": [
+      "ou",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La poule picore.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-moule",
+    "language": "fr",
+    "word": "moule",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 4,
+    "alphabeticalRank": 51,
+    "patterns": [
+      "ou",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La moule vit dans la mer.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-soupe",
+    "language": "fr",
+    "word": "soupe",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 5,
+    "alphabeticalRank": 92,
+    "patterns": [
+      "ou",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La soupe est chaude.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-loup",
+    "language": "fr",
+    "word": "loup",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 6,
+    "alphabeticalRank": 42,
+    "patterns": [
+      "ou",
+      "p-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : p.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le loup est dans la forêt.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ours",
+    "language": "fr",
+    "word": "ours",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 7,
+    "alphabeticalRank": 58,
+    "patterns": [
+      "ou",
+      "s"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "L’ours dort.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-four",
+    "language": "fr",
+    "word": "four",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 8,
+    "alphabeticalRank": 30,
+    "patterns": [
+      "ou",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le pain cuit au four.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-tour",
+    "language": "fr",
+    "word": "tour",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 9,
+    "alphabeticalRank": 95,
+    "patterns": [
+      "ou",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La tour est haute.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-jour",
+    "language": "fr",
+    "word": "jour",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 10,
+    "alphabeticalRank": 35,
+    "patterns": [
+      "ou",
+      "r"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le jour se lève.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-joue",
+    "language": "fr",
+    "word": "joue",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 11,
+    "alphabeticalRank": 34,
+    "patterns": [
+      "ou",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Ma joue est douce.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bijou",
+    "language": "fr",
+    "word": "bijou",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 12,
+    "alphabeticalRank": 7,
+    "patterns": [
+      "i",
+      "ou"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Ce bijou brille.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-chou",
+    "language": "fr",
+    "word": "chou",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 13,
+    "alphabeticalRank": 19,
+    "patterns": [
+      "ch",
+      "ou"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le chou pousse au jardin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-chat",
+    "language": "fr",
+    "word": "chat",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 14,
+    "alphabeticalRank": 17,
+    "patterns": [
+      "ch",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le chat dort.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-chut",
+    "language": "fr",
+    "word": "chut",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 15,
+    "alphabeticalRank": 20,
+    "patterns": [
+      "ch",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t. Prononciation retenue : t final muet. Certaines variantes prononcent le t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Chut, le bébé dort.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-chic",
+    "language": "fr",
+    "word": "chic",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 16,
+    "alphabeticalRank": 18,
+    "patterns": [
+      "ch",
+      "c"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Ce chapeau est chic.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-vache",
+    "language": "fr",
+    "word": "vache",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 17,
+    "alphabeticalRank": 97,
+    "patterns": [
+      "ch",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La vache mange de l’herbe.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-riche",
+    "language": "fr",
+    "word": "riche",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 18,
+    "alphabeticalRank": 76,
+    "patterns": [
+      "ch",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le roi est riche.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-roche",
+    "language": "fr",
+    "word": "roche",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 19,
+    "alphabeticalRank": 78,
+    "patterns": [
+      "ch",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Une roche est dans l’eau.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bouche",
+    "language": "fr",
+    "word": "bouche",
+    "curriculumUnit": "fr-03",
+    "difficulty": 3,
+    "unitOrder": 20,
+    "alphabeticalRank": 11,
+    "patterns": [
+      "ou",
+      "ch",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je ferme la bouche.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-maman",
+    "language": "fr",
+    "word": "maman",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 1,
+    "alphabeticalRank": 45,
+    "patterns": [
+      "an"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Maman me lit une histoire.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ruban",
+    "language": "fr",
+    "word": "ruban",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 2,
+    "alphabeticalRank": 82,
+    "patterns": [
+      "an"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "u",
+          "spoken": true
+        },
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le ruban est rose.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-volant",
+    "language": "fr",
+    "word": "volant",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 3,
+    "alphabeticalRank": 100,
+    "patterns": [
+      "an",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le volant tourne.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-plan",
+    "language": "fr",
+    "word": "plan",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 4,
+    "alphabeticalRank": 63,
+    "patterns": [
+      "an",
+      "pl"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Voici le plan du jardin.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-blanc",
+    "language": "fr",
+    "word": "blanc",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 5,
+    "alphabeticalRank": 8,
+    "patterns": [
+      "an",
+      "c-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : c.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le nuage est blanc.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-banc",
+    "language": "fr",
+    "word": "banc",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 6,
+    "alphabeticalRank": 4,
+    "patterns": [
+      "an",
+      "c-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : c.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le banc est près du lac.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-chant",
+    "language": "fr",
+    "word": "chant",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 7,
+    "alphabeticalRank": 16,
+    "patterns": [
+      "an",
+      "ch",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le chant est doux.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-champ",
+    "language": "fr",
+    "word": "champ",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 8,
+    "alphabeticalRank": 15,
+    "patterns": [
+      "am",
+      "ch",
+      "p-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : p.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "ch",
+          "spoken": true
+        },
+        {
+          "text": "am",
+          "spoken": true
+        },
+        {
+          "text": "p",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le champ est vert.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-rang",
+    "language": "fr",
+    "word": "rang",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 9,
+    "alphabeticalRank": 72,
+    "patterns": [
+      "an",
+      "g-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : g.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je suis au premier rang.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sans",
+    "language": "fr",
+    "word": "sans",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 10,
+    "alphabeticalRank": 87,
+    "patterns": [
+      "an",
+      "s-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : s.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "an",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je bois de l’eau sans glace.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bon",
+    "language": "fr",
+    "word": "bon",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 11,
+    "alphabeticalRank": 10,
+    "patterns": [
+      "on"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Ce repas est bon.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-nom",
+    "language": "fr",
+    "word": "nom",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 12,
+    "alphabeticalRank": 56,
+    "patterns": [
+      "om"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "om",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Mon nom est sur mon sac.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-non",
+    "language": "fr",
+    "word": "non",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 13,
+    "alphabeticalRank": 57,
+    "patterns": [
+      "on"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Non, merci.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-rond",
+    "language": "fr",
+    "word": "rond",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 14,
+    "alphabeticalRank": 80,
+    "patterns": [
+      "on",
+      "d-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : d.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        },
+        {
+          "text": "d",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le ballon est rond.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-pont",
+    "language": "fr",
+    "word": "pont",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 15,
+    "alphabeticalRank": 67,
+    "patterns": [
+      "on",
+      "t-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : t.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le pont traverse la rivière.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-long",
+    "language": "fr",
+    "word": "long",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 16,
+    "alphabeticalRank": 41,
+    "patterns": [
+      "on",
+      "g-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : g.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Le ruban est long.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-ballon",
+    "language": "fr",
+    "word": "ballon",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 17,
+    "alphabeticalRank": 3,
+    "patterns": [
+      "on",
+      "ll"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "Les deux l représentent une seule consonne prononcée.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "ll",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le ballon vole.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-savon",
+    "language": "fr",
+    "word": "savon",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 18,
+    "alphabeticalRank": 88,
+    "patterns": [
+      "on"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "a",
+          "spoken": true
+        },
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le savon fait des bulles.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-melon",
+    "language": "fr",
+    "word": "melon",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 19,
+    "alphabeticalRank": 47,
+    "patterns": [
+      "on",
+      "e"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le melon est sucré.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bouton",
+    "language": "fr",
+    "word": "bouton",
+    "curriculumUnit": "fr-04",
+    "difficulty": 4,
+    "unitOrder": 20,
+    "alphabeticalRank": 12,
+    "patterns": [
+      "ou",
+      "on"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "ou",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "on",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le bouton est bleu.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-roi",
+    "language": "fr",
+    "word": "roi",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 1,
+    "alphabeticalRank": 79,
+    "patterns": [
+      "oi"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le roi porte une couronne.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-loi",
+    "language": "fr",
+    "word": "loi",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 2,
+    "alphabeticalRank": 40,
+    "patterns": [
+      "oi"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La loi protège les gens.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-joie",
+    "language": "fr",
+    "word": "joie",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 3,
+    "alphabeticalRank": 33,
+    "patterns": [
+      "oi",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "j",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je saute de joie.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-noix",
+    "language": "fr",
+    "word": "noix",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 4,
+    "alphabeticalRank": 55,
+    "patterns": [
+      "oi",
+      "x-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : x.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "x",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La noix est dans le bol.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-pois",
+    "language": "fr",
+    "word": "pois",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 5,
+    "alphabeticalRank": 66,
+    "patterns": [
+      "oi",
+      "s-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : s.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Les pois sont verts.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-trois",
+    "language": "fr",
+    "word": "trois",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 6,
+    "alphabeticalRank": 96,
+    "patterns": [
+      "oi",
+      "tr",
+      "s-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : s.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "s",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je vois trois perles.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-voile",
+    "language": "fr",
+    "word": "voile",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 7,
+    "alphabeticalRank": 99,
+    "patterns": [
+      "oi",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "v",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La voile est blanche.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-etoile",
+    "language": "fr",
+    "word": "étoile",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 8,
+    "alphabeticalRank": 26,
+    "patterns": [
+      "é",
+      "oi",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "é",
+          "spoken": true
+        },
+        {
+          "text": "t",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Une étoile brille.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-poire",
+    "language": "fr",
+    "word": "poire",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 9,
+    "alphabeticalRank": 65,
+    "patterns": [
+      "oi",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La poire est mûre.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-boire",
+    "language": "fr",
+    "word": "boire",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 10,
+    "alphabeticalRank": 9,
+    "patterns": [
+      "oi",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "oi",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "Je vais boire de l’eau.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-neige",
+    "language": "fr",
+    "word": "neige",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 11,
+    "alphabeticalRank": 53,
+    "patterns": [
+      "ei",
+      "g-doux",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e. Ici, g a le son doux de j; le e final est muet.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "ei",
+          "spoken": true
+        },
+        {
+          "text": "g",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La neige est blanche.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-reine",
+    "language": "fr",
+    "word": "reine",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 12,
+    "alphabeticalRank": 75,
+    "patterns": [
+      "ei",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "ei",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La reine sourit.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-mer",
+    "language": "fr",
+    "word": "mer",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 13,
+    "alphabeticalRank": 48,
+    "patterns": [
+      "e-ouvert"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "m",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La mer est calme.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sel",
+    "language": "fr",
+    "word": "sel",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 14,
+    "alphabeticalRank": 89,
+    "patterns": [
+      "e-ouvert"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Il y a du sel dans la soupe.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-bec",
+    "language": "fr",
+    "word": "bec",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 15,
+    "alphabeticalRank": 6,
+    "patterns": [
+      "e-ouvert"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "b",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "c",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le bec de l’oiseau est jaune.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-fer",
+    "language": "fr",
+    "word": "fer",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 16,
+    "alphabeticalRank": 28,
+    "patterns": [
+      "e-ouvert"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "f",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "La clé est en fer.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-perle",
+    "language": "fr",
+    "word": "perle",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 17,
+    "alphabeticalRank": 61,
+    "patterns": [
+      "e-ouvert",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "p",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La perle brille.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-sirene",
+    "language": "fr",
+    "word": "sirène",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 18,
+    "alphabeticalRank": 90,
+    "patterns": [
+      "è",
+      "e-muet"
+    ],
+    "regularity": "partially_regular",
+    "exceptionNote": "Lettres muettes : e.",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "i",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "è",
+          "spoken": true
+        },
+        {
+          "text": "n",
+          "spoken": true
+        },
+        {
+          "text": "e",
+          "spoken": false
+        }
+      ]
+    },
+    "example": "La sirène nage.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-corail",
+    "language": "fr",
+    "word": "corail",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 19,
+    "alphabeticalRank": 22,
+    "patterns": [
+      "ail"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "c",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "r",
+          "spoken": true
+        },
+        {
+          "text": "ail",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le corail abrite des poissons.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  },
+  {
+    "id": "fr-soleil",
+    "language": "fr",
+    "word": "soleil",
+    "curriculumUnit": "fr-05",
+    "difficulty": 5,
+    "unitOrder": 20,
+    "alphabeticalRank": 91,
+    "patterns": [
+      "eil"
+    ],
+    "regularity": "regular",
+    "exceptionNote": "",
+    "decoding": {
+      "kind": "graphemes",
+      "segments": [
+        {
+          "text": "s",
+          "spoken": true
+        },
+        {
+          "text": "o",
+          "spoken": true
+        },
+        {
+          "text": "l",
+          "spoken": true
+        },
+        {
+          "text": "eil",
+          "spoken": true
+        }
+      ]
+    },
+    "example": "Le soleil brille sur la mer.",
+    "review": {
+      "status": "draft"
+    },
+    "image": null
+  }
+]

@@ -1,0 +1,11 @@
+{
+  "id": "/", "name": "Pearl Readers", "short_name": "Pearl Readers",
+  "description": "Une aventure de lecture en français et en anglais à partager en famille.",
+  "lang": "fr", "start_url": "/", "scope": "/", "display": "standalone",
+  "background_color": "#102d40", "theme_color": "#102d40",
+  "icons": [
+    {"src":"/icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any"},
+    {"src":"/icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any"},
+    {"src":"/icons/maskable-512.png","sizes":"512x512","type":"image/png","purpose":"maskable"}
+  ]
+}

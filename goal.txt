@@ -1,0 +1,2011 @@
+Pearl Readers
+
+Complete Product Requirements and Technical Specification
+
+Version: 1.1
+Status: V1 engineering handoff; educational release review pending
+Platform: Responsive static web application
+Deployment: Cloudflare Pages
+Primary users: Grade 1 children (approximately 5–7 years old) and their parents
+Languages: French and English
+Theme: Underwater mermaid princess kingdom
+
+⸻
+
+0. V1 implementation decisions — authoritative refinement (2026-10-18)
+
+This section resolves ambiguities in the longer product specification below.
+Where they conflict, this section takes precedence. Implement V1 only. This
+handoff authorizes specification refinement; implementation starts on the next
+explicit build instruction.
+
+0.1 Delivery scope and priorities
+
+Keep the static Vite / vanilla JavaScript architecture, 100 entries per language,
+independent curricula, both reading modes, day/night themes, letter-case choices,
+three ordering methods, directory, shareable sessions, local resume, accessibility,
+and tested offline reading. Keep goals 5 / 10 / 15 / 20 and the difficulty-range
+and single-unit filters. No custom subset editor is needed.
+
+Ship a calm, finished visual treatment using locally bundled CSS/SVG decoration.
+Word illustrations are optional and may be omitted throughout V1; every back
+still has its example sentence. Do not make 200 bespoke illustrations a build
+dependency. No reward route, placeholder rewards, audio controls, review engine,
+sentences-as-reading-activities, or future-only storage structures in V1.
+
+UI copy is localized in French and English, following the selected reading
+language. Use separate UI dictionaries; do not translate word datasets at runtime.
+Default to French / Simple / night / lowercase / learning order / goal 10.
+
+Build one complete, tested path with a small bilingual fixture first, then expand
+to the full 200-word inventory. A fixture is an implementation checkpoint, not a
+substitute for the V1 content target. Keep meaningful checkpoints and reserve
+roughly the final quarter of available allowance for integration, tests, and fixes.
+Do not spend the entire allowance on scaffolding, planning, or artwork.
+
+0.2 Content integrity and honest release status
+
+Authored content can be prepared during implementation, but machine validation
+cannot certify instructional correctness. Track review status per entry:
+review.status = draft | educator-reviewed; optional reviewer/date/source notes
+must be real. Never fabricate review, sources, or classroom alignment. Report
+unreviewed content clearly in the handoff and a concise parent-facing content
+note. A working engineering preview can ship with drafts; an educationally
+reviewed release requires a knowledgeable human's actual review of all entries.
+
+V1 decoding has one preferred representation per word. Segments carry text and
+spoken status, plus the representation kind (graphemes, syllables, onset-rime).
+Concatenation in NFC must reconstruct the canonical spelling. Do not describe
+syllables or rimes as individual sounds. Mark silent letters explicitly and give
+parents a visible explanation in the hint; do not rely on colour alone. Mixed
+silent/spoken groups need explicit subsegments or a different representation.
+No IPA, phoneme audio mappings, or multiple alternative analyses are required.
+Use regularity and exception notes to identify words with untaught patterns.
+
+Make unit sequence, within-unit word order, difficulty (integer 1–5), and
+alphabetical rank explicit in the content manifest. Validator checks structure,
+references, coverage, reconstructable segments, ranks, and optional asset paths;
+it cannot prove pronunciation, suitability, or correctness of the learning order.
+
+0.3 Reproducible decks
+
+For V1, vocabulary, curriculum, and ordering algorithm are one immutable published
+bundle named v1. Retain that bundle when adding v2 later. IDs are permanent.
+All included entries remain available in the engineering preview regardless of
+review status; mark preview status honestly rather than silently changing decks.
+
+Filter first using inclusive difficulty bounds and an optional curriculum unit;
+when both are supplied, use their intersection. Empty selections show a useful
+message and disable Start. Apply the chosen ordering to that candidate set.
+Learning order uses explicit unit/word order, then ID. Alphabetical order uses
+committed per-language ranks authored with locale-aware collation, then ID.
+Do not depend on browser Intl/ICU versions to reproduce a shared deck.
+
+Shuffle uses a specified Mulberry32 implementation and Fisher–Yates, with input
+in learning order. Accept unsigned 32-bit decimal seeds (0 through 4294967295).
+Seed 0 is valid. New seeds may use crypto.getRandomValues; deck replay uses only
+the specified PRNG. Lock reproducibility with a known expected permutation test.
+Different seeds need not mathematically guarantee different permutations.
+
+0.4 Session contract and completion
+
+An adventure uses the full filtered ordered deck; a reading round is a contiguous
+slice of that deck. State includes round start s, current deck index i, and goal.
+For deck length N, round end is min(s + goal, N), exclusive. Start at s = i = 0.
+The visible progress is i - s + 1 out of round end - s. A short deck or final
+round uses its actual remaining length. Do not wrap or repeat cards to fill it.
+
+Previous is disabled at the round start. Next advances within the round; at its
+last card it becomes Finish. Finishing records round completion once. Revisiting
+cards does not add completed presentations or imply mastery. Track unique card
+IDs visited in the round locally for the completion message. Shared links restore
+position/configuration, not visit history; do not invent prior visits on import.
+
+Finish early preserves the current position and reports that practice was paused.
+On completion, Continue reading begins the next round at the prior round end,
+using the same goal and deck. At deck end, offer Start again or Home. Persist a
+completed-round flag locally so reopening the app does not accidentally complete
+or count the same round again. No rewards or mastery statistics depend on this.
+
+Changing mode, letter case, or theme in the reader preserves deck and position;
+mode changes preserve the round and save under the destination mode's identity.
+Language, ordering, seed, goal, and filters are configured on Home and applied
+only by an explicit Start new adventure action. Continue uses the saved config.
+Separate saved identities use bundle + language + mode + order + relevant seed
++ filters + goal; letter case/theme are preferences. Keep the latest 20 identities
+by last use, with one last-active pointer. Do not evict the current identity.
+
+0.5 Canonical URLs and restoration
+
+Use /, /words, /card, and /play. No /rewards route in V1.
+Canonical session example (zero-based s and i):
+/play?deck=v1&lang=fr&mode=simple&order=learn&case=lower&min=1&max=5&goal=10&s=0&i=4
+Shuffle adds seed=0; optional unit identifies a unit in that language. Omit seed
+outside shuffle. Theme is device-local and not required to reproduce the deck.
+Canonical word link example: /card?deck=v1&lang=fr&id=fr-chat
+
+A complete adventure link carries every session field needed for replay. Parsing
+uses documented defaults only for absent fields: deck=v1, lang=fr, mode=simple,
+order=learn, case=lower, min=1, max=5, goal=10, s=0, i=s, seed=0 for shuffle.
+Present invalid enums, noninteger/overflow numbers, invalid ranges or units,
+unsupported versions, and out-of-round indices produce a friendly recovery view;
+never silently substitute a different deck or erase a saved adventure. Ignore
+unknown parameters and remove them when canonicalizing. Bound pasted input to
+4096 characters; support full HTTP(S) links from any host and relative /play
+links, parse only the supported path/query locally, and never fetch pasted URLs.
+Label the input “Continue from an adventure link”; short codes are out of V1.
+
+Explicit valid URL state wins over local state. Bare Home shows Continue rather
+than forcing a redirect. Standalone cards never write session progress. Directory
+filters stay in its URL so Back can recover them. History Back/Forward restores
+the indicated card and saves its position. New-card navigation resets to front;
+flip/hint state is transient. Push history for card/view changes; replace for
+cosmetic changes and canonicalization. Completion may use local UI state; it
+needs no separate shareable route.
+
+Storage reads/writes must tolerate unavailable storage, corrupt JSON, quota
+errors, and unknown schemas. Continue in memory and show one calm notice when
+saving fails. Never clear all storage as an error-recovery strategy.
+
+0.6 Verification and delivery gates
+
+Build includes content validation. Unit tests focus on deck permutations, filters,
+URL round trips and invalid inputs, storage recovery, and session boundaries.
+Browser tests exercise reload/fresh-context link replay, Back/Forward, French and
+English resume isolation, standalone card isolation, completion/continuation,
+clipboard fallback, accents/case, narrow screens, and offline refresh of a deep
+link after the service worker controls the app. Include denied-storage coverage.
+Accessibility checks include keyboard use, visible focus, reduced motion, contrast,
+and lang metadata; do not claim formal WCAG certification from automated checks.
+
+Keep the offline manifest, service worker, and core assets in V1. Precache the
+built shell and datasets using build-generated asset names, version caches, and
+avoid forced activation that disrupts an active round. Missing optional art must
+not block reading. Do not describe offline support as tested unless verified.
+
+Engineering completion means 200 structurally validated authored entries,
+working features, passing build/unit/browser checks, and Cloudflare-ready static
+output with a documented SPA fallback. Actual production deployment, hosted deep
+links, educator review, and parent/child physical-device testing are separate
+release checks. Perform them when access/people are available and report their
+status accurately; never fabricate them or require credentials to run locally.
+Pin a supported Node LTS and commit the lockfile. Do not create a framework,
+backend, hosted service, or plugin Site as a prerequisite for this repository.
+
+0.7 Recommended implementation model and effort
+
+Use GPT-6.1 Sol, medium reasoning, standard speed as the default for this handoff.
+Use high effort only for a specific unresolved deck/state/offline correctness
+problem; return to medium for implementation. This is a workload recommendation,
+not a guarantee that one five-hour subscription allowance will cover the build.
+Allowance depends on plan, remaining usage, model, context, tools, and reasoning.
+A five-hour reset window is not a fixed token count or five hours of compute.
+
+Official model guidance:
+https://developers.openai.com/api/docs/guides/model-selection
+Official usage and speed-mode guidance:
+https://learn.chatgpt.com/docs/pricing
+
+⸻
+
+1. Product vision
+
+Pearl Readers is a bilingual, parent-led reading adventure that helps early readers practise decoding words and recognizing common spelling patterns.
+
+The application presents large, easy-to-read flashcards within a gentle underwater mermaid-themed environment. Each reading session is short, configurable, and designed to be played collaboratively by a parent and child.
+
+Children gradually progress from simple sound patterns to complete words and eventually short sentences.
+
+The application must emphasize learning and encouragement rather than speed, scores, competition, or memorization.
+
+Central principle: Reading should feel like discovering treasures, not taking a test.
+
+The application must work without accounts, subscriptions, advertisements, external services, or backend infrastructure.
+
+1.1 Primary goals
+
+1. Support both French and English as independent reading curricula.
+2. Provide a predictable, progressively challenging learning experience.
+3. Allow parents to configure difficulty, presentation, and word order.
+4. Make reading sessions easy to start, interrupt, resume, and share.
+5. Encourage decoding instead of picture guessing or whole-word memorization.
+6. Make the interface accessible to young children on phones and tablets.
+7. Reward participation with gentle, creative incentives.
+8. Preserve progress locally without collecting personal information.
+9. Support installation and offline reading after initial caching.
+10. Remain simple to maintain, extend, and deploy.
+
+1.2 Non-goals
+
+Pearl Readers is not intended to be:
+
+* A replacement for classroom instruction or reading aloud with parents.
+* A diagnostic tool for reading disorders.
+* A competitive educational game.
+* An AI-powered reading tutor.
+* A speech-recognition or pronunciation-grading application.
+* A social platform.
+* A commercial service requiring authentication or payments.
+
+⸻
+
+2. Release scope
+
+Implementation should be divided into three milestones, all within the same repository.
+
+2.1 V1 — Core reading experience (required)
+
+V1 must include:
+
+* French and English support.
+* 100 curated words per language.
+* Simple Mode and Normal Mode.
+* Large, readable flashcards.
+* Front, hint, and back states.
+* Optional illustrated answers when available.
+* Day and night themes.
+* Lowercase, uppercase, and title case presentation.
+* Learning progression, alphabetical, and seeded random ordering.
+* Configurable session goals.
+* Previous, Next, Flip, and Copy Link controls.
+* A full word directory with filtering and direct links.
+* Unique URLs for cards and sessions.
+* Automatic URL updates without page reloads.
+* Local persistence of session state and settings.
+* Automatic resume on the same device.
+* Manual session restoration through pasted links or codes.
+* Responsive layouts for phones and tablets.
+* An initial mermaid-themed visual design.
+* Accessibility and automated tests.
+* Cloudflare Pages deployment.
+
+V1 must be fully usable without V2 or V3.
+
+2.2 V2 — Learning enhancements
+
+* Parent feedback: Got it / Practise again.
+* Persistent review queues.
+* Cumulative review across evenings.
+* Word-family activities.
+* Explicit phoneme-level hints.
+* Optional pronunciation audio.
+* Short decodable sentences.
+* Parent progress overview.
+* Pattern-based practice sessions.
+* Optional pretend-word decoding activities.
+
+V2 functionality should be anticipated in the data model, but not implemented prematurely.
+
+2.3 V3 — Magical rewards
+
+* Twelve bespoke printable colouring pages.
+* Underwater story progression.
+* Configurable reward thresholds.
+* Reward unlock persistence.
+* A reward gallery.
+* Offline availability of reward assets.
+* A gentle treasure-collection visual metaphor.
+
+A minimal placeholder reward screen may be included in V1, but the full reward system belongs to V3.
+
+⸻
+
+3. Target users
+
+3.1 Child
+
+The primary child user is approximately six years old and is learning to read both French and English.
+
+Expected characteristics:
+
+* Developing decoding skills.
+* Limited reading fluency.
+* May recognize some words visually.
+* May not yet distinguish every letter or spelling pattern.
+* Can tap large buttons.
+* Benefits from encouragement and short sessions.
+* May become frustrated when words are too difficult.
+* Enjoys mermaids, underwater creatures, princesses, and imaginative rewards.
+
+The child should be able to participate in choosing the language, starting a session, flipping cards, and moving forward.
+
+3.2 Parent
+
+The parent:
+
+* Selects difficulty and session configuration.
+* Reads instructions aloud when necessary.
+* Helps the child sound out words.
+* Controls pronunciation and hints.
+* Decides whether a word needs more practice.
+* Manages session progress.
+* May stop a session at any time.
+* May use the application for several minutes each evening over many months.
+
+The application should never require the parent to understand technical concepts such as random seeds, URL parameters, or phoneme segmentation.
+
+Advanced controls may expose these concepts unobtrusively.
+
+⸻
+
+4. Educational methodology
+
+4.1 Foundational approach
+
+Pearl Readers must prioritize:
+
+1. Phonemic awareness.
+2. Grapheme–phoneme correspondences.
+3. Blending individual sounds.
+4. Recognition of common spelling patterns.
+5. Reading familiar and unfamiliar decodable words.
+6. Cumulative review.
+7. Gradual movement into connected text.
+8. Vocabulary and meaning.
+
+Frequency alone must not determine learning order.
+
+A common but irregularly spelled word is not necessarily suitable for an early decoding exercise.
+
+4.2 Independent language curricula
+
+English and French must have independently authored word lists and difficulty progressions.
+
+The French vocabulary must not be generated by translating English words.
+
+The languages differ in:
+
+* Spelling-to-sound correspondences.
+* Silent letters.
+* Vowel patterns.
+* Syllable structures.
+* Digraphs and multiletter graphemes.
+* Word frequency.
+* Orthographic complexity.
+* Common beginner vocabulary.
+
+Each language should follow its own phonics progression, broadly aligned with beginning reading instruction.
+
+The exact instructional progression must be reviewed by someone knowledgeable about Grade 1 literacy in the relevant language.
+
+The software must not assume that an algorithm can determine instructional difficulty from word length.
+
+4.3 Word selection
+
+The complete content target is approximately 300 curated words per language.
+
+V1 ships with 100 per language.
+
+Target full-library composition:
+
+Category	Approximate target per language
+Regular, decodable words	120
+High-frequency useful words	80
+More complex spelling patterns	70
+Theme-related vocabulary	30
+Total	300
+
+The categories may overlap in meaning, but the final inventory should contain 300 distinct entries per language.
+
+Every word must be reviewed for spelling, meaning, pronunciation, segmentation, and appropriate difficulty.
+
+4.4 Difficulty progression
+
+The curriculum should distinguish between ordered instructional units and individual word difficulty.
+
+Suggested English progression:
+
+1. Early consonant–vowel–consonant patterns using taught correspondences.
+2. Additional short vowels.
+3. Beginning and ending consonant blends.
+4. Common digraphs.
+5. Longer and multisyllabic words.
+6. Common vowel teams and other vowel patterns.
+7. More complex or irregular spelling patterns.
+
+Suggested French progression:
+
+1. Simple consonant–vowel combinations using taught correspondences.
+2. Repeated and familiar syllable structures.
+3. Common consonant combinations.
+4. Multiletter vowel spellings such as ou.
+5. Other frequent graphemes such as ch, on, an, and oi, introduced according to the chosen instructional sequence.
+6. Silent letters and increasingly complex orthography.
+7. Longer words and multisyllabic reading.
+
+These are broad content categories, not a substitute for a reviewed, explicit curriculum sequence.
+
+Each word receives a difficulty level, curriculum unit, and associated spelling patterns.
+
+4.5 Correct representation of sounds
+
+The program must distinguish:
+
+* Letters.
+* Graphemes: written units representing sounds.
+* Phonemes: individual speech sounds.
+* Syllables.
+* Onset and rime.
+
+These concepts must not be treated as interchangeable.
+
+For example, English dog may be represented using:
+
+* Phoneme-aligned graphemes: d | o | g.
+* Onset/rime: d | og.
+* Syllables: dog.
+
+French papa may use syllables:
+
+* pa | pa.
+
+The application must not automatically split a word into arbitrary two-letter or three-letter groups.
+
+Every instructional split must be pre-authored and reviewed.
+
+A word may have multiple valid instructional representations.
+
+Silent letters must be identified explicitly.
+
+⸻
+
+5. Reading modes
+
+5.1 Simple Mode — Sound Explorer
+
+Purpose: help the child decode a word by examining its sound structure.
+
+Display:
+
+* One complete word.
+* One prominent pre-authored segmentation.
+* Optional grouping or spacing between segments.
+* A short parent-friendly blending instruction where useful.
+
+For example:
+
+dog
+
+d | og
+
+Or, when using phoneme-level segmentation:
+
+d | o | g
+
+Another example:
+
+papa
+
+pa | pa
+
+The application should choose the representation appropriate to the word and current instructional objective.
+
+Simple Mode rules
+
+* The segmentation must be educationally correct.
+* Segmentation must come from the word database.
+* No runtime heuristic splitting is allowed.
+* The complete word remains visible.
+* The word must use the selected letter case.
+* Colour may distinguish groups but cannot be the only grouping cue.
+* Silent letters must not be pronounced as ordinary sounds.
+* Optional audio must match the selected segmentation.
+* A parent can reveal the meaning or example on the back.
+
+The first version may standardize on one preferred split per word.
+
+Future versions may support explicit phonemes, syllables, and onset/rime choices where appropriate.
+
+5.2 Normal Mode — Word Explorer
+
+Purpose: practise reading complete words without visible decoding hints.
+
+Display:
+
+* One large complete word.
+* No segmentation by default.
+* Minimal surrounding interface.
+* An optional Help me button.
+
+The child tries to read the complete word.
+
+Selecting Help me reveals the word’s predefined decoding representation.
+
+The parent may subsequently reveal the back of the card.
+
+5.3 Important shared rules
+
+Both modes must use the same canonical word inventory.
+
+Both modes must preserve word IDs, navigation, and progress.
+
+Switching modes must not destroy the underlying reading session.
+
+Different modes may maintain independent resume positions if selected as separate adventures.
+
+⸻
+
+6. Flashcard design
+
+6.1 Flashcard states
+
+Every flashcard supports three states.
+
+State A — Front
+
+Contains:
+
+* The word.
+* Segmentation in Simple Mode.
+* Optional Help me button in Normal Mode.
+* Minimal decorative elements.
+* Controls for revealing the back and navigating.
+
+No illustrative clue should appear before the child has attempted to decode the word.
+
+State B — Hint
+
+Contains:
+
+* The complete word.
+* Its predefined decoding breakdown.
+* Optional highlighting of the current sound group.
+* Optional parent guidance.
+* A way to return to the unassisted presentation.
+
+The hint should not simply announce the answer.
+
+State C — Back
+
+Contains:
+
+* The correctly written word.
+* A recognizable illustration, where useful.
+* A short example sentence.
+* Optional pronunciation button.
+* Parent feedback controls when V2 is enabled.
+
+The back should reinforce meaning and understanding.
+
+For abstract words such as the, and, avec, or mais, illustrations may be omitted in favour of a simple contextual sentence.
+
+6.2 Flip behaviour
+
+* The card should not flip accidentally when tapping the word.
+* Flipping must be controlled by an obvious button.
+* Animations should be gentle and brief.
+* Reduced-motion preferences must be respected.
+* Revealing the back must not automatically advance the session.
+* Navigating to another word resets it to the front.
+* Navigating backward also returns to the front by default.
+
+6.3 Card typography
+
+Requirements:
+
+* Very large text.
+* Plain, child-friendly sans-serif letterforms.
+* Easily distinguishable letters.
+* Proper accented-character support.
+* Strong foreground/background contrast.
+* Responsive sizing.
+* No reliance on decorative fonts for reading words.
+* No text overlap or clipping.
+* Correct Unicode handling.
+
+Suggested starting sizes:
+
+Element	Mobile	Tablet
+Main word	64–80 px	90–120 px
+Sound groups	36–48 px	48–64 px
+Example sentence	22–26 px	26–32 px
+Primary controls	At least 48 px high	56 px or larger
+
+Use responsive clamp() values where suitable.
+
+Longer words may require smaller font sizes.
+
+The implementation must gracefully handle words longer than eight characters without horizontal scrolling or clipping.
+
+⸻
+
+7. Visual design
+
+7.1 Theme
+
+The visual identity is an underwater mermaid princess kingdom.
+
+Motifs may include:
+
+* Mermaids.
+* Seashells.
+* Pearls.
+* Seahorses.
+* Coral.
+* Gentle seaweed.
+* Starfish.
+* Moonlight.
+* Underwater castles.
+* Magical underwater creatures.
+
+Illustrations should feel welcoming, whimsical, and appropriate for young children.
+
+Avoid overly commercial, busy, or visually overwhelming designs.
+
+7.2 Day theme
+
+Suggested palette:
+
+* Warm ivory.
+* Pastel pink.
+* Soft lavender.
+* Pale turquoise.
+* Muted purple accents.
+
+Cards should use clean, high-contrast surfaces.
+
+7.3 Night theme
+
+Suggested palette:
+
+* Deep navy.
+* Muted blue.
+* Dark purple.
+* Soft lavender.
+* Warm cream lettering.
+* Subtle pearl accents.
+
+Night mode must not use excessively bright backgrounds or saturated neon accents.
+
+It should be comfortable for bedtime reading while maintaining sufficient text contrast.
+
+7.4 Theme behavior
+
+* Day/night toggle on the landing page.
+* Toggle also accessible during reading.
+* The selected preference persists locally.
+* Theme changes do not reset progress or card position.
+* Transitions should be subtle.
+* Reading text always takes priority over illustrations.
+
+7.5 Accessibility
+
+The interface must:
+
+* Meet WCAG 2.2 AA where applicable.
+* Use at least 4.5:1 contrast for ordinary text and 3:1 for large text.
+* Provide visible keyboard focus.
+* Support screen readers and meaningful accessible labels.
+* Provide large touch targets.
+* Respect prefers-reduced-motion.
+* Avoid colour-only instructional cues.
+* Avoid autoplay audio.
+* Remain usable with browser text enlargement where practical.
+* Use correct document language metadata.
+* Avoid placing essential information inside images.
+
+The interface must not depend on hover.
+
+⸻
+
+8. Landing page
+
+8.1 Purpose
+
+The landing page welcomes the child, briefly explains the activity, provides configuration controls, and makes it easy to begin or resume reading.
+
+The page should fit naturally on a phone.
+
+The most important controls should be visible without requiring advanced configuration.
+
+8.2 Primary content
+
+Top area:
+
+* Mermaid-themed welcome illustration.
+* Project title: Pearl Readers.
+* Short introduction.
+
+Suggested copy:
+
+Explore an underwater kingdom, discover new words, and collect magical pearls as you learn to read!
+
+Primary configuration:
+
+1. Language.
+2. Reading mode.
+3. Day/night theme.
+4. Reading goal.
+5. Start adventure button.
+
+If a saved session exists, also display:
+
+Continue our adventure
+
+This should be at least as prominent as starting a new session.
+
+8.3 Defaults
+
+Setting	Default
+Language	French
+Reading mode	Simple
+Theme	Night
+Letter case	Lowercase
+Ordering	Easiest to hardest
+Session goal	10
+Audio	Off until tapped
+Animations	Minimal
+Sound hint	Available on demand
+Rewards	Enabled once implemented
+
+The language default should be configurable and then remembered.
+
+8.4 Advanced settings
+
+Advanced settings must be collapsed by default.
+
+They include:
+
+Letter case
+
+* lowercase
+* UPPERCASE
+* Title Case
+
+Letter case changes presentation only, not the canonical stored words.
+
+Preserve accents and other language-specific orthography.
+
+Do not corrupt Unicode when transforming text.
+
+For example:
+
+* étoile
+* ÉTOILE
+* Étoile
+
+Apply transformations separately to displayed words, segments, and applicable sentence text.
+
+Sentence text should retain natural casing by default; the card’s letter-case setting need not force sentence casing.
+
+Ordering
+
+* Easiest to hardest.
+* Alphabetical.
+* Seeded shuffle.
+
+Advanced shuffle controls:
+
+* Numeric seed input.
+* Generate new seed.
+* Preserve current seed.
+* Display current seed.
+
+Seed 0 is valid and must not be treated as an absent value.
+
+Word selection
+
+Initially:
+
+* All available words.
+* Selected difficulty range.
+* Selected curriculum unit.
+
+Future:
+
+* Practise words needing review.
+* Explore new sounds.
+* Known patterns only.
+* Selected word family.
+
+Session goal
+
+Supported values:
+
+* 5
+* 10
+* 15
+* 20
+
+An advanced custom positive integer may be supported later, capped at a sensible maximum.
+
+Optional settings
+
+* Show example sentences.
+* Enable pronunciation controls.
+* Enable gentle animations.
+* Enable rewards.
+
+Settings not implemented in the current release must not appear as functional controls.
+
+8.5 Resume input
+
+Include a section labeled:
+
+Continue from a link or code
+
+Allow the parent to paste a previously copied session URL or supported session code.
+
+Provide clear success or error messages.
+
+Malformed inputs must never crash the application.
+
+8.6 Library link
+
+Include a secondary link:
+
+Explore all words
+
+This opens the word directory.
+
+⸻
+
+9. Reading session interface
+
+9.1 Layout priorities
+
+The reading screen must be designed mobile-first.
+
+Suggested portrait layout:
+
+1. Compact header.
+2. Progress indicator.
+3. Large central reading card.
+4. Reveal/hint controls.
+5. Large navigation controls.
+6. Secondary actions.
+
+The central word must be the dominant visual element.
+
+No scrolling should be necessary for the core reading interaction on typical modern phones, subject to browser zoom and accessibility requirements.
+
+9.2 Header
+
+Include:
+
+* Small language indicator.
+* Current mode.
+* Session progress, such as 4 / 10.
+* Home/back-to-settings control.
+
+Avoid crowded headers.
+
+9.3 Navigation
+
+Provide:
+
+Previous
+Next
+
+Next is the most prominent navigation action.
+
+Previous must remain accessible without being visually dominant.
+
+Also provide:
+
+* Flip card.
+* Help me, when applicable.
+* Copy this word.
+* Copy this adventure.
+* Finish session.
+
+Copy and other secondary actions may be placed inside a compact secondary menu.
+
+9.4 Navigation rules
+
+Next:
+
+* Advances to the next word.
+* Resets the next card to the front.
+* Updates the URL.
+* Saves the new position locally.
+* Updates session progress.
+* Does not require the card to have been flipped.
+
+Previous:
+
+* Moves to the preceding word.
+* Resets card presentation.
+* Updates URL and local position.
+
+At the first word, Previous is disabled.
+
+At the final word, Next becomes Finish or opens the completion screen.
+
+A child must not lose progress when leaving the site accidentally.
+
+9.5 Progress
+
+Display the current position clearly.
+
+For example:
+
+Pearl 7 of 10
+
+A small pearl progress visualization may supplement the numeric indicator.
+
+Do not use countdown timers.
+
+Do not show failure percentages or competitive scores.
+
+9.6 Session completion
+
+A session completes when its configured number of word presentations has been reached and the parent or child selects Finish.
+
+Completion screen:
+
+* Gentle congratulatory message.
+* Number of cards visited.
+* A mermaid or pearl illustration.
+* Resume full deck button.
+* Return home button.
+* Reward unlock presentation when available.
+
+Do not equate finishing a session with mastering its words.
+
+Sessions must be allowed to end early.
+
+Early exits preserve progress but should not falsely report a completed goal.
+
+⸻
+
+10. Word directory
+
+10.1 Purpose
+
+Provide a browsable, structured list of all words included in the application.
+
+The directory serves both parents and developers.
+
+10.2 Features
+
+* Language selection.
+* Search input.
+* Alphabetical sorting.
+* Difficulty sorting.
+* Curriculum-unit filtering.
+* Optional pattern filtering.
+* Direct link to every word.
+* Word count.
+* Clear indication of current filters.
+
+10.3 Layout
+
+On mobile:
+
+Use a tidy, responsive list or compact table with large tappable rows.
+
+On tablet/desktop:
+
+A conventional table is acceptable.
+
+Suggested columns:
+
+Word	Level	Pattern	Open
+
+Rows should link directly to a stable individual card URL.
+
+Searching for a French word must support accented characters.
+
+A diacritic-insensitive search option is acceptable, provided the displayed spelling remains correct.
+
+10.4 Word directory rules
+
+* All words must be discoverable.
+* Every word must have a stable ID.
+* Filter changes should not reload the page.
+* Direct links must work after refresh.
+* The directory must not modify the current active session merely because a word was opened.
+* Returning from a direct word view should retain the prior session when available.
+
+⸻
+
+11. Word data model
+
+The word library is educational content and must remain separate from rendering logic.
+
+Use JSON files in the repository.
+
+Suggested layout:
+
+src/data/
+  en.json
+  fr.json
+  curriculum-en.json
+  curriculum-fr.json
+
+11.1 Suggested word schema
+
+Illustrative example:
+
+{
+  "id": "fr-chat",
+  "language": "fr",
+  "word": "chat",
+  "curriculumUnit": "fr-02",
+  "difficulty": 2,
+  "frequencyRank": 120,
+  "categories": ["animal", "common"],
+  "regularity": "partially_regular",
+  "patterns": ["ch"],
+  "decoding": {
+    "preferred": "graphemes",
+    "graphemes": [
+      {
+        "text": "ch",
+        "spoken": true
+      },
+      {
+        "text": "a",
+        "spoken": true
+      },
+      {
+        "text": "t",
+        "spoken": false
+      }
+    ],
+    "syllables": ["chat"],
+    "onsetRime": null
+  },
+  "example": "Le chat dort.",
+  "image": "/images/words/fr-chat.webp",
+  "audio": null
+}
+
+This schema is illustrative; the final schema should explicitly support reviewed grapheme-to-phoneme annotations where phoneme playback or more sophisticated highlighting is required.
+
+Do not infer phonemes merely by iterating over grapheme strings.
+
+11.2 Required fields
+
+For V1:
+
+* id
+* language
+* word
+* curriculumUnit
+* difficulty
+* patterns
+* decoding
+* example
+
+Images and audio may be optional.
+
+11.3 Validation
+
+Implement a build-time content validator.
+
+It must verify:
+
+* Every ID is unique.
+* Language codes are valid.
+* Required fields exist.
+* Difficulty values are valid.
+* Referenced curriculum units exist.
+* Every word has at least one usable instructional representation.
+* Concatenated spelling segments reconstruct the original word where applicable.
+* All referenced asset paths exist.
+* No broken word links exist.
+* Sorting metadata is consistent.
+* No unintentional duplicate word entries exist.
+
+Unicode normalization should be consistent, preferably NFC.
+
+Words must not silently fall back to arbitrary segmentation when annotations are missing.
+
+Invalid content should fail validation rather than produce incorrect instruction.
+
+⸻
+
+12. Ordering and deterministic decks
+
+12.1 Core requirement
+
+A parent must be able to return to the exact same word position, even after several days.
+
+Ordered sessions must be deterministic.
+
+The same configuration, vocabulary version, deck algorithm version, and shuffle seed must generate the same ordered sequence.
+
+12.2 Supported orders
+
+Learning order
+
+Sort by:
+
+1. Curriculum unit sequence.
+2. Word instructional difficulty within that unit.
+3. Stable curriculum order.
+4. Stable word ID as final tiebreaker.
+
+Do not rely on JavaScript object iteration order to define the curriculum.
+
+Alphabetical order
+
+Use an explicit locale-aware comparator:
+
+* English: en
+* French: fr
+
+Use stable word IDs as a tiebreaker.
+
+Random order
+
+Use a documented, deterministic pseudo-random-number generator.
+
+The implementation must not rely on Math.random() to reproduce a shuffled deck.
+
+Recommended:
+
+* An explicitly implemented, tested 32-bit seeded PRNG.
+* Fisher–Yates shuffle.
+* Explicit input ordering before shuffling.
+
+The seed must support 0.
+
+Changing the seed must produce a reproducible new permutation.
+
+Random ordering should be constrained to an appropriate selected difficulty range, rather than automatically mixing every level.
+
+12.3 Versioning
+
+Define:
+
+* Vocabulary dataset version.
+* Deck generation algorithm version.
+* Curriculum version.
+
+For shareable reproducibility, a session should identify the exact deck definition or carry a compact snapshot of the selected word IDs.
+
+An updated vocabulary library must not silently change an existing saved adventure.
+
+Preferred approach:
+
+* Store an explicit ordered word-ID snapshot locally.
+* Use compact, versioned URL descriptors for standard published decks.
+* Keep immutable published deck manifests for previously shared descriptors.
+* Detect unsupported old deck versions and explain that the original sequence cannot be recovered rather than silently substituting another.
+
+Permanent reproducibility for arbitrary custom subsets requires a complete word-ID list or a server-stored session; a seed alone is insufficient if the underlying deck changes.
+
+For V1, published versioned decks and stable vocabulary manifests are sufficient.
+
+⸻
+
+13. URL routing and shareable links
+
+Use the History API with client-side routing.
+
+No full page refresh should occur between cards.
+
+Vite and Cloudflare Pages should serve the application entry point for supported deep links.
+
+13.1 Routes
+
+Home
+
+/
+
+Library
+
+/words
+
+Individual card
+
+/card?lang=fr&id=fr-chat
+
+Reading session
+
+/play?lang=fr&mode=simple&order=learn&case=lower&deck=v1&i=42
+
+Shuffled session
+
+/play?lang=en&mode=normal&order=shuffle&seed=2&case=lower&deck=v1&i=42
+
+Rewards
+
+/rewards
+
+URLs shown above are illustrative. The implementation should define and test one canonical query-parameter schema.
+
+13.2 URL rules
+
+* The URL must identify the current state needed to resume an adventure.
+* Session goal and selected difficulty scope must be included in shareable session state, directly or through a versioned deck descriptor.
+* i is a zero-based index internally.
+* Displayed progress must be one-based.
+* The URL must update when the current card changes.
+* Back and Forward browser navigation must restore appropriate application state.
+* A reloaded deep link must render correctly.
+* Invalid parameters must be handled safely.
+* Unknown word IDs must display a friendly error.
+* Missing optional parameters should use documented defaults.
+
+13.3 History behavior
+
+Use history.pushState() for meaningful navigation between cards, so browser Back works.
+
+Use history.replaceState() for canonicalization or non-navigational updates.
+
+Implement and test popstate handling.
+
+Avoid creating a browser-history entry for every purely cosmetic setting adjustment.
+
+13.4 Copy controls
+
+Two separate actions are required:
+
+Copy this word
+
+Copies a stable individual-card permalink.
+
+Copy this adventure
+
+Copies the current session, configuration, deck identity, and exact position.
+
+Use the Clipboard API when available.
+
+Provide a safe fallback or manually selectable link when clipboard access is unavailable.
+
+Success feedback should be brief and clear.
+
+13.5 Resume by pasted link
+
+The home page must allow a parent to paste a full session URL.
+
+V1 does not need a proprietary short-code service.
+
+A short-code format may be added later if it can be decoded locally and contains sufficient state.
+
+A simple numeric seed is not itself a full resume code.
+
+⸻
+
+14. Persistence
+
+14.1 Storage
+
+Use localStorage for:
+
+* Global preferences.
+* Language preferences.
+* Session configuration.
+* Session deck snapshot.
+* Current position.
+* Last active session.
+* Completion history.
+* Future review state.
+* Future reward unlock state.
+
+Use versioned storage keys or schema metadata.
+
+14.2 Persistence behavior
+
+* Save after each meaningful navigation.
+* Save after configuration changes.
+* Save before leaving a session where practical.
+* Do not rely on unload events as the sole persistence mechanism.
+* Reloading the page should preserve the active position.
+* Closing and reopening the browser should allow continuation.
+* Navigation through a permalink should prioritize explicit URL state over unrelated local state.
+
+14.3 Multiple sessions
+
+Store separate progress identities for different decks and language/mode combinations.
+
+A French session must not overwrite the English resume position.
+
+A standalone card visit must not reset active-session progress.
+
+14.4 Privacy limitations
+
+All progress is device-local.
+
+Explain this clearly:
+
+Your progress stays on this device. Copy your adventure link to continue somewhere else.
+
+A copied link can restore the session configuration and position, but it does not automatically transfer private review histories or unlocked rewards.
+
+Browser storage may be cleared by the browser or user.
+
+Do not promise guaranteed permanent persistence.
+
+⸻
+
+15. Parent feedback and review (V2)
+
+15.1 Feedback controls
+
+Once the back is revealed, optionally display:
+
+* Practise again.
+* Got it!
+
+Controls are parent-operated.
+
+They must not appear as punitive scores.
+
+15.2 Review model
+
+Record:
+
+* Word ID.
+* Date last practised.
+* Number of practice encounters.
+* Number of successful independent readings.
+* Number of assisted readings.
+* Whether a word requires review.
+* Suggested next review date.
+
+Review history should be distinct from session navigation history.
+
+15.3 Review scheduling
+
+Implement a simple, transparent initial review rule rather than a complicated adaptive algorithm.
+
+Suggested behavior:
+
+* Practise again: revisit within the current or next session.
+* Got it: review on a later day.
+* Repeated independent success over multiple days: increase the interval.
+* Difficulty after a previously successful reading: shorten the interval.
+
+These intervals are configurable implementation defaults, not claims of an optimal clinical learning schedule.
+
+15.4 Parent progress page
+
+Future progress view may show:
+
+* Words practised.
+* Patterns practised.
+* Words due for review.
+* Recent session history.
+* French and English progress separately.
+
+Avoid ranking the child against other children.
+
+⸻
+
+16. Word-family activities (V2)
+
+Introduce optional mini-activities showing related word patterns.
+
+Examples:
+
+English:
+
+cat
+bat
+mat
+sat
+
+French:
+
+roue
+poule
+bouche
+
+The French example illustrates the shared ou grapheme, not a single rime family.
+
+Activities should explicitly identify the shared pattern.
+
+Do not present a word family unless its spelling relationships have been reviewed.
+
+Optional later activity:
+
+Change one sound
+
+cat → bat → bag → bug
+
+Allow children to notice how letters and sounds change.
+
+⸻
+
+17. Audio (V2)
+
+Audio must be optional and initiated by the user.
+
+Potential audio types:
+
+* Whole-word pronunciation.
+* Individual speech sounds.
+* Segmented blending.
+* Short example sentences.
+
+Prefer reviewed recorded audio for isolated phonemes and phoneme blending.
+
+Do not assume built-in browser speech synthesis can accurately produce isolated speech sounds in either language.
+
+Browser text-to-speech may be used as a clearly documented fallback for whole-word playback, where supported.
+
+Audio must never interrupt the child while they are attempting a word.
+
+⸻
+
+18. Reward system (V3)
+
+18.1 Philosophy
+
+Rewards celebrate participation.
+
+The child should not have to achieve perfect accuracy to receive a reward.
+
+No competitive leaderboards, loss of points, or daily streak penalties.
+
+18.2 Narrative
+
+An underwater kingdom has lost its magical pearls.
+
+Each reading adventure helps restore the kingdom.
+
+The mermaid princess gradually discovers underwater treasures and new locations.
+
+18.3 Reward content
+
+Create twelve bespoke colouring pages.
+
+Suggested scenes:
+
+1. The Lost Pearl.
+2. The Friendly Seahorse.
+3. The Secret Coral Garden.
+4. The Moonlit Shell.
+5. The Starfish Parade.
+6. The Hidden Mermaid Grotto.
+7. The Turtle’s Treasure.
+8. The Singing Whales.
+9. The Crystal Reef.
+10. The Enchanted Palace.
+11. The Sea Princess’s Crown.
+12. The Kingdom of Pearls.
+
+Each should be:
+
+* Black-and-white.
+* Printable.
+* Suitable for a six-year-old.
+* Clear outlined artwork.
+* Detailed enough to be interesting but not overwhelming.
+* Free of watermarks.
+* Optimized for letter-size paper, with A4-friendly margins.
+
+18.4 Unlock rules
+
+A reward unlocks after completing a configurable number of cards in a qualifying reading session.
+
+Default: 10 cards.
+
+The reward threshold may use the configured session goal.
+
+Rewards should depend on completed participation, not correctness.
+
+Repeat visits to the same card must not permit accidental multiple unlocks within one session.
+
+18.5 Reward experience
+
+On completion:
+
+* Show a gentle pearl animation.
+* Announce the unlocked page.
+* Offer View colouring page.
+* Offer Print.
+* Offer Back to reading.
+
+Unlocked content is stored locally.
+
+No server-side progress is necessary.
+
+If browser storage is cleared, unlock state may be lost.
+
+Provide parents with a way to restore previously unlocked rewards without requiring children to repeat completed work.
+
+⸻
+
+19. Technical architecture
+
+19.1 Stack
+
+Use:
+
+* Vite.
+* Vanilla JavaScript with ES modules.
+* Modern CSS.
+* JSON content files.
+* Vitest for unit tests.
+* Playwright for browser tests.
+* Cloudflare Pages for static hosting.
+
+Do not introduce a frontend framework unless a concrete implementation need justifies it.
+
+Do not introduce a backend.
+
+Do not use Cloudflare D1, Workers, R2, or authentication for V1.
+
+19.2 Single-page application
+
+The application must:
+
+* Load once.
+* Navigate between views without full reloads.
+* Respond immediately to card navigation.
+* Update URLs using the History API.
+* Work when loaded directly at supported routes.
+* Preserve and restore UI state predictably.
+
+Views should be modular and independent of routing mechanics.
+
+19.3 Proposed repository
+
+pearl-readers/
+├── README.md
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── index.html
+├── public/
+│   ├── favicon.svg
+│   ├── manifest.webmanifest
+│   ├── icons/
+│   ├── images/
+│   │   ├── theme/
+│   │   └── words/
+│   ├── audio/
+│   └── rewards/
+├── src/
+│   ├── main.js
+│   ├── app.js
+│   ├── router.js
+│   ├── state.js
+│   ├── storage.js
+│   ├── deck.js
+│   ├── shuffle.js
+│   ├── progress.js
+│   ├── content.js
+│   ├── styles/
+│   │   ├── base.css
+│   │   ├── themes.css
+│   │   ├── components.css
+│   │   └── responsive.css
+│   ├── data/
+│   │   ├── en.json
+│   │   ├── fr.json
+│   │   ├── curriculum-en.json
+│   │   └── curriculum-fr.json
+│   ├── components/
+│   │   ├── flashcard.js
+│   │   ├── progress-indicator.js
+│   │   ├── word-segments.js
+│   │   ├── settings.js
+│   │   └── navigation.js
+│   └── views/
+│       ├── home.js
+│       ├── reader.js
+│       ├── word-detail.js
+│       ├── directory.js
+│       ├── completion.js
+│       └── rewards.js
+├── scripts/
+│   └── validate-content.js
+└── tests/
+    ├── unit/
+    └── browser/
+
+Files may be reorganized if necessary, but educational content, routing, state, storage, and UI should remain cleanly separated.
+
+19.4 Dependencies
+
+Prefer minimal runtime dependencies.
+
+Use native browser APIs where practical.
+
+Avoid large component libraries, global state frameworks, UI kits, and heavy animation packages.
+
+Do not use external CDNs at runtime.
+
+Bundle necessary assets locally.
+
+19.5 Build commands
+
+Provide:
+
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run test
+npm run test:e2e
+npm run validate:content
+
+npm run build must fail when content validation fails.
+
+⸻
+
+20. Offline support and PWA
+
+The site should be installable as a Progressive Web App.
+
+Include:
+
+* Web app manifest.
+* Application icons.
+* Service worker.
+* Offline caching strategy.
+* Standalone display mode.
+* Theme colour metadata.
+
+The site should remain usable after its required content and assets have been cached.
+
+Recommended:
+
+* Precache application shell and word datasets.
+* Precache core theme assets.
+* Cache optional illustration and reward assets according to storage constraints.
+* Avoid assuming every browser permits unlimited offline storage.
+
+Any missing optional asset must degrade gracefully.
+
+Do not claim offline readiness until it has been tested by loading the installed application with network access disabled.
+
+Service-worker updates must not unexpectedly destroy an active session or invalidate saved decks.
+
+⸻
+
+21. Cloudflare Pages deployment
+
+21.1 Hosting
+
+Deploy from a private Git repository through Cloudflare Pages.
+
+Use a modern Git-integrated Cloudflare Pages workflow, not a legacy application template or deprecated configuration path.
+
+The final deployable output is static.
+
+21.2 Build configuration
+
+Suggested:
+
+Build command: npm run build
+Output directory: dist
+
+Pin a supported Node.js version in the repository or deployment settings.
+
+Commit the lockfile.
+
+21.3 Routing
+
+Configure SPA fallback behavior so direct requests to /play, /card, /words, and /rewards load correctly.
+
+Avoid creating a fallback configuration that accidentally masks missing static assets.
+
+Test direct deep links on the deployed site, not only in local development.
+
+21.4 Environment variables
+
+No environment variables or secrets should be required for V1.
+
+21.5 Security
+
+* No personal data collection.
+* No analytics by default.
+* No cookies required.
+* No tracking pixels.
+* No advertising.
+* No unnecessary third-party scripts.
+* All external navigation, if any, clearly identified.
+* Sanitize or safely encode user-controlled URL parameters.
+* Avoid inserting untrusted values through unsafe HTML operations.
+
+Prefer restrictive security headers compatible with the application.
+
+⸻
+
+22. Error handling
+
+The application must handle:
+
+* Invalid session URLs.
+* Unknown word IDs.
+* Invalid languages.
+* Invalid modes.
+* Out-of-range positions.
+* Missing images.
+* Unsupported audio.
+* Unavailable localStorage.
+* Clipboard failures.
+* Corrupted local data.
+* Old deck versions.
+* Empty word filters.
+* Invalid shuffle seeds.
+* Browser Back/Forward navigation.
+* Missing optional offline assets.
+
+Errors must be understandable to a parent.
+
+Suggested wording:
+
+We couldn’t find that adventure. You can start a new one or go back to your saved reading session.
+
+Avoid technical stack traces or developer-oriented messages in the UI.
+
+Unexpected failures should not silently erase progress.
+
+⸻
+
+23. Testing requirements
+
+23.1 Unit tests
+
+Cover:
+
+* Dataset validation.
+* Unique ID enforcement.
+* Correct decoding segmentation.
+* Locale-aware sorting.
+* Difficulty sorting.
+* Stable sorting tiebreakers.
+* Seeded random generation.
+* Shuffle determinism.
+* Seed zero.
+* URL serialization.
+* URL parsing.
+* State restoration.
+* Letter-case transformations.
+* Session goal boundaries.
+* Dataset version handling.
+
+23.2 Browser tests
+
+Test:
+
+1. Launch a new French Simple Mode session.
+2. Advance multiple cards.
+3. Copy a session link.
+4. Reload and restore the exact card.
+5. Open the copied link in a fresh browser context.
+6. Verify the same word and settings.
+7. Use Previous and Next.
+8. Use browser Back and Forward.
+9. Change day/night theme.
+10. Change letter case.
+11. Open a direct word link.
+12. Return to the active session.
+13. Browse and filter the word directory.
+14. Complete a configured session.
+15. Resume a different English session.
+16. Verify French progress is preserved.
+17. Open a malformed URL.
+18. Run with offline mode enabled after caching.
+19. Test common phone and tablet viewports.
+
+23.3 Educational content tests
+
+Validate that no instructional segmentation is created from unreviewed runtime heuristics.
+
+Verify that silent letters are not treated as pronounced sounds.
+
+Verify correct display of French accents and Unicode transformations.
+
+All starter words and annotations require human review.
+
+23.4 Usability testing
+
+Test with an actual parent and young child.
+
+Observe:
+
+* Can the child identify the main reading word?
+* Can the child find Next?
+* Can the parent reveal a hint quickly?
+* Are control labels understandable?
+* Is the child distracted by decorations?
+* Does the interface work comfortably at bedtime?
+* Can the parent resume tomorrow without explanation?
+* Does switching languages cause confusion?
+* Is the experience enjoyable without rewards?
+
+Iterate based on observation rather than adding complexity.
+
+⸻
+
+24. Performance requirements
+
+Targets:
+
+* Small JavaScript bundle.
+* No large runtime dependencies.
+* Fast initial rendering on ordinary mobile hardware.
+* Immediate card navigation.
+* No network request required for each card.
+* Minimal layout shifts.
+* Images sized and compressed appropriately.
+* Lazy loading for nonessential illustrations.
+* No background video.
+* No heavyweight animation framework.
+
+The main reading experience must remain functional even when decorative image loading fails.
+
+⸻
+
+25. Content authoring guidelines
+
+Every included word must have:
+
+1. Correct orthography.
+2. Stable unique ID.
+3. Appropriate language assignment.
+4. Reviewed curriculum position.
+5. Correct instructional splitting.
+6. Appropriate difficulty.
+7. An age-appropriate example sentence.
+8. Appropriate artwork where available.
+
+Preferred words:
+
+* Familiar to young children.
+* Useful in everyday language.
+* Suitable for the chosen sound patterns.
+* Free of unnecessary ambiguity.
+* Engaging when possible.
+
+Avoid introducing many untaught correspondences at once.
+
+The word list should include a variety of subjects and interests rather than only mermaid-themed vocabulary.
+
+Princess and ocean words may appear in later, theme-related sections.
+
+The first 100 words per language must form a coherent learning progression, not merely a selection of random common words.
+
+Where a word is not fully decodable using previously taught patterns, identify that explicitly in its metadata.
+
+⸻
+
+26. Acceptance criteria for V1
+
+V1 is complete only when all of the following are true.
+
+Application
+
+* [ ]	Runs locally with npm run dev.
+* [ ]	Builds successfully with npm run build.
+* [ ]	Deploys to Cloudflare Pages as a static application.
+* [ ]	Requires no backend or database.
+* [ ]	Works on modern mobile and tablet browsers.
+* [ ]	Deep links survive browser refreshes.
+
+Learning content
+
+* [ ]	Contains 100 curated English words.
+* [ ]	Contains 100 curated French words.
+* [ ]	Includes valid reviewed decoding annotations.
+* [ ]	Uses independent language curricula.
+* [ ]	Does not automatically invent sound splits.
+* [ ]	Correctly handles accented characters.
+
+Interface
+
+* [ ]	Two reading modes.
+* [ ]	Day/night toggle.
+* [ ]	Three letter-case options.
+* [ ]	Large flashcards.
+* [ ]	Front/hint/back card states.
+* [ ]	Previous/Next navigation.
+* [ ]	Easy session completion.
+* [ ]	Clearly displayed progress.
+* [ ]	Optional advanced settings.
+* [ ]	Mobile-first responsive design.
+* [ ]	Underwater mermaid theme.
+
+Ordering and navigation
+
+* [ ]	Learning order works.
+* [ ]	Alphabetical order works.
+* [ ]	Seeded shuffle is deterministic.
+* [ ]	Seed zero works.
+* [ ]	Same versioned deck and seed reproduce the same word sequence.
+* [ ]	Every word has a direct URL.
+* [ ]	Every session position has a shareable URL.
+* [ ]	Browser Back/Forward works.
+* [ ]	Page refresh preserves explicitly linked state.
+
+Persistence
+
+* [ ]	Settings persist locally.
+* [ ]	Session progress persists locally.
+* [ ]	French and English progress remain independent.
+* [ ]	Continue our adventure works.
+* [ ]	Copy word link works.
+* [ ]	Copy adventure link works.
+* [ ]	Pasted session links restore correctly.
+* [ ]	Corrupted storage does not crash the app.
+
+Directory
+
+* [ ]	All words are listed.
+* [ ]	Search works.
+* [ ]	Language filtering works.
+* [ ]	Difficulty sorting works.
+* [ ]	Every directory word links to its card.
+
+Quality
+
+* [ ]	Content validation passes.
+* [ ]	Unit tests pass.
+* [ ]	Browser navigation tests pass.
+* [ ]	Keyboard navigation works.
+* [ ]	Reduced-motion mode works.
+* [ ]	No essential controls rely on hover.
+* [ ]	No essential user information is sent to external services.
+* [ ]	Offline operation works after successful caching.
+
+⸻
+
+27. Implementation guidance for the development agent
+
+Implement V1 first.
+
+Do not introduce V2 or V3 functionality until the core reading experience is working and tested.
+
+Prioritize correctness of reading content, deterministic deck generation, session restoration, and mobile usability over visual polish.
+
+Suggested development order:
+
+Step 1 — Project foundation
+
+Create the Vite project, routing, build configuration, and tests.
+
+Step 2 — Content schema
+
+Define and validate language curricula and word records.
+
+Step 3 — Deck engine
+
+Implement curriculum order, alphabetical order, deterministic shuffle, filtering, and versioning.
+
+Step 4 — Routing and persistence
+
+Implement session descriptors, direct-card URLs, History API navigation, local storage, and resume.
+
+Step 5 — Flashcard experience
+
+Implement Simple Mode, Normal Mode, hints, card backs, and navigation.
+
+Step 6 — Landing page and directory
+
+Implement configuration, continue flow, word browsing, search, and pasted links.
+
+Step 7 — Visual design
+
+Introduce the underwater kingdom design while preserving strong readability and calm bedtime presentation.
+
+Step 8 — PWA and deployment
+
+Implement offline support, installability, and Cloudflare Pages configuration.
+
+Step 9 — Quality assurance
+
+Run automated tests and conduct real-device usability testing.
+
+The developer should write maintainable, readable code, keep dependencies minimal, and document technical decisions.
+
+Do not introduce avoidable abstraction or infrastructure.
+
+⸻
+
+28. Definition of success
+
+Pearl Readers succeeds when a parent can open the website with a child, select French or English, begin reading within seconds, practise ten appropriately challenging words, stop whenever needed, and return the following evening to exactly where they left off.
+
+The child should feel encouraged, comfortable making mistakes, and excited to return.
+
+The parent should never need to manage accounts, troubleshoot synchronization, or remember which word came next.
+
+The mermaid kingdom provides atmosphere and delight.
+
+The carefully sequenced decoding practice provides the educational value.
+
+The magic is in making something difficult feel approachable, one word and one pearl at a time.
+
+⸻
+
+End of specification — Pearl Readers v1.0
