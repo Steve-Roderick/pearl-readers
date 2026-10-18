@@ -671,3 +671,69 @@ test("top language switching resumes independent reading positions and works in 
   await page.getByRole("button", { name: "English", exact: true }).click();
   await expect(word(page)).toHaveText("mat");
 });
+
+test("story arrows cycle through ten titles without disturbing Home settings or parent input", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Math.random = () => 0;
+  });
+  await page.goto("/");
+  await expect(page.locator("#story-title")).toHaveText(
+    "Perle et les étoiles perdues",
+  );
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(page.locator("#story-title")).toHaveText(
+    "Pearl and the Lost Stars",
+  );
+  await page.selectOption("#goal", "15");
+  await page.locator("#adventure-link").fill("a parent’s unfinished link");
+  const before = await stored(page);
+  const titles = new Set();
+  for (let index = 0; index < 10; index++) {
+    titles.add(await page.locator("#story-title").textContent());
+    await expect(page.locator(".story-position")).toHaveText(
+      `Story ${index + 1} / 10`,
+    );
+    await page.getByRole("button", { name: "Next story", exact: true }).click();
+  }
+  expect(titles.size).toBe(10);
+  await expect(page.locator("#story-title")).toHaveText(
+    "Pearl and the Lost Stars",
+  );
+  await page
+    .getByRole("button", { name: "Previous story", exact: true })
+    .click();
+  await expect(page.locator(".story-position")).toHaveText("Story 10 / 10");
+  await expect(page.locator("#goal")).toHaveValue("15");
+  await expect(page.locator("#adventure-link")).toHaveValue(
+    "a parent’s unfinished link",
+  );
+  expect(await stored(page)).toEqual(before);
+});
+
+test("a full page load picks a fresh random story; language and theme changes keep the selected story", async ({
+  page,
+}) => {
+  await page.addInitScript(() => {
+    Math.random = () =>
+      Number(sessionStorage.getItem("test-story-random") ?? 0);
+  });
+  await page.goto("/");
+  await expect(page.locator(".story-position")).toHaveText("Histoire 1 / 10");
+  await page.evaluate(() =>
+    sessionStorage.setItem("test-story-random", "0.99"),
+  );
+  await page.reload();
+  await expect(page.locator(".story-position")).toHaveText("Histoire 10 / 10");
+  await button(page, "theme").click();
+  await expect(page.locator(".story-position")).toHaveText("Histoire 10 / 10");
+  await page.getByRole("button", { name: "English", exact: true }).click();
+  await expect(page.locator("#story-title")).toHaveText(
+    "The Pearl and the Sleeping Gate",
+  );
+  await page.getByRole("button", { name: "Next story", exact: true }).click();
+  await expect(page.locator(".story-position")).toHaveText("Story 1 / 10");
+  await page.reload();
+  await expect(page.locator(".story-position")).toHaveText("Story 10 / 10");
+});

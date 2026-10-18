@@ -39,6 +39,13 @@ the translation immediately. Translations are local, work offline, and do not
 change the reading deck or progress. They may be short phrases when the meaning
 needs one. No word illustrations or audio are required in this release.
 
+Home opens with one of ten magical mermaid rescue stories, chosen randomly on each
+full page load. The small previous/next arrows cycle through all ten. Each story
+has a large title and child-readable text in both languages; switching language
+keeps the same story. Story selection is atmosphere and does not alter the reading
+deck, settings, or saved progress. These fictional introductions are shared-reading
+text, not a claim of independently decodable practice.
+
 ## Build and verify
 
 ```sh

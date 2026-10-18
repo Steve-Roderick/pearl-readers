@@ -1373,18 +1373,93 @@ h2,
   text-decoration: underline;
   text-underline-offset: 4px;
 }
-.language-button:hover { color: var(--text); }
-.site-header nav { gap: 16px; }
-.nav-icon { display: none; width: 24px; height: 24px; }
+.language-button:hover {
+  color: var(--text);
+}
+.site-header nav {
+  gap: 16px;
+}
+.nav-icon {
+  display: none;
+  width: 24px;
+  height: 24px;
+}
 @media (max-width: 800px) {
-  .site-header { flex-wrap: wrap; row-gap: 8px; }
-  .site-header nav { flex-wrap: wrap; }
+  .site-header {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+  .site-header nav {
+    flex-wrap: wrap;
+  }
 }
 @media (max-width: 560px) {
-  .site-header nav { gap: 6px; }
-  .site-header .nav-text { display: none; }
-  .site-header .nav-icon { display: block; }
-  .site-header .nav-link { min-height: 32px; }
-  .site-header .theme-button { width: 32px; height: 32px; }
-  .site-header .theme-button svg { width: 18px; height: 18px; }
+  .site-header nav {
+    gap: 6px;
+  }
+  .site-header .nav-text {
+    display: none;
+  }
+  .site-header .nav-icon {
+    display: block;
+  }
+  .site-header .nav-link {
+    min-height: 32px;
+  }
+  .site-header .theme-button {
+    width: 32px;
+    height: 32px;
+  }
+  .site-header .theme-button svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Large, short story passages invite a child and parent to read together. */
+.story-selector {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.story-arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  min-height: 36px;
+  flex: none;
+  border: 1px solid var(--border-strong);
+  border-radius: 50%;
+  color: var(--text);
+  background: transparent;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+.story-arrow:hover {
+  background: var(--hover);
+}
+.story-position {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.story-hero h1 {
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+  margin-bottom: 24px;
+}
+.story-text {
+  font-size: clamp(1.4rem, 2vw, 1.7rem);
+  line-height: 1.65;
+}
+.story-text p + p {
+  margin-top: 0.8em;
+}
+.story-hero .hero-art {
+  align-self: center;
+}
+@media (max-width: 560px) {
+  .story-hero .hero-art {
+    margin-top: 12px;
+  }
 }

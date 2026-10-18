@@ -18,6 +18,10 @@ import {
 } from "./router.js";
 import { createStorage } from "./storage.js";
 import { messages } from "./i18n.js";
+import stories from "./data/stories.json";
+
+// Pick once per page load; settings and language changes keep the chosen story.
+let storyIndex = Math.floor(Math.random() * stories.length);
 
 const app = document.querySelector("#app");
 let storageFailed = false,
@@ -83,6 +87,13 @@ function shell(body) {
   document.title = `Pearl Readers · ${lang() === "fr" ? "Un mot, une perle" : "One word, one pearl"}`;
   return `<div class="page ${route.view === "play" || route.view === "card" ? "reading-page" : ""}"><header class="site-header"><a class="brand" href="/" data-nav aria-label="Pearl Readers — ${esc(t("home"))}">${icon}<span>Pearl Readers<small>${esc(t("tagline"))}</small></span></a><nav aria-label="${esc(t("actions"))}"><div class="language-switch" role="group" aria-label="${esc(t("language"))}">${action("language", "EN", "language-button", `data-language="en" lang="en" aria-label="English" title="English" aria-pressed="${lang() === "en"}"`)}${action("language", "FR", "language-button", `data-language="fr" lang="fr" aria-label="Français" title="Français" aria-pressed="${lang() === "fr"}"`)}</div><a class="nav-link" href="/words?lang=${lang()}" data-nav aria-label="${esc(t("library"))}" title="${esc(t("library"))}"><span class="nav-text">${esc(t("library"))}</span><svg class="nav-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 5v15M3 4c4-1 6 0 9 2 3-2 5-3 9-2v14c-4-1-6 0-9 2-3-2-5-3-9-2Z"/></svg></a><button type="button" class="theme-button" data-action="theme" aria-label="${esc(t("theme"))}" title="${esc(t("theme"))}">${themeIcon()}</button></nav></header>${storageFailed ? `<p class="storage-warning" role="status">${esc(t("notSaved"))}</p>` : ""}<main id="main" tabindex="-1">${body}</main>${footer()}</div><dialog id="copy-dialog"><form method="dialog"><h2>${esc(t("manualCopy"))}</h2><textarea id="copy-link" readonly aria-label="${esc(t("manualCopy"))}"></textarea><button class="primary">${esc(t("close"))}</button></form></dialog>`;
 }
+function storyContent() {
+  const story = stories[storyIndex][lang()];
+  return `<h1 id="story-title">${esc(story.title)}</h1><div class="story-text">${story.paragraphs.map((paragraph) => `<p>${esc(paragraph)}</p>`).join("")}</div>`;
+}
+function storyPosition() {
+  return `${t("story")} ${storyIndex + 1} / ${stories.length}`;
+}
 function home() {
   const c = store.preferences;
   let deck = [],
@@ -106,7 +117,7 @@ function home() {
         record.config.lang === c.lang && record.config.mode === c.mode,
     ) ??
     store.last;
-  return `<section class="hero"><div class="hero-copy"><p class="eyebrow"><span class="tiny-star">✧</span> ${esc(t("eyebrow"))}</p><h1>${t("hero").split("\n").map(esc).join("<br>")}</h1><p class="intro">${esc(t("intro"))}</p><a href="#adventure" class="text-link hero-link">${esc(t("begin"))} <span aria-hidden="true">↘</span></a><p class="quiet-note">${esc(t("noRush"))}</p></div><div class="hero-art"><img src="/kingdom.svg" alt="" width="600" height="460"><span class="art-caption">${esc(t(store.preferences.theme === "night" ? "night" : "day"))} · Pearl Readers</span></div></section>
+  return `<section class="hero story-hero" aria-labelledby="story-title"><div class="hero-copy"><div class="story-selector">${action("previous-story", "‹", "story-arrow", `aria-label="${esc(t("previousStory"))}" aria-controls="story-content"`)}<p class="story-position" role="status">${esc(storyPosition())}</p>${action("next-story", "›", "story-arrow", `aria-label="${esc(t("nextStory"))}" aria-controls="story-content"`)}</div><div id="story-content">${storyContent()}</div><a href="#adventure" class="text-link hero-link">${esc(t("begin"))} <span aria-hidden="true">↘</span></a><p class="quiet-note">${esc(t("noRush"))}</p></div><div class="hero-art"><img src="/kingdom.svg" alt="" width="600" height="460"><span class="art-caption">${esc(t(store.preferences.theme === "night" ? "night" : "day"))} · Pearl Readers</span></div></section>
   <section id="adventure" class="setup-panel" aria-labelledby="setup-title"><div class="section-heading"><div><p class="eyebrow">✧ Pearl Readers</p><h2 id="setup-title">${esc(t("setup"))}</h2><p>${esc(t("setupNote"))}</p></div><span class="shell-stamp" aria-hidden="true">${icon}</span></div>
   ${saved ? `<div class="continue-panel">${link(sessionURL(saved.config), t("continue"), "primary")}<span>${esc(saved.config.lang === "fr" ? t("french") : t("english"))} · ${esc(t("progress"))} ${saved.config.i - saved.config.s + 1} ${esc(t("of"))} ${roundEnd(saved.config, saved.deckIds.length) - saved.config.s}</span></div>` : ""}
   <form id="setup-form"><div class="setup-grid">${select(
@@ -423,6 +434,14 @@ app.addEventListener("click", (e) => {
   const button = e.target.closest("[data-action]");
   if (!button || button.disabled) return;
   const name = button.dataset.action;
+  if (name === "previous-story" || name === "next-story") {
+    storyIndex =
+      (storyIndex + (name === "next-story" ? 1 : -1) + stories.length) %
+      stories.length;
+    document.querySelector("#story-content").innerHTML = storyContent();
+    document.querySelector(".story-position").textContent = storyPosition();
+    return;
+  }
   if (name === "language") {
     switchLanguage(button.dataset.language);
     return;
